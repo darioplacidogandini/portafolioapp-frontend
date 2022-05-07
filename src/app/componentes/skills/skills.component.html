@@ -1,0 +1,18 @@
+<div class="card m-3">
+    <div class="row m-3">
+        <h1 class="text-theme">Hard & Soft Skills</h1>
+        <div class="row">
+            <h3 class="text-secondary">Lenguajes de Programación</h3>
+            <ul class="list-unstyled">
+                <li *ngFor="let skills of skillList">
+                    <div class="col m-2">
+                        <h5>{{skills.skill}}</h5>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-theme progress-bar-striped fw-bold" [style.width]="skills.porcentaje">{{skills.porcentaje}}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

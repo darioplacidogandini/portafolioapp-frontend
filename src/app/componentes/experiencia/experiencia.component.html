@@ -1,0 +1,19 @@
+<div class="card m-3">
+    <div class="row m-2">
+        <h1 class="text-theme">Experiencia Laboral</h1>
+        <ul class="list-unstyled">
+            <li *ngFor="let experiencia of experienciaList">
+                <div class="row justify-content-center align-items-center border-top border-bottom">
+                    <div class="col-1">
+                        <img class="img-fluid rounded-circle border" [src]="experiencia.img" alt="experiencia.alt">
+                    </div>
+                    <div class="col-11">
+                        <h3 class="text-secondary">{{experiencia.organizacion}}</h3>
+                        <h5>{{experiencia.puesto}}</h5>
+                        <p>{{experiencia.inicio}} a {{experiencia.fin}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

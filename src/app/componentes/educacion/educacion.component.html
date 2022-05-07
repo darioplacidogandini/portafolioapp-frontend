@@ -1,0 +1,19 @@
+<div class="card m-3">
+    <div class="row m-2">
+        <h1 class="text-theme">Educacion</h1>
+        <ul class="list-unstyled">
+            <li *ngFor="let educacion of educacionList">
+                <div class="row justify-content-center align-items-center border-top border-bottom">
+                    <div class="col-1">
+                        <img class="img-fluid rounded-circle border" [src]="educacion.img" alt="educacion.alt">
+                    </div>
+                    <div class="col-11">
+                        <h3 class="text-secondary">{{educacion.titulo}}</h3>
+                        <h5>{{educacion.institucion}}</h5>
+                        <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
