@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from '../../servicios/portfolio.service';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +8,7 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 })
 export class HeaderComponent implements OnInit {
   headerList:any;
-  constructor(private datosPortfolio:PortfolioService, public autenticacionService:AutenticacionService) { }
+  constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data=>{

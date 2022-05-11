@@ -10,18 +10,17 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { AppRoutingModule } from './app-routing.module';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioService } from './servicios/portfolio.service';
-import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AcercaDeComponent,
-    ExperienciaComponent,
     EducacionComponent,
+    ExperienciaComponent,
     SkillsComponent,
     ProyectosComponent,
     PortfolioComponent,
@@ -34,9 +33,7 @@ import { InterceptorService } from './servicios/interceptor.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ PortfolioService,
-    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
-  ],
+  providers: [ PortfolioService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

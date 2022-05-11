@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -10,7 +9,7 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 })
 export class IniciarSesionComponent implements OnInit {
   form:FormGroup;
-  constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService,
+  constructor(private formBuilder:FormBuilder,
     private ruta:Router) { 
     this.form = this.formBuilder.group (
       {
