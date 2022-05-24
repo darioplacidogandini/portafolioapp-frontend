@@ -12,7 +12,11 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
-import { EditarPortfolioComponent } from './componentes/editar-portfolio/editar-portfolio.component';
+import { EditarAcercaComponent } from './componentes/acerca-de/editar-acerca/editar-acerca.component';
+import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
+import { AgregarEducacionComponent } from './componentes/educacion/agregar-educacion/agregar-educacion.component';
+import { AgregarExperienciaComponent } from './componentes/experiencia/agregar-experiencia/agregar-experiencia.component';
+import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia/editar-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { EditarPortfolioComponent } from './componentes/editar-portfolio/editar-
     ProyectosComponent,
     PortfolioComponent,
     IniciarSesionComponent,
-    EditarPortfolioComponent,
+    EditarAcercaComponent,
+    EditarEducacionComponent,
+    AgregarEducacionComponent,
+    AgregarExperienciaComponent,
+    EditarExperienciaComponent,
   ],
   imports: [
     BrowserModule,
