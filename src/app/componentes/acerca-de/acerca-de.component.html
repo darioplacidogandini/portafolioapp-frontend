@@ -1,21 +1,32 @@
-<div class="card m-3" *ngFor="let acercaDe of acercaDeList">
-    <div [style.background-image]="'url(' + acercaDe.banner + ')'">
-    <div class="row m-3">
-        <div class="col-3">
-            <img class="img-fluid rounded-circle" [src]="acercaDe.fotoPerfil" alt="Foto de perfil">                
-        </div>
+<div class="card m-3">
+    <div class="row m-2"> 
         <div class="col-9">
 
         </div>
-    </div>
-    </div>
-    <div class="row m-3">
         <div class="col">
-            <h1 class="text-theme">{{acercaDe.nombre}}</h1>
-            <h3 class="text-secondary">{{acercaDe.titulo}}</h3>
+            <a [routerLink]="'/editar'"><button class="btn btn-theme float-end">EDITAR</button></a>
         </div>
-        <div class="col">
-
+    </div>
+    <div *ngFor="let acerca of listaAcerca | async">
+        <div class="row">
+            <div [style.background-image]="'url(' + acerca.banner + ')'"></div>
+            <div class="row m-3">
+                <div class="col-3">
+                    <img class="img-fluid rounded-circle" [src]="acerca.perfil">                
+                </div>
+                <div class="col-9">
+        
+                </div>
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col">
+                <h1 class="text-theme">{{acerca.nombre}}</h1>
+                <h3 class="text-secondary">{{acerca.puesto}}</h3>
+            </div>
+            <div class="col">
+    
+            </div>
         </div>
     </div>
 </div>

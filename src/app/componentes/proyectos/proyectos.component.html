@@ -1,19 +1,5 @@
 <div class="card m-3">
     <div class="row m-2">
         <h1 class="text-theme">Proyectos</h1>
-        <ul class="list-unstyled">
-            <li *ngFor="let proyectos of proyectosList">
-                <div class="row justify-content-center align-items-center border-top border-bottom">
-                    <div class="col-1">
-                        <img class="img-fluid rounded-circle border" [src]="proyectos.img" alt="proyectos.alt">
-                    </div>
-                    <div class="col-11">
-                        <h3 class="text-secondary">{{proyectos.nombre}}</h3>
-                        <p>{{proyectos.descripcion}}</p>
-                        <a class="text-theme" [href]="proyectos.url">{{proyectos.url}}</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
     </div>
 </div>

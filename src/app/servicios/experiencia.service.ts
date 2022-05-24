@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EducacionService {
+export class ExperienciaService {
 
-  private baseUrl = 'http://localhost:8080/api/educacion';
+  private baseUrl = 'http://localhost:8080/api/experiencia';
 
   constructor(private http: HttpClient) {}
 
@@ -15,8 +15,8 @@ export class EducacionService {
     return this.http.get(`${this.baseUrl}/listar`);
   }
 
-  agregar(educacion: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/agregar`, educacion);
+  agregar(experiencia: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/agregar`, experiencia);
   }
 
   eliminar(id: number) {

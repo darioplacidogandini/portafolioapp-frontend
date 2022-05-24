@@ -12,7 +12,7 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
-import { PortfolioService } from './servicios/portfolio.service';
+import { EditarPortfolioComponent } from './componentes/editar-portfolio/editar-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { PortfolioService } from './servicios/portfolio.service';
     SkillsComponent,
     ProyectosComponent,
     PortfolioComponent,
-    IniciarSesionComponent
+    IniciarSesionComponent,
+    EditarPortfolioComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,7 @@ import { PortfolioService } from './servicios/portfolio.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ PortfolioService ],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

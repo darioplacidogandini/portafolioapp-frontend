@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from '../../servicios/portfolio.service';
+import { Observable } from 'rxjs';
+import { Acerca } from 'src/app/model/acerca.model';
+import { AcercaService } from 'src/app/servicios/acerca.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -7,14 +9,19 @@ import { PortfolioService } from '../../servicios/portfolio.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  acercaDeList:any;
-  constructor(private datosPortfolio:PortfolioService) { }
+
+  listaAcerca: Observable<Acerca[]> | undefined;
+
+  acerca: Acerca = new Acerca();
+
+  constructor(private datosAcerca:AcercaService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data=>{
-      console.log(data);
-      this.acercaDeList=data.acercaDe;
-    })
-  }
+    this.listar();
+    }
+    
+    public listar() {
+      this.listaAcerca = this.datosAcerca.listar();
+    }
 
 }

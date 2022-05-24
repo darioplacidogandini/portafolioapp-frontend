@@ -1,11 +1,18 @@
 <div class="card m-3">
     <div class="row m-2">
-        <h1 class="text-theme">Educacion</h1>
+        <div class="row">
+            <div class="col-9">
+                <h1 class="text-theme">Educacion</h1>
+            </div>
+            <div class="col">
+                <a><button class="btn btn-theme float-end">EDITAR</button></a>
+            </div>
+        </div>
         <ul class="list-unstyled">
-            <li *ngFor="let educacion of educacionList">
+            <li *ngFor="let educacion of listaEducacion | async">
                 <div class="row justify-content-center align-items-center border-top border-bottom">
                     <div class="col-1">
-                        <img class="img-fluid rounded-circle border" [src]="educacion.img" alt="educacion.alt">
+                        <img class="img-fluid rounded-circle border" [src]="educacion.logo">
                     </div>
                     <div class="col-11">
                         <h3 class="text-secondary">{{educacion.titulo}}</h3>
