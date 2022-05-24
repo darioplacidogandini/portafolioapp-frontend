@@ -1,1 +1,33 @@
-<p>agregar-educacion works!</p>
+<form (ngSubmit)="agregarEducacion()" class="row card m-3">
+        <div class="row">
+            <div>
+                <label for="titulo">Titulo</label>
+                <input  type="text" class="form-control" formControlName="titulo">
+            </div>
+            <div>
+                <label for="institucion">Institucion</label>
+                <input  type="text" class="form-control" formControlName="institucion">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="fecha">Fecha</label>
+                <input  type="text" class="form-control" formControlName="fecha">
+            </div>
+            <div class="col">
+                <label for="duracion">Duracion</label>
+                <input  type="text" class="form-control" formControlName="duracion">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col text-centered">
+                <button type="submit" class="btn btn-theme">AGREGAR</button>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </form>

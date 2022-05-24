@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Educacion } from 'src/app/model/educacion.model';
+import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
   selector: 'app-agregar-educacion',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarEducacionComponent implements OnInit {
 
-  constructor() { }
+  educacion: Educacion = new Educacion();
 
-  ngOnInit(): void {
+  constructor(private educacionService:EducacionService, private ruta:Router) {}
+
+  ngOnInit(): void {}
+
+  agregarEducacion() {
+    this.educacionService.agregar(this.educacion).subscribe();
+    this.ruta.navigate(['/portfolio']);
   }
 
 }

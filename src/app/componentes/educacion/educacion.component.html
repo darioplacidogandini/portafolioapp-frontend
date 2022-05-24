@@ -1,13 +1,11 @@
 <div class="card m-3">
     <div class="row m-2">
-        <div class="row">
             <div class="col-9">
                 <h1 class="text-theme">Educacion</h1>
             </div>
             <div class="col">
                 <a [routerLink]="'/editar-educacion'"><button class="btn btn-theme float-end">EDITAR</button></a>
             </div>
-        </div>
         <ul class="list-unstyled">
             <li *ngFor="let educacion of listaEducacion | async">
                 <div class="row justify-content-center align-items-center border-top border-bottom">
