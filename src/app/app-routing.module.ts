@@ -11,6 +11,7 @@ import { AgregarExperienciaComponent } from './componentes/experiencia/agregar-e
 import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades/editar-habilidades.component';
 import { AgregarHabilidadesComponent } from './componentes/habilidades/agregar-habilidades/agregar-habilidades.component';
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
+import { AgregarProyectosComponent } from './componentes/proyectos/agregar-proyectos/agregar-proyectos.component';
 
 const routes: Routes = [
   {path: 'portfolio',component:PortfolioComponent},
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path: 'editar-habilidades',component:EditarHabilidadesComponent},
   {path: "agregar-habilidades",component:AgregarHabilidadesComponent},
   {path: "editar-proyectos",component:EditarProyectosComponent},
-  {path: "agregar-proyectos",component:AgregarEducacionComponent}
+  {path: "agregar-proyectos",component:AgregarProyectosComponent}
 ];
 
 @NgModule({
