@@ -5,7 +5,7 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
-import { SkillsComponent } from './componentes/skills/skills.component';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
@@ -25,7 +25,7 @@ import { EditarExperienciaComponent } from './componentes/experiencia/editar-exp
     AcercaDeComponent,
     EducacionComponent,
     ExperienciaComponent,
-    SkillsComponent,
+    HabilidadesComponent,
     ProyectosComponent,
     PortfolioComponent,
     IniciarSesionComponent,
