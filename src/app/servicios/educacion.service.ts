@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Educacion } from '../model/educacion.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,8 @@ export class EducacionService {
     return this.http.get(`${this.baseUrl}/listar`);
   }
 
-  agregar(educacion: Object): Observable<Object> {
+  agregar(educacion: Educacion): Observable<any> {
     return this.http.post(`${this.baseUrl}/agregar`, educacion);
-  }
-
-  eliminar(id: number) {
-    return this.http.delete(`${this.baseUrl}/{id}`, {responseType: 'text'});
   }
 
 }

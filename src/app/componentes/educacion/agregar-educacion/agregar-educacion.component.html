@@ -1,22 +1,22 @@
-<form (ngSubmit)="agregarEducacion()" class="row card m-3">
+<form class="row card m-3">
         <div class="row">
-            <div>
+            <div class="form-group">
                 <label for="titulo">Titulo</label>
-                <input  type="text" class="form-control" formControlName="titulo">
+                <input [ngModel]="educacion.titulo" type="text" class="form-control">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="institucion">Institucion</label>
-                <input  type="text" class="form-control" formControlName="institucion">
+                <input [ngModel]="educacion.institucion" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col form-group">
                 <label for="fecha">Fecha</label>
-                <input  type="text" class="form-control" formControlName="fecha">
+                <input [ngModel]="educacion.fecha" type="text" class="form-control">
             </div>
-            <div class="col">
+            <div class="col form-group">
                 <label for="duracion">Duracion</label>
-                <input  type="text" class="form-control" formControlName="duracion">
+                <input [ngModel]="educacion.duracion" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
@@ -24,10 +24,10 @@
 
             </div>
             <div class="col text-centered">
-                <button type="submit" class="btn btn-theme">AGREGAR</button>
+                <button (click)="agregarEducacion()" type="submit" class="btn btn-theme">AGREGAR</button>
             </div>
             <div class="col">
 
             </div>
         </div>
-    </form>
+ </form>

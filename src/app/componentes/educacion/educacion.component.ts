@@ -12,15 +12,13 @@ export class EducacionComponent implements OnInit {
 
   listaEducacion: Observable<Educacion[]> | undefined;
 
-  educacion: Educacion = new Educacion();
-
   constructor(private datosEducacion:EducacionService) { }
 
   ngOnInit(): void { 
-    this.obtenerDatos();
+    this.cargarDatos();
   }
 
-   public obtenerDatos() {
+   public cargarDatos() {
     this.listaEducacion = this.datosEducacion.listar();
    }
 

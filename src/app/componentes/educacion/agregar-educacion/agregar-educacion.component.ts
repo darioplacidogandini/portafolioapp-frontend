@@ -10,7 +10,12 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class AgregarEducacionComponent implements OnInit {
 
-  educacion: Educacion = new Educacion();
+  educacion: Educacion = {
+    titulo: '',
+    institucion: '',
+    fecha: '',
+    duracion: 0
+  };
 
   constructor(private educacionService:EducacionService, private ruta:Router) {}
 
@@ -18,7 +23,6 @@ export class AgregarEducacionComponent implements OnInit {
 
   agregarEducacion() {
     this.educacionService.agregar(this.educacion).subscribe();
-    this.ruta.navigate(['/portfolio']);
   }
 
 }
