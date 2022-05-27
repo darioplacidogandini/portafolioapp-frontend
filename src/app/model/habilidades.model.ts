@@ -1,5 +1,5 @@
 export class Habilidades {
-    id: number | undefined;
-    habilidad: String | undefined;
-    porcentaje: String | undefined;
+    id?: number;
+    habilidad?: String;
+    porcentaje?: String;
 }

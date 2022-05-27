@@ -1,12 +1,12 @@
-<form (ngSubmit)="agregarHabilidad()" class="row card m-3">
+<form class="row card m-3">
     <div class="row">
         <div>
             <label for="habilidad">Habilidad</label>
-            <input  type="text" class="form-control" formControlName="habilidad">
+            <input  type="text" class="form-control" id="habilidad">
         </div>
         <div>
             <label for="porcentaje">Porcentaje</label>
-            <input  type="text" class="form-control" formControlName="porcentaje">
+            <input  type="text" class="form-control" id="porcentaje">
         </div>
     </div>
     <div class="row">
@@ -14,7 +14,7 @@
 
         </div>
         <div class="col text-centered">
-            <button type="submit" class="btn btn-theme">AGREGAR</button>
+            <button (click)="agregarHabilidad()" type="submit" class="btn btn-theme">AGREGAR</button>
         </div>
         <div class="col">
 

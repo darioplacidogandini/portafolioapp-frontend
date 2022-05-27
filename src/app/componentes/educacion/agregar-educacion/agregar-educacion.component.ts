@@ -23,6 +23,7 @@ export class AgregarEducacionComponent implements OnInit {
 
   agregarEducacion() {
     this.educacionService.agregar(this.educacion).subscribe();
+    this.ruta.navigate(['/portfolio']);
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Experiencia } from 'src/app/model/experiencia.model';
+import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 @Component({
   selector: 'app-agregar-experiencia',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarExperienciaComponent implements OnInit {
 
-  constructor() { }
+  experiencia: Experiencia = {
+    empresa: '',
+    puesto: '',
+    inicio: '',
+    fin: '',
+    logo: ''
+  };
 
-  ngOnInit(): void {
+  constructor(private experienciaService:ExperienciaService, private ruta:Router) {}
+
+  ngOnInit(): void {}
+
+  agregarExperiencia() {
+    this.experienciaService.agregar(this.experiencia).subscribe();
+    this.ruta.navigate(['/portfolio']);
   }
 
 }

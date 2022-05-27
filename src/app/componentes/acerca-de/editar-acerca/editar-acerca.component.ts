@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Acerca } from 'src/app/model/acerca.model';
+import { AcercaService } from 'src/app/servicios/acerca.service';
 
 @Component({
   selector: 'app-editar-acerca',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarAcercaComponent implements OnInit {
 
-  constructor() { }
+  acerca: Acerca = {
+    nombre: '',
+    puesto: '',
+    foto: '',
+    portada:''
+  };
 
-  ngOnInit(): void {
+  constructor(private acercaService:AcercaService, private ruta:Router) {}
+
+  ngOnInit(): void {}
+
+  guardarCambios() {
+    this.acercaService.editar(this.acerca).subscribe();
+    this.ruta.navigate(['/portfolio']);
   }
 
 }
