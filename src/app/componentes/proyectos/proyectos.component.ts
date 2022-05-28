@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Proyectos } from 'src/app/model/proyectos.model';
+import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -6,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-  proyectosList: any;
-  constructor() { }
+  
+  listaProyectos: Observable<Proyectos[]> | undefined;
 
-  ngOnInit(): void {}
+  constructor(private datosProyectos:ProyectosService) {}
+
+  ngOnInit(): void {
+    this.cargarDatos();
+  }
+
+  cargarDatos() {
+    this.listaProyectos = this.datosProyectos.listar(); 
+  }
 
 }

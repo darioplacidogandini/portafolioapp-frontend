@@ -6,5 +6,19 @@
         <div class="col">
             <a [routerLink]="'/editar-experiencia'"><button class="btn btn-theme float-end">EDITAR</button></a>
         </div>
+        <ul class="list-unstyled">
+            <li *ngFor="let experiecia of listaExperiencia | async">
+                <div class="row justify-content-center align-items-center border-top border-bottom">
+                    <div class="col-1">
+                        <img class="img-fluid rounded-circle border" [src]="experiecia.logo">
+                    </div>
+                    <div class="col-11">
+                        <h3 class="text-secondary">{{experiecia.empresa}}</h3>
+                        <h5>{{experiecia.puesto}}</h5>
+                        <p>{{experiecia.inicio}} - {{experiecia.inicio}} hs</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>

@@ -6,5 +6,19 @@
         <div class="col">
             <a [routerLink]="'/editar-proyectos'"><button class="btn btn-theme float-end">EDITAR</button></a>
         </div>
+        <ul class="list-unstyled">
+            <li *ngFor="let proyectos of listaProyectos | async">
+                <div class="row justify-content-center align-items-center border-top border-bottom">
+                    <div class="col-1">
+                        <img class="img-fluid rounded-circle border" [src]="">
+                    </div>
+                    <div class="col-11">
+                        <h3 class="text-secondary">{{proyectos.nombre}}</h3>
+                        <h5>{{proyectos.descripcion}}</h5>
+                        <a href="{{proyectos.url}}"><button class="btn btn-theme">VER</button></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>

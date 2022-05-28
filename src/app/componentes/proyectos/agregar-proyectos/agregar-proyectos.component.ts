@@ -10,7 +10,11 @@ import { ProyectosService } from 'src/app/servicios/proyectos.service';
 })
 export class AgregarProyectosComponent implements OnInit {
 
-  proyecto: Proyectos = new Proyectos();
+  proyecto: Proyectos = {
+    nombre: '',
+    descripcion: '',
+    url: ''
+  }
 
   constructor(private proyectosService:ProyectosService, private ruta:Router) {}
 

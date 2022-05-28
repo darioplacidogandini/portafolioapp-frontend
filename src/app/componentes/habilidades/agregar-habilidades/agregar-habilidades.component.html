@@ -2,11 +2,11 @@
     <div class="row">
         <div>
             <label for="habilidad">Habilidad</label>
-            <input  type="text" class="form-control" id="habilidad">
+            <input [(ngModel)]="habilidad.habilidad" type="text" class="form-control" id="habilidad" name="habilidad">
         </div>
         <div>
             <label for="porcentaje">Porcentaje</label>
-            <input  type="text" class="form-control" id="porcentaje">
+            <input [(ngModel)]="habilidad.porcentaje" type="text" class="form-control" id="porcentaje" name="porcentaje">
         </div>
     </div>
     <div class="row">
