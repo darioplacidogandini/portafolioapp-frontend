@@ -3,4 +3,5 @@ export class Proyectos {
     nombre?: String;
     descripcion?: String;
     url?: String;
+    logo?: String;
 }

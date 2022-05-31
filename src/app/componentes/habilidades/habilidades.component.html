@@ -8,7 +8,7 @@
         </div>
         <li *ngFor="let habilidad of listaHabilidades | async">
             <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-theme" role="progressbar" [style.width]="habilidad.porcentaje">{{habilidad.habilidad}}</div>
+                <div class="progress-bar progress-bar-striped bg-theme" role="progressbar" [style.width]="habilidad.porcentaje + '%'">{{habilidad.habilidad}}</div>
             </div>
     </div>
 </div>
