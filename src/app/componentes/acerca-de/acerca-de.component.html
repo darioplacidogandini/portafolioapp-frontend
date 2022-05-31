@@ -9,7 +9,7 @@
     </div>
     <div *ngFor="let acerca of listaAcerca | async">
         <div class="row">
-            <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}"></div>            
+            <img class="img-fluid" [src]="acerca.portada">          
                 <div class="row m-3">
                     <div class="col-3">
                         <img class="img-fluid rounded-circle" [src]="acerca.foto">                
