@@ -7,8 +7,8 @@
             <a [routerLink]="'/editar-habilidades'"><button class="btn btn-theme float-end">EDITAR</button></a>
         </div>
         <ul class="list-unstyled" *ngFor="let habilidad of listaHabilidades | async">
+            <h2 class="text-secondary">{{habilidad.habilidad}}</h2>
             <div class="progress">
-                <h2 class="text-secondary">{{habilidad.habilidad}}</h2>
                 <div class="progress-bar progress-bar-striped bg-theme" role="progressbar" [style.width]="habilidad.porcentaje + '%'">{{habilidad.porcentaje}}%</div>
             </div>
         </ul>

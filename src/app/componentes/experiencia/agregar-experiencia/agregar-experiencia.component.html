@@ -1,10 +1,10 @@
 <div class="row form card m-3">
     <div class="row">
-        <div>
+        <div class="col">
             <label for="empresa">Empresa</label>
             <input [(ngModel)]="experiencia.empresa" type="text" class="form-control" id="empresa" name="empresa">
         </div>
-        <div>
+        <div class="col">
             <label for="puesto">Puesto</label>
             <input [(ngModel)]="experiencia.puesto" type="text" class="form-control" id="puesto" name="puesto">
         </div>
@@ -17,6 +17,12 @@
         <div class="col">
             <label for="fin">Hasta</label>
             <input [(ngModel)]="experiencia.fin" type="text" class="form-control" id="fin" name="fin">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="logo">URL logo de la empresa</label>
+            <input [(ngModel)]="experiencia.logo" type="text" class="form-control" id="logo" name="logo">
         </div>
     </div>
     <div class="row">
