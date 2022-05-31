@@ -13,7 +13,8 @@ export class AgregarProyectosComponent implements OnInit {
   proyecto: Proyectos = {
     nombre: '',
     descripcion: '',
-    url: ''
+    url: '',
+    logo: ''
   }
 
   constructor(private proyectosService:ProyectosService, private ruta:Router) {}
