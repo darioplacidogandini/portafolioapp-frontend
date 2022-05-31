@@ -20,8 +20,8 @@ export class AcercaDeComponent implements OnInit {
     this.listar();
     }
     
-    public listar() {
-      this.listaAcerca = this.datosAcerca.listar();
-    }
+  public listar() {
+    this.listaAcerca = this.datosAcerca.listar();
+  }
 
 }

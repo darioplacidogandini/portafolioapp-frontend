@@ -15,10 +15,10 @@ export class ProyectosComponent implements OnInit {
   constructor(private datosProyectos:ProyectosService) {}
 
   ngOnInit(): void {
-    this.cargarDatos();
+    this.listar();
   }
 
-  cargarDatos() {
+  public listar() {
     this.listaProyectos = this.datosProyectos.listar(); 
   }
 

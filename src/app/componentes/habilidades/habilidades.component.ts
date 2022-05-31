@@ -15,10 +15,10 @@ export class HabilidadesComponent implements OnInit {
   constructor(private datosHabilidades:HabilidadesService) {}
 
   ngOnInit(): void {
-    this.cargarDatos();
+    this.listar();
   }
 
-  cargarDatos() {
+  public listar() {
     this.listaHabilidades = this.datosHabilidades.listar();
   }
   

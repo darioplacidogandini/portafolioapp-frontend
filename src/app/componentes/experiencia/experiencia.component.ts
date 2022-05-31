@@ -15,10 +15,10 @@ export class ExperienciaComponent implements OnInit {
   constructor(private datosExperiencia:ExperienciaService) {}
 
   ngOnInit(): void {
-    this.cargarDatos();
+    this.listar();
   }
 
-  cargarDatos() {
+  public listar() {
     this.listaExperiencia = this.datosExperiencia.listar();
   }
 

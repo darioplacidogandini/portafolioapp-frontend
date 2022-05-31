@@ -14,7 +14,7 @@ export class EditarAcercaComponent implements OnInit {
     nombre: '',
     puesto: '',
     foto: '',
-    portada:''
+    portada: ''
   };
 
   constructor(private acercaService:AcercaService, private ruta:Router) {}
