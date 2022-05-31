@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AcercaService {
 
-  private baseUrl = 'https://bzw3zao6uyhzhc61l6vh-mysql.services.clever-cloud.com/api/acerca';
+  private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/acerca';
 
   constructor(private http: HttpClient) {}
 

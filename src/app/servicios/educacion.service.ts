@@ -8,7 +8,7 @@ import { Educacion } from '../model/educacion.model';
 })
 export class EducacionService {
 
-  private baseUrl = 'https://bzw3zao6uyhzhc61l6vh-mysql.services.clever-cloud.com/api/educacion';
+  private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/educacion';
 
   constructor(private http: HttpClient) {}
 

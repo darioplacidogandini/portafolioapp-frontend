@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProyectosService {
 
-  private baseUrl = 'https://bzw3zao6uyhzhc61l6vh-mysql.services.clever-cloud.com/api/proyectos';
+  private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/proyectos';
 
   constructor(private http:HttpClient) {}
 
