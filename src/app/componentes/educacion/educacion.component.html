@@ -7,9 +7,8 @@
                 <a [routerLink]="'/agregar-educacion'"><button class="btn btn-theme float-end">EDITAR</button></a>
             </div>
         <ul class="list-unstyled">
-            <li *ngFor="let educacion of listaEducacion">
+            <li *ngFor="let educacion of listaEducacion | async">
                 <div class="row justify-content-center align-items-center border-top border-bottom">
-                    <div class="row btn btn-theme float-end">ELIMINAR</div>
                     <div class="col-1">
                         <img class="img-fluid rounded-circle border" [src]="educacion.logo">
                     </div>

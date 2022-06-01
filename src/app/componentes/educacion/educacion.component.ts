@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
@@ -9,16 +10,16 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EducacionComponent implements OnInit {
 
-  listaEducacion?: Educacion[];
+  listaEducacion: Observable<Educacion[]> | undefined;
 
-  constructor(private datosEducacion:EducacionService) { }
+  constructor(private datosEducacion:EducacionService) {}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.listar();
   }
 
   public listar() {
-    this.datosEducacion.listar();
+    this.listaEducacion = this.datosEducacion.listar();
   }
 
 }
