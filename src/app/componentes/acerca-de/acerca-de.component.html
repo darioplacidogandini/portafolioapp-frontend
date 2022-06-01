@@ -1,4 +1,5 @@
-<div class="card m-3" *ngFor="let acerca of listaAcerca | async" [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}">
+<div class="card m-3" *ngFor="let acerca of listaAcerca | async">
+    <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}">
     <div class="row"> 
         <div class="col-9">
 
@@ -14,6 +15,7 @@
         <div class="col-9">
 
         </div>
+    </div>
     </div>
     <div class="row">
         <div class="col">
