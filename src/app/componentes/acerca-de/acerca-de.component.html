@@ -1,5 +1,5 @@
-<div class="card m-3">
-    <div class="row m-2"> 
+<div class="card m-3" *ngFor="let acerca of listaAcerca | async" [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}">
+    <div class="row"> 
         <div class="col-9">
 
         </div>
@@ -7,27 +7,21 @@
             <a [routerLink]="'/editar-acerca'"><button class="btn btn-theme float-end">EDITAR</button></a>
         </div>
     </div>
-    <div *ngFor="let acerca of listaAcerca | async">
-        <div class="row">
-            <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}">   
-                <div class="row m-3">
-                    <div class="col-3">
-                        <img class="img-fluid rounded-circle" [src]="acerca.foto">                
-                    </div>
-                    <div class="col-9">
-
-                    </div>
-                </div>
-            </div>
+    <div class="row">   
+        <div class="col-3">
+            <img class="img-fluid rounded-circle" [src]="acerca.foto">                
         </div>
-        <div class="row m-3">
-            <div class="col">
-                <h1 class="text-theme">{{acerca.nombre}}</h1>
-                <h3 class="text-secondary">{{acerca.puesto}}</h3>
-            </div>
-            <div class="col">
+        <div class="col-9">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 class="text-theme">{{acerca.nombre}}</h1>
+            <h3 class="text-secondary">{{acerca.puesto}}</h3>
+        </div>
+        <div class="col">
     
-            </div>
         </div>
     </div>
 </div>
