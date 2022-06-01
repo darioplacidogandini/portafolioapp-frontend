@@ -13,13 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { EditarAcercaComponent } from './componentes/acerca-de/editar-acerca/editar-acerca.component';
-import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
 import { AgregarEducacionComponent } from './componentes/educacion/agregar-educacion/agregar-educacion.component';
 import { AgregarExperienciaComponent } from './componentes/experiencia/agregar-experiencia/agregar-experiencia.component';
-import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia/editar-experiencia.component';
 import { AgregarProyectosComponent } from './componentes/proyectos/agregar-proyectos/agregar-proyectos.component';
-import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
-import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades/editar-habilidades.component';
 import { AgregarHabilidadesComponent } from './componentes/habilidades/agregar-habilidades/agregar-habilidades.component';
 
 @NgModule({
@@ -34,13 +30,9 @@ import { AgregarHabilidadesComponent } from './componentes/habilidades/agregar-h
     PortfolioComponent,
     IniciarSesionComponent,
     EditarAcercaComponent,
-    EditarEducacionComponent,
     AgregarEducacionComponent,
     AgregarExperienciaComponent,
-    EditarExperienciaComponent,
     AgregarProyectosComponent,
-    EditarProyectosComponent,
-    EditarHabilidadesComponent,
     AgregarHabilidadesComponent,
   ],
   imports: [
