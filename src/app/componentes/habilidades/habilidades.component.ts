@@ -21,5 +21,9 @@ export class HabilidadesComponent implements OnInit {
   public listar() {
     this.listaHabilidades = this.datosHabilidades.listar();
   }
+
+  public eliminar() {
+    alert("Elemento eliminado");
+  }
   
 }

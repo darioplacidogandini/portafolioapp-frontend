@@ -22,4 +22,8 @@ export class ExperienciaComponent implements OnInit {
     this.listaExperiencia = this.datosExperiencia.listar();
   }
 
+  public eliminar() {
+    alert("Elemento eliminado");
+  }
+
 }

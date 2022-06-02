@@ -13,7 +13,7 @@
                         <img class="img-fluid rounded-circle border" [src]="educacion.logo">
                     </div>
                     <div class="col-11">
-                        <div class="btn btn-secondary float-end">ELIMINAR</div>
+                            <button (click)="eliminar()" class="btn btn-secondary float-end">ELIMINAR</button>
                         <h3 class="text-secondary">{{educacion.titulo}}</h3>
                         <h5>{{educacion.institucion}}</h5>
                         <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
