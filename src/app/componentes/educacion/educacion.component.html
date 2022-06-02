@@ -8,6 +8,9 @@
             </div>
         <ul class="list-unstyled">
             <li *ngFor="let educacion of listaEducacion | async">
+                <div class="row">
+                    <div class="btn btn-secondary float-end">ELIMINAR</div>
+                </div>
                 <div class="row justify-content-center align-items-center border-top border-bottom">
                     <div class="col-1">
                         <img class="img-fluid rounded-circle border" [src]="educacion.logo">
