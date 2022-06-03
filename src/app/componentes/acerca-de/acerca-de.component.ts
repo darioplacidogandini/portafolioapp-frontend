@@ -23,5 +23,5 @@ export class AcercaDeComponent implements OnInit {
   public listar() {
     this.listaAcerca = this.datosAcerca.listar();
   }
-
+  
 }

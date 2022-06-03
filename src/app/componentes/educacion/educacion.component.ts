@@ -22,8 +22,8 @@ export class EducacionComponent implements OnInit {
     this.listaEducacion = this.datosEducacion.listar();
   }
 
-  public eliminar() {
-    alert("Elemento eliminado");
+  public eliminar(id: any) {
+    this.datosEducacion.eliminar(id).subscribe();
   }
 
 }

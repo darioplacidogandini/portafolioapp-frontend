@@ -16,7 +16,7 @@ export class AcercaService {
   }
 
   editar(acerca: object): Observable<any> {
-    return this.http.post(`${this.baseUrl}/editar`, acerca);
+    return this.http.put(`${this.baseUrl}/editar`, acerca);
   }
 
 }
