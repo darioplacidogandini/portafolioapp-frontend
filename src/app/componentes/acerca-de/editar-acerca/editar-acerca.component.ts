@@ -22,7 +22,7 @@ export class EditarAcercaComponent implements OnInit {
   ngOnInit(): void {}
 
   guardarCambios() {
-    this.acercaService.editar(this.acerca).subscribe();
+    this.acercaService.editar(1,this.acerca).subscribe();
     this.ruta.navigate(['/portfolio']);
   }
 

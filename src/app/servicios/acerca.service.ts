@@ -15,8 +15,8 @@ export class AcercaService {
     return this.http.get(`${this.baseUrl}/listar`);
   }
 
-  editar(acerca: object): Observable<any> {
-    return this.http.put(`${this.baseUrl}/editar`, acerca);
+  editar(id: number,value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`, value);
   }
 
 }
