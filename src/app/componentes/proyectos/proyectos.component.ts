@@ -22,8 +22,8 @@ export class ProyectosComponent implements OnInit {
     this.listaProyectos = this.datosProyectos.listar(); 
   }
 
-  public eliminar() {
-    alert("Elemento eliminado");
+  public eliminar(id: number) {
+    this.datosProyectos.eliminar(id).subscribe;
   }
 
 }

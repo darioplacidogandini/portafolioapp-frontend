@@ -20,7 +20,7 @@ export class EducacionService {
     return this.http.post(`${this.baseUrl}/agregar`, educacion);
   }
 
-  eliminar(id: any) {
+  eliminar(id: number) {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

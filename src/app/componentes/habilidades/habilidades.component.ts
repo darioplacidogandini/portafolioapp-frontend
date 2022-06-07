@@ -22,8 +22,8 @@ export class HabilidadesComponent implements OnInit {
     this.listaHabilidades = this.datosHabilidades.listar();
   }
 
-  public eliminar() {
-    alert("Elemento eliminado");
+  public eliminar(id: number) {
+    this.datosHabilidades.eliminar(id).subscribe;
   }
   
 }

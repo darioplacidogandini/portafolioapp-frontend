@@ -20,7 +20,7 @@ export class ExperienciaService {
   }
 
   eliminar(id: number) {
-    return this.http.delete(`${this.baseUrl}/{id}`, {responseType: 'text'});
+    return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 
 }
