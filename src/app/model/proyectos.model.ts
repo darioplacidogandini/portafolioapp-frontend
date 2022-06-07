@@ -1,5 +1,5 @@
 export class Proyectos {
-    id?: number;
+    id?: any;
     nombre?: String;
     descripcion?: String;
     url?: String;

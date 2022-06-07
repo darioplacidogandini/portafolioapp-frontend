@@ -1,5 +1,5 @@
 export class Acerca {
-    id?: number;
+    id?: any;
     foto?: string;
     portada?: string;
     nombre?: string;

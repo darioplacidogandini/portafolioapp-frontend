@@ -13,7 +13,8 @@
                         <img class="img-fluid rounded-circle border" [src]="proyectos.logo">
                     </div>
                     <div class="col-11">
-                        <button (click)="eliminar()" class="btn btn-secondary float-end">ELIMINAR</button>
+                        <button (click)="editar()" class="btn btn-secondary">EDITAR</button>
+                        <button (click)="eliminar(proyectos.id)" class="btn btn-danger float-end">ELIMINAR</button>
                         <h3 class="text-secondary">{{proyectos.nombre}}</h3>
                         <h5>{{proyectos.descripcion}}</h5>
                         <a href="{{proyectos.url}}"><button class="btn btn-theme">VER</button></a>
