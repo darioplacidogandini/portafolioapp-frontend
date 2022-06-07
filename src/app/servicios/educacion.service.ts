@@ -21,7 +21,7 @@ export class EducacionService {
   }
 
   eliminar(id: any) {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 
 }

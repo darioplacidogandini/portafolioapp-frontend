@@ -22,7 +22,7 @@ export class EducacionComponent implements OnInit {
     this.listaEducacion = this.datosEducacion.listar();
   }
 
-  public eliminar(id: any) {
+  public eliminar(id: number) {
     this.datosEducacion.eliminar(id).subscribe();
   }
 
