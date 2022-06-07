@@ -7,8 +7,12 @@
             <a [routerLink]="'/agregar-habilidades'"><button class="btn btn-theme float-end">EDITAR</button></a>
         </div>
         <ul class="list-unstyled" *ngFor="let habilidad of listaHabilidades | async">
-            <button (click)="editar()" class="btn btn-secondary">EDITAR</button>
-            <button (click)="eliminar(habilidad.id)" class="btn btn-danger float-end">ELIMINAR</button>
+            <div class="col">
+            </div>
+            <div class="col-4">
+                <button (click)="editar()" class="btn btn-secondary">EDITAR</button>
+                <button (click)="eliminar(habilidad.id)" class="btn btn-danger float-end">ELIMINAR</button>    
+            </div>
             <h2 class="text-secondary">{{habilidad.habilidad}}</h2>
             <div class="progress">
                 <div class="progress-bar progress-bar-striped bg-theme fw-bold" role="progressbar" [style.width]="habilidad.porcentaje + '%'">{{habilidad.porcentaje}}%</div>
