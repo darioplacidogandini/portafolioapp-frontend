@@ -19,6 +19,10 @@ export class ProyectosService {
     return this.http.post(`${this.baseUrl}/agregar`, proyectos);
   }
 
+  editar(id: number,value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`, value);
+  }
+
   eliminar(id: number) {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
@@ -12,7 +13,7 @@ export class ExperienciaComponent implements OnInit {
   
   listaExperiencia: Observable<Experiencia[]> | undefined;
 
-  constructor(private datosExperiencia:ExperienciaService) {}
+  constructor(private datosExperiencia:ExperienciaService, private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
@@ -22,8 +23,9 @@ export class ExperienciaComponent implements OnInit {
     this.listaExperiencia = this.datosExperiencia.listar();
   }
 
-  public editar() {
-    alert("Editar");
+  public editar(id: number) {
+    this.datosExperiencia.editar(id,this.listaExperiencia).subscribe();
+    this.ruta.navigate(['/portfolio']);
   }
 
   public eliminar(id: number) {

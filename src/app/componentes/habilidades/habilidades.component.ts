@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
@@ -12,7 +13,7 @@ export class HabilidadesComponent implements OnInit {
   
   listaHabilidades: Observable<Habilidades[]> | undefined;
 
-  constructor(private datosHabilidades:HabilidadesService) {}
+  constructor(private datosHabilidades:HabilidadesService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
@@ -22,8 +23,9 @@ export class HabilidadesComponent implements OnInit {
     this.listaHabilidades = this.datosHabilidades.listar();
   }
 
-  public editar() {
-    alert("Editar");
+  public editar(id: number) {
+    this.datosHabilidades.editar(id,this.listaHabilidades).subscribe();
+    this.ruta.navigate(['/portfolio']);
   }
 
   public eliminar(id: number) {
