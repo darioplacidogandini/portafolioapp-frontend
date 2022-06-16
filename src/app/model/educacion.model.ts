@@ -1,5 +1,5 @@
 export class Educacion {
-    id?: any;
+    id?: number;
     titulo?: string;
     institucion?: string;
     fecha?: string;
