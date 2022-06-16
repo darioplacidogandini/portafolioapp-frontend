@@ -11,6 +11,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 export class AgregarEducacionComponent implements OnInit {
 
   educacion: Educacion = {
+    id: 0,
     titulo: '',
     institucion: '',
     fecha: '',
