@@ -11,6 +11,7 @@ import { AcercaService } from 'src/app/servicios/acerca.service';
 export class EditarAcercaComponent implements OnInit {
 
   acerca: Acerca = {
+    id: 0,
     nombre: '',
     puesto: '',
     foto: '',

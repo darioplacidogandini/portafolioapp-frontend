@@ -11,6 +11,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 export class AgregarExperienciaComponent implements OnInit {
 
   experiencia: Experiencia = {
+    id: 0,
     empresa: '',
     puesto: '',
     inicio: '',
