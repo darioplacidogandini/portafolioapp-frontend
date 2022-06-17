@@ -7,6 +7,7 @@ import { EditarEducacionComponent } from './componentes/educacion/editar-educaci
 import { AgregarExperienciaComponent } from './componentes/experiencia/agregar-experiencia/agregar-experiencia.component';
 import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia/editar-experiencia.component';
 import { AgregarHabilidadesComponent } from './componentes/habilidades/agregar-habilidades/agregar-habilidades.component';
+import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades/editar-habilidades.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { AgregarProyectosComponent } from './componentes/proyectos/agregar-proyectos/agregar-proyectos.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path: 'agregar-educacion',component:AgregarEducacionComponent},
   {path: 'editar-educacion',component:EditarEducacionComponent},
   {path: "agregar-habilidades",component:AgregarHabilidadesComponent},
-  {path: 'editar-experiencia',component:EditarExperienciaComponent},
+  {path: 'editar-habilidades',component:EditarHabilidadesComponent},
   {path: "agregar-proyectos",component:AgregarProyectosComponent},
   {path: 'editar-proyectos',component:EditarProyectosComponent},
 ];
