@@ -13,7 +13,7 @@ export class ExperienciaComponent implements OnInit {
   
   listaExperiencia: Observable<Experiencia[]> | undefined;
 
-  constructor(private datosExperiencia:ExperienciaService, private ruta:Router) {}
+  constructor(private datosExperiencia:ExperienciaService) {}
 
   ngOnInit(): void {
     this.listar();
@@ -21,11 +21,6 @@ export class ExperienciaComponent implements OnInit {
 
   public listar() {
     this.listaExperiencia = this.datosExperiencia.listar();
-  }
-
-  public editar(id: number) {
-    this.datosExperiencia.editar(id,this.listaExperiencia).subscribe();
-    this.ruta.navigate(['/portfolio']);
   }
 
   public eliminar(id: number) {

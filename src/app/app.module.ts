@@ -17,6 +17,10 @@ import { AgregarEducacionComponent } from './componentes/educacion/agregar-educa
 import { AgregarExperienciaComponent } from './componentes/experiencia/agregar-experiencia/agregar-experiencia.component';
 import { AgregarProyectosComponent } from './componentes/proyectos/agregar-proyectos/agregar-proyectos.component';
 import { AgregarHabilidadesComponent } from './componentes/habilidades/agregar-habilidades/agregar-habilidades.component';
+import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
+import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia/editar-experiencia.component';
+import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades/editar-habilidades.component';
+import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { AgregarHabilidadesComponent } from './componentes/habilidades/agregar-h
     AgregarExperienciaComponent,
     AgregarProyectosComponent,
     AgregarHabilidadesComponent,
+    EditarEducacionComponent,
+    EditarExperienciaComponent,
+    EditarHabilidadesComponent,
+    EditarProyectosComponent,
   ],
   imports: [
     BrowserModule,

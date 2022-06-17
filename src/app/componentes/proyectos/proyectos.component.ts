@@ -13,7 +13,7 @@ export class ProyectosComponent implements OnInit {
   
   listaProyectos: Observable<Proyectos[]> | undefined;
 
-  constructor(private datosProyectos:ProyectosService,private ruta:Router) {}
+  constructor(private datosProyectos:ProyectosService) {}
 
   ngOnInit(): void {
     this.listar();
@@ -21,11 +21,6 @@ export class ProyectosComponent implements OnInit {
 
   public listar() {
     this.listaProyectos = this.datosProyectos.listar(); 
-  }
-
-  public editar(id: number) {
-    this.datosProyectos.editar(id,this.listaProyectos).subscribe();
-    this.ruta.navigate(['/portfolio']);
   }
 
   public eliminar(id: number) {

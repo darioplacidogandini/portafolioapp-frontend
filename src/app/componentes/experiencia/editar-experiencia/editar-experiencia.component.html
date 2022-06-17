@@ -1,0 +1,40 @@
+<div class="row form card m-3">
+    <div class="row">
+        <div class="col">
+            <label for="empresa">Empresa</label>
+            <input [(ngModel)]="experiencia.empresa" type="text" class="form-control" id="empresa" name="empresa">
+        </div>
+        <div class="col">
+            <label for="puesto">Puesto</label>
+            <input [(ngModel)]="experiencia.puesto" type="text" class="form-control" id="puesto" name="puesto">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="inicio">Desde</label>
+            <input [(ngModel)]="experiencia.inicio" type="text" class="form-control" id="inicio" name="inicio">
+        </div>
+        <div class="col">
+            <label for="fin">Hasta</label>
+            <input [(ngModel)]="experiencia.fin" type="text" class="form-control" id="fin" name="fin">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="logo">URL logo de la empresa</label>
+            <input [(ngModel)]="experiencia.logo" type="text" class="form-control" id="logo" name="logo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            <button (click)="editar(experiencia.id)" class="btn btn-theme">GUARDAR CAMBIOS</button>
+            <a [routerLink]="'/portfolio'"><button class="btn btn-secondary">SALIR</button></a>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</div>

@@ -11,7 +11,7 @@
                 <div class="col">
                 </div>
                 <div class="col-3">
-                    <button (click)="editar(habilidad.id)" class="btn btn-secondary">EDITAR</button>
+                    <a [routerLink]="'/editar-habilidades'"><button class="btn btn-secondary">EDITAR</button></a>
                     <button (click)="eliminar(habilidad.id)" class="btn btn-danger float-end">ELIMINAR</button>    
                 </div>
             </div>

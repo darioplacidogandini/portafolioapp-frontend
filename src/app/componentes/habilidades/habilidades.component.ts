@@ -23,11 +23,6 @@ export class HabilidadesComponent implements OnInit {
     this.listaHabilidades = this.datosHabilidades.listar();
   }
 
-  public editar(id: number) {
-    this.datosHabilidades.editar(id,this.listaHabilidades).subscribe();
-    this.ruta.navigate(['/portfolio']);
-  }
-
   public eliminar(id: number) {
     this.datosHabilidades.eliminar(id).subscribe();
     this.listar();

@@ -13,7 +13,7 @@ export class EducacionComponent implements OnInit {
 
   listaEducacion: Observable<Educacion[]> | undefined;
 
-  constructor(private datosEducacion:EducacionService,private ruta:Router) {}
+  constructor(private datosEducacion:EducacionService) {}
 
   ngOnInit(): void {
     this.listar();
@@ -21,11 +21,6 @@ export class EducacionComponent implements OnInit {
 
   public listar() {
     this.listaEducacion = this.datosEducacion.listar();
-  }
-
-  public editar(id: number) {
-    this.datosEducacion.editar(id,this.listaEducacion).subscribe();
-    this.ruta.navigate(['/portfolio']);
   }
 
   public eliminar(id: number) {

@@ -1,0 +1,32 @@
+<form class="row card m-3">
+    <div class="row">
+        <div>
+            <label for="nombre">Nombre del proyecto</label>
+            <input [(ngModel)]="proyecto.nombre" type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="descripcion">Descripcion del proyecto</label>
+            <input [(ngModel)]="proyecto.descripcion" type="text" class="form-control" id="descripcion" name="descripcion">
+        </div>
+        <div>
+            <label for="url">URL del proyecto</label>
+            <input [(ngModel)]="proyecto.url" type="text" class="form-control" id="url" name="url">
+        </div>
+        <div>
+            <label for="logo">Logo del proyecto</label>
+            <input [(ngModel)]="proyecto.logo" type="text" class="form-control" id="logo" name="logo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            <button (click)="editar(proyecto.id)" type="submit" class="btn btn-theme">AGREGAR</button>
+            <a [routerLink]="'/portfolio'"><button class="btn btn-secondary">SALIR</button></a>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</form>
