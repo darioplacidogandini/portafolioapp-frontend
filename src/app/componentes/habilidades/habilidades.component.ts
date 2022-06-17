@@ -29,7 +29,8 @@ export class HabilidadesComponent implements OnInit {
   }
 
   public eliminar(id: number) {
-    this.datosHabilidades.eliminar(id).subscribe;
+    this.datosHabilidades.eliminar(id).subscribe();
+    this.listar();
   }
   
 }

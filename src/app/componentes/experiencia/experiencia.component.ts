@@ -29,7 +29,8 @@ export class ExperienciaComponent implements OnInit {
   }
 
   public eliminar(id: number) {
-    this.datosExperiencia.eliminar(id).subscribe;
+    this.datosExperiencia.eliminar(id).subscribe();
+    this.listar();
   }
 
 }
