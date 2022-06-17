@@ -23,7 +23,7 @@ export class AgregarExperienciaComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregarExperiencia() {
+  agregar() {
     this.experienciaService.agregar(this.experiencia).subscribe();
     this.ruta.navigate(['/portfolio']);
   }

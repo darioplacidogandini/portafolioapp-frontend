@@ -24,7 +24,7 @@ export class EditarHabilidadesComponent implements OnInit {
   ngOnInit(): void {}
 
   public editar(id: number) {
-    this.datosHabilidades.editar(id,this.listaHabilidades).subscribe();
+    this.datosHabilidades.editar(id,this.habilidad).subscribe();
     this.ruta.navigate(['/portfolio']);
   }
 

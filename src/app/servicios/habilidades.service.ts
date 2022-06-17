@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Habilidades } from '../model/habilidades.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class HabilidadesService {
     return this.http.post(`${this.baseUrl}/agregar`, habilidades);
   }
 
-  editar(id: number,value: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, value);
+  editar(id: number,habilidades: Habilidades): Observable<any> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`, habilidades);
   }
 
   eliminar(id: number) {
