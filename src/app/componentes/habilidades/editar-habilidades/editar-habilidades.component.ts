@@ -10,19 +10,12 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class EditarHabilidadesComponent implements OnInit {
 
-  habilidad: Habilidades = {
-    id: 0,
-    habilidad: '',
-    porcentaje: ''
-  }
-
   constructor(private datosHabilidades:HabilidadesService,private router:ActivatedRoute,private ruta:Router) {}
 
-  ngOnInit() {
-    this.habilidad = new Habilidades();
+  habilidad = new Habilidades();
+  id: any;
 
-    this.habilidad.id = this.router.snapshot.params['id'];
-  }
+  ngOnInit() {}
 
   public editar(id: number) {
     this.datosHabilidades.editar(id,this.habilidad).subscribe();

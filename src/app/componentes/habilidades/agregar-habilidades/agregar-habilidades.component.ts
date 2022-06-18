@@ -10,11 +10,7 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class AgregarHabilidadesComponent implements OnInit {
 
-  habilidad: Habilidades = {
-    id: 0,
-    habilidad: '',
-    porcentaje: ''
-  }
+  habilidad = new Habilidades();
 
   constructor(private habilidadesService:HabilidadesService, private ruta:Router) {}
 
