@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 
@@ -11,17 +10,19 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class EditarHabilidadesComponent implements OnInit {
 
-  listaHabilidades: Observable<Habilidades[]> | undefined;
-
   habilidad: Habilidades = {
     id: 0,
     habilidad: '',
     porcentaje: ''
   }
 
-  constructor(private datosHabilidades:HabilidadesService,private ruta:Router) {}
+  constructor(private datosHabilidades:HabilidadesService,private router:ActivatedRoute,private ruta:Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.habilidad = new Habilidades();
+
+    this.habilidad.id = this.router.snapshot.params['id'];
+  }
 
   public editar(id: number) {
     this.datosHabilidades.editar(id,this.habilidad).subscribe();
