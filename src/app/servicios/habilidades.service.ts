@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Habilidades } from '../model/habilidades.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class HabilidadesService {
 
   listar(): Observable<any> {
     return this.http.get(`${this.baseUrl}/listar`);
+  } 
+
+  buscar(id: number): Observable<Habilidades> {
+    return this.http.get<Habilidades>(`${this.baseUrl}/${id}`);
   }
 
   agregar(habilidades: Object): Observable<Object> {

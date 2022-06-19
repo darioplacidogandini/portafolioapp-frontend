@@ -1,5 +1,5 @@
 export class Habilidades {
-    id: any;
-    habilidad?: String;
-    porcentaje?: String;
+    id: number;
+    habilidad: String;
+    porcentaje: String;
 }
