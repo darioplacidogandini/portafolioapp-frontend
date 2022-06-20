@@ -13,7 +13,7 @@ export class EditarHabilidadesComponent implements OnInit {
   constructor(private datosHabilidades:HabilidadesService,private router:ActivatedRoute,private ruta:Router) {}
 
   habilidad = new Habilidades();
-  id: number;
+  id = this.habilidad.id;
 
   ngOnInit() {
     this.id = this.router.snapshot.params['id'];
