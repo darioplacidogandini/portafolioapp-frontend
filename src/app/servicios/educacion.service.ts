@@ -12,19 +12,19 @@ export class EducacionService {
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/listar`);
+  listar(): Observable<Educacion[]> {
+    return this.http.get<Educacion[]>(`${this.baseUrl}/listar`);
   }
 
   agregar(educacion: Educacion): Observable<any> {
     return this.http.post(`${this.baseUrl}/agregar`, educacion);
   }
 
-  editar(id: number,value: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, value);
+  editar(id: number,educacion: Educacion): Observable<any> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`, educacion);
   }
 
-  eliminar(id: number) {
+  eliminar(id: number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

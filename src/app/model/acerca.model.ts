@@ -1,7 +1,7 @@
 export class Acerca {
-    id!: number;
-    foto?: string;
-    portada?: string;
-    nombre?: string;
-    puesto?: string;
+    id: number = 0;
+    foto: string = '';
+    portada: string = '';
+    nombre: string = '';
+    puesto: string = '';
 }

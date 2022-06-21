@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Proyectos } from 'src/app/model/proyectos.model';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
@@ -11,7 +9,7 @@ import { ProyectosService } from 'src/app/servicios/proyectos.service';
 })
 export class ProyectosComponent implements OnInit {
   
-  listaProyectos: Observable<Proyectos[]> | undefined;
+  proyectos: Proyectos[] = [];
 
   constructor(private datosProyectos:ProyectosService) {}
 
@@ -20,7 +18,9 @@ export class ProyectosComponent implements OnInit {
   }
 
   public listar() {
-    this.listaProyectos = this.datosProyectos.listar(); 
+    this.datosProyectos.listar().subscribe(data => {
+      this.proyectos = data;
+    }); 
   }
 
   public eliminar(id: number) {

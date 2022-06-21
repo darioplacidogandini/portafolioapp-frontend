@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos.model';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
@@ -11,22 +10,18 @@ import { ProyectosService } from 'src/app/servicios/proyectos.service';
 })
 export class EditarProyectosComponent implements OnInit {
 
-  listaProyectos: Observable<Proyectos[]> | undefined;
+  constructor(private datosProyectos:ProyectosService,private router:ActivatedRoute,private ruta:Router) {}
 
-  proyecto: Proyectos = {
-    id: 0,
-    nombre: '',
-    descripcion: '',
-    url: '',
-    logo: ''
+  proyecto = new Proyectos();
+  id = this.proyecto.id;
+
+  ngOnInit(): void {
+    this.id = this.router.snapshot.params['id'];
+    this.datosProyectos.buscar(this.id);
   }
 
-  constructor(private datosProyectos:ProyectosService,private ruta:Router) {}
-
-  ngOnInit(): void {}
-
   public editar(id: number) {
-    this.datosProyectos.editar(id,this.listaProyectos).subscribe();
+    this.datosProyectos.editar(id,this.proyecto).subscribe();
     this.ruta.navigate(['/portfolio']);
   }
 

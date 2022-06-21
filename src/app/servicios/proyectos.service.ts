@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Proyectos } from '../model/proyectos.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,23 @@ export class ProyectosService {
 
   constructor(private http:HttpClient) {}
 
-  listar(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/listar`);
+  listar(): Observable<Proyectos[]> {
+    return this.http.get<Proyectos[]>(`${this.baseUrl}/listar`);
   }
 
-  agregar(proyectos: Object): Observable<Object> {
+  buscar(id: number): Observable<Proyectos> {
+    return this.http.get<Proyectos>(`${this.baseUrl}/${id}`);
+  }
+
+  agregar(proyectos: Proyectos): Observable<Object> {
     return this.http.post(`${this.baseUrl}/agregar`, proyectos);
   }
 
-  editar(id: number,value: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, value);
+  editar(id: number,proyectos: Proyectos): Observable<any> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`, proyectos);
   }
 
-  eliminar(id: number) {
+  eliminar(id: number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

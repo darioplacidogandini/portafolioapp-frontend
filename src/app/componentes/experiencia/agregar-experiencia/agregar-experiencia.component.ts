@@ -10,14 +10,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class AgregarExperienciaComponent implements OnInit {
 
-  experiencia: Experiencia = {
-    id: 0,
-    empresa: '',
-    puesto: '',
-    inicio: '',
-    fin: '',
-    logo: ''
-  };
+  experiencia: Experiencia = new Experiencia();
 
   constructor(private experienciaService:ExperienciaService, private ruta:Router) {}
 

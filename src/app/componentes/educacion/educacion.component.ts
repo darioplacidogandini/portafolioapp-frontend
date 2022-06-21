@@ -11,7 +11,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EducacionComponent implements OnInit {
 
-  listaEducacion: Observable<Educacion[]> | undefined;
+  educacion: Educacion[] = [];
 
   constructor(private datosEducacion:EducacionService) {}
 
@@ -20,7 +20,9 @@ export class EducacionComponent implements OnInit {
   }
 
   public listar() {
-    this.listaEducacion = this.datosEducacion.listar();
+    this.datosEducacion.listar().subscribe(data => {
+      this.educacion = data;
+    });
   }
 
   public eliminar(id: number) {

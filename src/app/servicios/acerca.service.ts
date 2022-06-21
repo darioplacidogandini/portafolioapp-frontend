@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Acerca } from '../model/acerca.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,12 @@ export class AcercaService {
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/listar`);
+  listar(): Observable<Acerca[]> {
+    return this.http.get<Acerca[]>(`${this.baseUrl}/listar`);
   }
 
-  editar(id: number,value: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, value);
+  editar(id: number,acerca: Acerca): Observable<any> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`, acerca);
   }
 
 }

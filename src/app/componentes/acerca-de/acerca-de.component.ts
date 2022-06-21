@@ -10,9 +10,7 @@ import { AcercaService } from 'src/app/servicios/acerca.service';
 })
 export class AcercaDeComponent implements OnInit {
 
-  listaAcerca: Observable<Acerca[]> | undefined;
-
-  acerca: Acerca = new Acerca();
+  acerca: Acerca[] = [];
 
   constructor(private datosAcerca:AcercaService) { }
 
@@ -21,7 +19,9 @@ export class AcercaDeComponent implements OnInit {
     }
     
   public listar() {
-    this.listaAcerca = this.datosAcerca.listar();
+    this.datosAcerca.listar().subscribe(data => {
+      this.acerca = data;
+    });
   }
   
 }

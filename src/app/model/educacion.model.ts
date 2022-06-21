@@ -1,8 +1,8 @@
 export class Educacion {
-    id!: number;
-    titulo?: string;
-    institucion?: string;
-    fecha?: string;
-    duracion?: number;
-    logo?: string;
+    id: number = 0;
+    titulo: string = '';
+    institucion: string = '';
+    fecha: string = '';
+    duracion: number = 0;
+    logo: string = '';
   }

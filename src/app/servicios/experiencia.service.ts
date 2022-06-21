@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Experiencia } from '../model/experiencia.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,23 @@ export class ExperienciaService {
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/listar`);
+  listar(): Observable<Experiencia[]> {
+    return this.http.get<Experiencia[]>(`${this.baseUrl}/listar`);
   }
 
-  agregar(experiencia: Object): Observable<Object> {
+  buscar(id: number): Observable<Experiencia> {
+    return this.http.get<Experiencia>(`${this.baseUrl}/${id}`);
+  }
+
+  agregar(experiencia: Experiencia): Observable<Object> {
     return this.http.post(`${this.baseUrl}/agregar`, experiencia);
   }
 
-  editar(id: number,value: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, value);
+  editar(id: number,experiencia: Experiencia): Observable<any> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`, experiencia);
   }
 
-  eliminar(id: number) {
+  eliminar(id: number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 
