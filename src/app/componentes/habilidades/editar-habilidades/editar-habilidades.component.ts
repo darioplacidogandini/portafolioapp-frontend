@@ -17,7 +17,9 @@ export class EditarHabilidadesComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.router.snapshot.params['id'];
-    this.datosHabilidades.buscar(this.id);
+    this.datosHabilidades.buscar(this.id).subscribe(data => {
+      this.habilidad = data;
+    });
   }
 
   public editar(id: number) {
