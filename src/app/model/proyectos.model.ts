@@ -1,7 +1,7 @@
 export class Proyectos {
-    id!: number;
-    nombre?: String;
-    descripcion?: String;
-    url?: String;
-    logo?: String;
+    id: number = 0;
+    nombre: String = '';
+    descripcion: String = '';
+    url: String = '';
+    logo: String = '';
 }

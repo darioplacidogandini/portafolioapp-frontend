@@ -20,15 +20,15 @@ export class HabilidadesService {
     return this.http.get<Habilidades>(`${this.baseUrl}/${id}`);
   }
 
-  agregar(habilidades: Object): Observable<Object> {
+  agregar(habilidades: Habilidades): Observable<Object> {
     return this.http.post(`${this.baseUrl}/agregar`, habilidades);
   }
 
-  editar(id: number,habilidades: Object): Observable<any> {
+  editar(id: number,habilidades: Habilidades): Observable<Object> {
     return this.http.put(`${this.baseUrl}/editar/${id}`, habilidades);
   }
 
-  eliminar(id: number) {
+  eliminar(id: number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

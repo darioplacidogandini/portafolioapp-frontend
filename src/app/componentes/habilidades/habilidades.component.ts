@@ -9,7 +9,7 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class HabilidadesComponent implements OnInit {
 
-  habilidades: Habilidades[] | undefined;
+  habilidades: Habilidades[] = [];
 
   constructor(private datosHabilidades:HabilidadesService) {}
 
