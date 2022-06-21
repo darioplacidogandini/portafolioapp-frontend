@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'agregar-educacion',component:AgregarEducacionComponent},
   {path: 'editar-educacion',component:EditarEducacionComponent},
   {path: "agregar-habilidades",component:AgregarHabilidadesComponent},
-  {path: 'editar-habilidades',component:EditarHabilidadesComponent},
+  {path: 'editar-habilidades/:id',component:EditarHabilidadesComponent},
   {path: "agregar-proyectos",component:AgregarProyectosComponent},
   {path: 'editar-proyectos',component:EditarProyectosComponent},
 ];
