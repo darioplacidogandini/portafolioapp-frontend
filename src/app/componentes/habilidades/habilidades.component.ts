@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 
@@ -10,8 +9,8 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class HabilidadesComponent implements OnInit {
 
-  listaHabilidades: Observable<Habilidades[]> | undefined;
-  
+  habilidades!: Habilidades[];
+
   constructor(private datosHabilidades:HabilidadesService) {}
 
   ngOnInit(): void {

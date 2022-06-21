@@ -12,8 +12,8 @@ export class HabilidadesService {
 
   constructor(private http:HttpClient) {}
 
-  listar(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/listar`);
+  listar(): Observable<Habilidades[]> {
+    return this.http.get<Habilidades[]>(`${this.baseUrl}/listar`);
   } 
 
   buscar(id: number): Observable<Habilidades> {
