@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
@@ -11,22 +10,16 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EditarEducacionComponent implements OnInit {
 
-  listaEducacion: Observable<Educacion[]> | undefined;
-
-  educacion: Educacion = {
-    id: 0,
-    titulo: '',
-    institucion: '',
-    fecha: '',
-    duracion: 0
-  };
+educacion: Educacion = new Educacion();
   
     constructor(private datosEducacion:EducacionService, private ruta:Router) {}
   
     ngOnInit(): void {}
   
     public editar(id: number) {
-      this.datosEducacion.editar(id,this.listaEducacion).subscribe();
+      this.datosEducacion.editar(id,this.educacion).subscribe(data => {
+        this.educacion = data;
+      });
       this.ruta.navigate(['/portfolio']);
     }
 }

@@ -11,23 +11,15 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class EditarExperienciaComponent implements OnInit {
 
-  listaExperiencia: Observable<Experiencia[]> | undefined;
-
-  experiencia: Experiencia = {
-    id: 0,
-    empresa: '',
-    puesto: '',
-    inicio: '',
-    fin: '',
-    logo: ''
-  };
+  id: number = 0;
+  experiencia: Experiencia = new Experiencia();
 
   constructor(private datosExperiencia:ExperienciaService,private ruta:Router) {}
 
   ngOnInit(): void {}
 
     public editar(id: number) {
-      this.datosExperiencia.editar(id,this.listaExperiencia).subscribe();
+      this.datosExperiencia.editar(id,this.experiencia).subscribe();
       this.ruta.navigate(['/portfolio']);
     }
 
