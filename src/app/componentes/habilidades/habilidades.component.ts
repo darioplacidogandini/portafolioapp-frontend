@@ -18,7 +18,9 @@ export class HabilidadesComponent implements OnInit {
   }
 
   public listar() {
-    this.datosHabilidades.listar();
+    this.datosHabilidades.listar().subscribe(data => {
+      this.habilidades = data;
+    });
   }
 
   public eliminar(id: number) {
