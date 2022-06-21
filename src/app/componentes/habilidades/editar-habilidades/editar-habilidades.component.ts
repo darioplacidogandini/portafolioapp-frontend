@@ -22,8 +22,8 @@ export class EditarHabilidadesComponent implements OnInit {
     });
   }
 
-  public editar(id: number) {
-    this.datosHabilidades.editar(id,this.habilidad).subscribe();
+  public editar() {
+    this.datosHabilidades.editar(this.id,this.habilidad).subscribe();
     this.ruta.navigate(['/portfolio']);
   }
 
