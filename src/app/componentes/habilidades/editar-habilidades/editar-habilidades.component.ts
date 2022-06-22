@@ -22,7 +22,7 @@ export class EditarHabilidadesComponent implements OnInit {
     });
   }
 
-  public editar() {
+  public guardarCambios() {
     this.datosHabilidades.editar(this.id,this.habilidad).subscribe();
     this.ruta.navigate(['/portfolio']);
   }

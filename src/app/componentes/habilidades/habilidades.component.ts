@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 
@@ -11,7 +12,7 @@ export class HabilidadesComponent implements OnInit {
 
   habilidades: Habilidades[] = [];
 
-  constructor(private datosHabilidades:HabilidadesService) {}
+  constructor(private datosHabilidades:HabilidadesService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
@@ -21,6 +22,10 @@ export class HabilidadesComponent implements OnInit {
     this.datosHabilidades.listar().subscribe(data => {
       this.habilidades = data;
     });
+  }
+
+  public editar(id: number) {
+    this.ruta.navigate(['editar-habilidades', id]);
   }
 
   public eliminar(id: number) {
