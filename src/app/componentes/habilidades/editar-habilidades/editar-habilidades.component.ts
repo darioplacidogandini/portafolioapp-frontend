@@ -19,13 +19,14 @@ export class EditarHabilidadesComponent implements OnInit {
     this.id = this.router.snapshot.params['id'];
     this.datosHabilidades.buscar(this.id).subscribe(data => { 
       this.habilidad = data;
-    }, error => console.log(error));
+    },error => console.log(error));
   }
 
   public guardarCambios() {
     this.datosHabilidades.editar(this.id,this.habilidad).subscribe(data => {
+      console.log(data)
       this.ruta.navigate(['/portfolio']);
-    });
+    },error => console.log(error));
   }
 
 }

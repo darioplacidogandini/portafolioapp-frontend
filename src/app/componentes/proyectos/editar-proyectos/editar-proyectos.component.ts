@@ -12,18 +12,22 @@ export class EditarProyectosComponent implements OnInit {
 
   constructor(private datosProyectos:ProyectosService,private router:ActivatedRoute,private ruta:Router) {}
 
-  proyecto = new Proyectos();
-  id = this.proyecto.id;
+  id: number = 0;
+  proyecto: Proyectos = new Proyectos();
 
   ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
-    this.datosProyectos.buscar(this.id);
+    this.proyecto = new Proyectos();
+    this.datosProyectos.buscar(this.id).subscribe(data => {
+      this.proyecto = data;
+    },error => console.log(error));
   }
 
   public guardarCambios(id: number) {
     this.datosProyectos.editar(id,this.proyecto).subscribe(data => {
+      console.log(data);
       this.ruta.navigate(['/portfolio']);
-    });
+    },error => console.log(error));
   }
 
 }
