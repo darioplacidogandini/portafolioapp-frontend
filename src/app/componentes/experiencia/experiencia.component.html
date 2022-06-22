@@ -7,23 +7,23 @@
             <a [routerLink]="'/agregar-experiencia'"><button class="btn btn-theme float-end">AGREGAR</button></a>
         </div>
         <ul class="list-unstyled">
-            <li *ngFor="let experiecia of listaExperiencia | async">
+            <li *ngFor="let experiencia of experiencia">
                 <div class="row justify-content-center align-items-center border-top border-bottom">
                     <div class="row">
                         <div class="col">
                         </div>
                         <div class="col-3">
-                            <a [routerLink]="'editar-experiecia/{{experiecia.id}}'"><button class="btn btn-secondary">EDITAR</button></a>
-                            <button (click)="eliminar(experiecia.id)" class="btn btn-danger float-end">ELIMINAR</button>
+                            <button (click)="editar(experiencia.id)" class="btn btn-secondary">EDITAR</button>
+                            <button (click)="eliminar(experiencia.id)" class="btn btn-danger float-end">ELIMINAR</button>
                         </div>
                     </div>
                     <div class="col-1">
-                        <img class="img-fluid rounded-circle border" [src]="experiecia.logo">
+                        <img class="img-fluid rounded-circle border" [src]="experiencia.logo">
                     </div>
                     <div class="col-11">
-                        <h3 class="text-secondary">{{experiecia.empresa}}</h3>
-                        <h5>{{experiecia.puesto}}</h5>
-                        <p>{{experiecia.inicio}} - {{experiecia.inicio}}</p>
+                        <h3 class="text-secondary">{{experiencia.empresa}}</h3>
+                        <h5>{{experiencia.puesto}}</h5>
+                        <p>{{experiencia.inicio}} - {{experiencia.inicio}}</p>
                     </div>
                 </div>
             </li>

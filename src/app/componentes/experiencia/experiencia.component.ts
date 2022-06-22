@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
@@ -11,16 +10,22 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class ExperienciaComponent implements OnInit {
   
-  listaExperiencia: Observable<Experiencia[]> | undefined;
+  experiencia: Experiencia[] = [];
 
-  constructor(private datosExperiencia:ExperienciaService) {}
+  constructor(private datosExperiencia:ExperienciaService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
   }
 
   public listar() {
-    this.listaExperiencia = this.datosExperiencia.listar();
+    this.datosExperiencia.listar().subscribe(data => {
+      this.experiencia = data;
+    });
+  }
+
+  public editar(id: number) {
+    this.ruta.navigate(['editar-experiencia', id]);
   }
 
   public eliminar(id: number) {

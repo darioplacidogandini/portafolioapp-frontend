@@ -13,7 +13,7 @@ export class EducacionComponent implements OnInit {
 
   educacion: Educacion[] = [];
 
-  constructor(private datosEducacion:EducacionService) {}
+  constructor(private datosEducacion:EducacionService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
@@ -23,6 +23,10 @@ export class EducacionComponent implements OnInit {
     this.datosEducacion.listar().subscribe(data => {
       this.educacion = data;
     });
+  }
+
+  public editar(id: number) {
+    this.ruta.navigate(['editar-educacion', id]);
   }
 
   public eliminar(id: number) {

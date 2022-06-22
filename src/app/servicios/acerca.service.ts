@@ -16,6 +16,10 @@ export class AcercaService {
     return this.http.get<Acerca[]>(`${this.baseUrl}/listar`);
   }
 
+  buscar(id: number): Observable<Acerca> {
+    return this.http.get<Acerca>(`${this.baseUrl}/buscar/${id}`);
+  }
+
   editar(id: number,acerca: Acerca): Observable<any> {
     return this.http.put(`${this.baseUrl}/editar/${id}`, acerca);
   }

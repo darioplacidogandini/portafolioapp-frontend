@@ -18,9 +18,8 @@ educacion: Educacion = new Educacion();
   
     public editar(id: number) {
       this.datosEducacion.editar(id,this.educacion).subscribe(data => {
-        this.educacion = data;
+        this.ruta.navigate(['/portfolio']);
       });
-      this.ruta.navigate(['/portfolio']);
     }
 }
 

@@ -18,9 +18,10 @@ export class EditarExperienciaComponent implements OnInit {
 
   ngOnInit(): void {}
 
-    public editar(id: number) {
-      this.datosExperiencia.editar(id,this.experiencia).subscribe();
-      this.ruta.navigate(['/portfolio']);
+    public guardarCambios(id: number) {
+      this.datosExperiencia.editar(id,this.experiencia).subscribe(data => {
+        this.ruta.navigate(['/portfolio']);
+      });
     }
 
 }

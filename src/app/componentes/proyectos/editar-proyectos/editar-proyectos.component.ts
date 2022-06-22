@@ -20,9 +20,10 @@ export class EditarProyectosComponent implements OnInit {
     this.datosProyectos.buscar(this.id);
   }
 
-  public editar(id: number) {
-    this.datosProyectos.editar(id,this.proyecto).subscribe();
-    this.ruta.navigate(['/portfolio']);
+  public guardarCambios(id: number) {
+    this.datosProyectos.editar(id,this.proyecto).subscribe(data => {
+      this.ruta.navigate(['/portfolio']);
+    });
   }
 
 }

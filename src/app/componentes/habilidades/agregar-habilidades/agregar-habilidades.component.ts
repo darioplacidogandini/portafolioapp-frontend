@@ -16,9 +16,10 @@ export class AgregarHabilidadesComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregarHabilidad() {
-    this.habilidadesService.agregar(this.habilidad).subscribe();
-    this.ruta.navigate(['/portfolio']);
+  agregar() {
+    this.habilidadesService.agregar(this.habilidad).subscribe(data => {
+      this.ruta.navigate(['/portfolio']);
+    });
   }
 
 }
