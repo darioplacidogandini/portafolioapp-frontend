@@ -20,7 +20,7 @@ export class AcercaService {
     return this.http.get<Acerca>(`${this.baseUrl}/buscar/${id}`);
   }
 
-  editar(id: number,acerca: Acerca): Observable<any> {
+  editar(id: number,acerca: Acerca): Observable<Object> {
     return this.http.put(`${this.baseUrl}/editar/${id}`, acerca);
   }
 

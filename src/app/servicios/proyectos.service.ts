@@ -24,7 +24,7 @@ export class ProyectosService {
     return this.http.post(`${this.baseUrl}/agregar`, proyectos);
   }
 
-  editar(id: number,proyectos: Proyectos): Observable<any> {
+  editar(id: number,proyectos: Proyectos): Observable<Object> {
     return this.http.put(`${this.baseUrl}/editar/${id}`, proyectos);
   }
 

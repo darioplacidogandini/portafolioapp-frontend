@@ -23,7 +23,7 @@ export class EditarAcercaComponent implements OnInit {
   }
 
   guardarCambios() {
-    this.acercaService.editar(1,this.acerca).subscribe(data => {
+    this.acercaService.editar(this.id,this.acerca).subscribe(data => {
       console.log(data);
       this.ruta.navigate(['/portfolio']);
     }, error => console.log(error)); 

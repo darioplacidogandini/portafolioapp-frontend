@@ -24,7 +24,7 @@ export class EducacionService {
     return this.http.post(`${this.baseUrl}/agregar`, educacion);
   }
 
-  editar(id: number,educacion: Educacion): Observable<any> {
+  editar(id: number,educacion: Educacion): Observable<Object> {
     return this.http.put(`${this.baseUrl}/editar/${id}`, educacion);
   }
 

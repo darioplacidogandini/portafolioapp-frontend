@@ -23,8 +23,8 @@ export class EditarProyectosComponent implements OnInit {
     },error => console.log(error));
   }
 
-  public guardarCambios(id: number) {
-    this.datosProyectos.editar(id,this.proyecto).subscribe(data => {
+  public guardarCambios() {
+    this.datosProyectos.editar(this.id,this.proyecto).subscribe(data => {
       console.log(data);
       this.ruta.navigate(['/portfolio']);
     },error => console.log(error));
