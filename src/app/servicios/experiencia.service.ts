@@ -17,7 +17,7 @@ export class ExperienciaService {
   }
 
   buscar(id: number): Observable<Experiencia> {
-    return this.http.get<Experiencia>(`${this.baseUrl}/${id}`);
+    return this.http.get<Experiencia>(`${this.baseUrl}/buscar/${id}`);
   }
 
   agregar(experiencia: Experiencia): Observable<Object> {

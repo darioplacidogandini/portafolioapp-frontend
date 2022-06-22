@@ -17,7 +17,7 @@ export class ProyectosService {
   }
 
   buscar(id: number): Observable<Proyectos> {
-    return this.http.get<Proyectos>(`${this.baseUrl}/${id}`);
+    return this.http.get<Proyectos>(`${this.baseUrl}/buscar/${id}`);
   }
 
   agregar(proyectos: Proyectos): Observable<Object> {

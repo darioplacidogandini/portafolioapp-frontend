@@ -16,6 +16,10 @@ export class EducacionService {
     return this.http.get<Educacion[]>(`${this.baseUrl}/listar`);
   }
 
+  buscar(id: number): Observable<Educacion> {
+    return this.http.get<Educacion>(`${this.baseUrl}/buscar/${id}`);
+  }
+
   agregar(educacion: Educacion): Observable<any> {
     return this.http.post(`${this.baseUrl}/agregar`, educacion);
   }

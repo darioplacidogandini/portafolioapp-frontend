@@ -17,7 +17,7 @@ export class HabilidadesService {
   } 
 
   buscar(id: number): Observable<Habilidades> {
-    return this.http.get<Habilidades>(`${this.baseUrl}/${id}`);
+    return this.http.get<Habilidades>(`${this.baseUrl}/buscar/${id}`);
   }
 
   agregar(habilidades: Habilidades): Observable<Object> {
