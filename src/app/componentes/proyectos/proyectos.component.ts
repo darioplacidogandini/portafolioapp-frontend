@@ -30,8 +30,9 @@ export class ProyectosComponent implements OnInit {
 
   public eliminar(id: number) {
     this.datosProyectos.eliminar(id).subscribe(data => {
-      this.ruta.navigate(['/portfolio'])
-    });
+      console.log(data);
+      this.listar();
+    })
   }
 
 }

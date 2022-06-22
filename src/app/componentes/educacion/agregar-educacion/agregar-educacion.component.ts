@@ -16,9 +16,11 @@ export class AgregarEducacionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregarEducacion() {
-    this.educacionService.agregar(this.educacion).subscribe();
-    this.ruta.navigate(['/portfolio']);
+  agregar() {
+    this.educacionService.agregar(this.educacion).subscribe(data => {
+      console.log(data);
+      this.ruta.navigate(['/portfolio']);
+    });
   }
 
 }

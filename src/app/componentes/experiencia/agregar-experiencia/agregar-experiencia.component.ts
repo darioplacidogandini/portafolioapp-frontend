@@ -17,8 +17,10 @@ export class AgregarExperienciaComponent implements OnInit {
   ngOnInit(): void {}
 
   agregar() {
-    this.experienciaService.agregar(this.experiencia).subscribe();
-    this.ruta.navigate(['/portfolio']);
+    this.experienciaService.agregar(this.experiencia).subscribe(data => {
+      console.log(data);
+      this.ruta.navigate(['/portfolio']);
+    });
   }
 
 }

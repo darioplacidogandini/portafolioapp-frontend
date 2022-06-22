@@ -18,6 +18,7 @@ export class AgregarHabilidadesComponent implements OnInit {
 
   agregar() {
     this.habilidadesService.agregar(this.habilidad).subscribe(data => {
+      console.log(data);
       this.ruta.navigate(['/portfolio']);
     });
   }

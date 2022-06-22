@@ -30,8 +30,10 @@ export class EducacionComponent implements OnInit {
   }
 
   public eliminar(id: number) {
-    this.datosEducacion.eliminar(id).subscribe();
-    this.listar();
+    this.datosEducacion.eliminar(id).subscribe(data => {
+      console.log(data);
+      this.listar();
+    });
   }
 
 }

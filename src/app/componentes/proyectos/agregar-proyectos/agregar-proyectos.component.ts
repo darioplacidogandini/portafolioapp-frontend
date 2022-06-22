@@ -17,8 +17,10 @@ export class AgregarProyectosComponent implements OnInit {
   ngOnInit(): void {}
 
   agregarProyecto() {
-    this.proyectosService.agregar(this.proyecto).subscribe();
-    this.ruta.navigate(['/portfolio']);
+    this.proyectosService.agregar(this.proyecto).subscribe(data => {
+      console.log(data);
+      this.ruta.navigate(['/portfolio']);
+    });
   }
 
 }
