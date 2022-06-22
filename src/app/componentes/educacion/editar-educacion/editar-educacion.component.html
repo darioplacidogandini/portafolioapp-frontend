@@ -1,5 +1,4 @@
-<p>editar-educacion works!</p>
-<form class="row card m-3">
+<form (ngSubmit)="editar(educacion.id)" class="row card m-3">
     <div class="row">
         <div class="form-group">
             <label for="titulo">Titulo</label>
@@ -31,7 +30,7 @@
 
         </div>
         <div class="col text-centered">
-            <button (click)="editar(educacion.id)" type="submit" class="btn btn-theme">GUARDAR CAMBIOS</button>
+            <button type="submit" class="btn btn-theme">GUARDAR CAMBIOS</button>
             <a [routerLink]="'/portfolio'"><button class="btn btn-secondary">SALIR</button></a>
         </div>
         <div class="col">

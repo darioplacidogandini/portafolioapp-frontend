@@ -1,4 +1,4 @@
-<div class="row form card m-3">
+<form (ngSubmit)="editar(experiencia.id)" class="row form card m-3">
     <div class="row">
         <div class="col">
             <label for="empresa">Empresa</label>
@@ -30,11 +30,11 @@
 
         </div>
         <div class="col">
-            <button (click)="editar(experiencia.id)" class="btn btn-theme">GUARDAR CAMBIOS</button>
+            <button type="submit" class="btn btn-theme">GUARDAR CAMBIOS</button>
             <a [routerLink]="'/portfolio'"><button class="btn btn-secondary">SALIR</button></a>
         </div>
         <div class="col">
 
         </div>
     </div>
-</div>
+</form>

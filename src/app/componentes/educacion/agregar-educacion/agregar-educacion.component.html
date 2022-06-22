@@ -1,4 +1,4 @@
-<form class="row card m-3">
+<form (ngSubmit)="agregarEducacion()" class="row card m-3">
         <div class="row">
             <div class="form-group">
                 <label for="titulo">Titulo</label>
@@ -30,7 +30,7 @@
 
             </div>
             <div class="col text-centered">
-                <button (click)="agregarEducacion()" type="submit" class="btn btn-theme">AGREGAR</button>
+                <button type="submit" class="btn btn-theme">AGREGAR</button>
                 <a [routerLink]="'/portfolio'"><button class="btn btn-secondary">SALIR</button></a>
             </div>
             <div class="col">
