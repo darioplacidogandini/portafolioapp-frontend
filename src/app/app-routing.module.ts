@@ -17,15 +17,15 @@ const routes: Routes = [
   {path: 'portfolio',component:PortfolioComponent},
   {path: 'iniciar-sesion',component:IniciarSesionComponent},
   {path: '',redirectTo: 'portfolio', pathMatch: 'full'},
-  {path: 'editar-acerca',component:EditarAcercaComponent},
+  {path: 'editar-acerca/:id',component:EditarAcercaComponent},
   {path: 'agregar-experiencia',component:AgregarExperienciaComponent},
-  {path: 'editar-experiencia',component:EditarExperienciaComponent},
+  {path: 'editar-experiencia/:id',component:EditarExperienciaComponent},
   {path: 'agregar-educacion',component:AgregarEducacionComponent},
-  {path: 'editar-educacion',component:EditarEducacionComponent},
+  {path: 'editar-educacion/:id',component:EditarEducacionComponent},
   {path: "agregar-habilidades",component:AgregarHabilidadesComponent},
   {path: 'editar-habilidades/:id',component:EditarHabilidadesComponent},
   {path: "agregar-proyectos",component:AgregarProyectosComponent},
-  {path: 'editar-proyectos',component:EditarProyectosComponent},
+  {path: 'editar-proyectos/:id',component:EditarProyectosComponent},
 ];
 
 @NgModule({
