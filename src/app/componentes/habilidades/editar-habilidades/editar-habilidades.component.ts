@@ -12,19 +12,20 @@ export class EditarHabilidadesComponent implements OnInit {
 
   constructor(private datosHabilidades:HabilidadesService,private router:ActivatedRoute,private ruta:Router) {}
 
+  id: number = 0;
   habilidad: Habilidades = new Habilidades();
-  id = this.habilidad.id;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
-    this.datosHabilidades.buscar(this.id).subscribe(data => {
+    this.datosHabilidades.buscar(this.id).subscribe(data => { 
       this.habilidad = data;
-    });
+    }, error => console.log(error));
   }
 
   public guardarCambios() {
-    this.datosHabilidades.editar(this.id,this.habilidad).subscribe();
-    this.ruta.navigate(['/portfolio']);
+    this.datosHabilidades.editar(this.id,this.habilidad).subscribe(data => {
+      this.ruta.navigate(['/portfolio']);
+    });
   }
 
 }
