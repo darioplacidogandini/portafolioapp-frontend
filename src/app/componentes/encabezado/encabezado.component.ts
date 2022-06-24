@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/servicios/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncabezadoComponent implements OnInit {
   headerList:any;
-  constructor() {}
+  constructor(private authenticationService:AuthenticationService) {}
 
   ngOnInit(): void {}
+
+  cerrarSesion() {
+    this.authenticationService.logOut();
+  }
     
 }

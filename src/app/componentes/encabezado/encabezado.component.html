@@ -12,7 +12,7 @@
                 <a href="https://github.com/darioplacidogandini"><button class="btn btn-sm btn-secondary rounded-circle"><i class="bi-github"></i></button></a>
                 <a class="text-light" href="mailto:darioplacidogandini@outlook.com"><button class="btn btn-sm btn-secondary rounded-circle"><i class="bi-envelope"></i></button></a>
                 <a [routerLink]="'/iniciar-sesion'"><button class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Haga click aquí para iniciar sesión">LOGIN</button></a>
-                <a><button class="btn btn-danger float-end" data-toggle="tooltip" data-placement="bottom" title="Haga click aquí para cerrar sesión">SALIR</button></a>
+                <button (click)="cerrarSesion()" class="btn btn-danger float-end" data-toggle="tooltip" data-placement="bottom" title="Haga click aquí para cerrar sesión">SALIR</button>
             </div>
         </div>
     </div>
