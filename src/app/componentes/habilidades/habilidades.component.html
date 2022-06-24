@@ -4,21 +4,21 @@
             <h1 class="text-theme">Habilidades</h1>
         </div>
         <div class="col">
-            <a [routerLink]="'/agregar-habilidades'"><button class="btn btn-theme float-end">AGREGAR</button></a>
+            <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'"><button class="btn btn-theme float-end">AGREGAR</button></a>
         </div>
-        <ul class="list-unstyled" *ngFor="let habilidad of habilidades">
+        <ol class="list-unstyled" *ngFor="let habilidad of habilidades">
             <div class="row">
                 <div class="col">
                 </div>
                 <div class="col-3">
-                    <button (click)="editar(habilidad.id)" class="btn btn-secondary">EDITAR</button>
-                    <button (click)="eliminar(habilidad.id)" class="btn btn-danger float-end">ELIMINAR</button>    
+                    <button *ngIf="isUserLoggedIn()" (click)="editar(habilidad.id)" class="btn btn-secondary">EDITAR</button>
+                    <button *ngIf="isUserLoggedIn()" (click)="eliminar(habilidad.id)" class="btn btn-danger float-end">ELIMINAR</button>    
                 </div>
             </div>
             <h2 class="text-secondary">{{habilidad.habilidad}}</h2>
             <div class="progress">
                 <div class="progress-bar progress-bar-striped bg-theme fw-bold" role="progressbar" [style.width]="habilidad.porcentaje + '%'">{{habilidad.porcentaje}}%</div>
             </div>
-        </ul>
+        </ol>
     </div>
 </div>

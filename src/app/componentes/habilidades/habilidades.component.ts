@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades.model';
+import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 
 @Component({
@@ -12,10 +13,14 @@ export class HabilidadesComponent implements OnInit {
 
   habilidades: Habilidades[] = [];
 
-  constructor(private datosHabilidades:HabilidadesService,private ruta:Router) {}
+  constructor(private datosHabilidades:HabilidadesService,private authService:AuthenticationService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
+  }
+
+  public isUserLoggedIn() {
+    return this.authService.isUserLoggedIn();
   }
 
   public listar() {

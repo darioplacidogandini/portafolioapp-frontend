@@ -4,17 +4,17 @@
             <h1 class="text-theme">Experiencia Laboral</h1>
         </div>
         <div class="col">
-            <a [routerLink]="'/agregar-experiencia'"><button class="btn btn-theme float-end">AGREGAR</button></a>
+            <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-experiencia'"><button class="btn btn-theme float-end">AGREGAR</button></a>
         </div>
-        <ul class="list-unstyled">
+        <ol class="list-unstyled">
             <li *ngFor="let experiencia of experiencia">
                 <div class="row justify-content-center align-items-center border-top border-bottom">
                     <div class="row">
                         <div class="col">
                         </div>
                         <div class="col-3">
-                            <button (click)="editar(experiencia.id)" class="btn btn-secondary">EDITAR</button>
-                            <button (click)="eliminar(experiencia.id)" class="btn btn-danger float-end">ELIMINAR</button>
+                            <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" class="btn btn-secondary">EDITAR</button>
+                            <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" class="btn btn-danger float-end">ELIMINAR</button>
                         </div>
                     </div>
                     <div class="col-1">
@@ -27,6 +27,6 @@
                     </div>
                 </div>
             </li>
-        </ul>
+        </ol>
     </div>
 </div>

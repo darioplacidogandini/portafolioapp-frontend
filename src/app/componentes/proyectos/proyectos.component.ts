@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos.model';
+import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
 @Component({
@@ -12,10 +13,14 @@ export class ProyectosComponent implements OnInit {
   
   proyectos: Proyectos[] = [];
 
-  constructor(private datosProyectos:ProyectosService,private ruta:Router) {}
+  constructor(private datosProyectos:ProyectosService,private authService:AuthenticationService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
+  }
+
+  public isUserLoggedIn() {
+    return this.authService.isUserLoggedIn();
   }
 
   public listar() {

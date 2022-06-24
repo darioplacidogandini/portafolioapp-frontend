@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/model/educacion.model';
+import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
@@ -13,10 +14,14 @@ export class EducacionComponent implements OnInit {
 
   educacion: Educacion[] = [];
 
-  constructor(private datosEducacion:EducacionService,private ruta:Router) {}
+  constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
+  }
+
+  public isUserLoggedIn() {
+    return this.authService.isUserLoggedIn();
   }
 
   public listar() {
