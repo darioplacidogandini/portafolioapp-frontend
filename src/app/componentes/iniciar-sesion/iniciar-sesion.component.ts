@@ -14,20 +14,20 @@ export class IniciarSesionComponent implements OnInit {
   invalidLogin = false
 
   constructor(private router: Router,
-    private loginservice: AuthenticationService) { }
+    private loginservice: AuthenticationService) {}
 
-  ngOnInit() {
-  }
+ ngOnInit() {}
 
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
-        this.router.navigate([''])
-        this.invalidLogin = false
+        console.log(data);
+        this.router.navigate(['']);
+        this.invalidLogin = false;
       },
       error => {
-        this.invalidLogin = true
-
+        console.log(error);
+        this.invalidLogin = true;
       }
     )
     );

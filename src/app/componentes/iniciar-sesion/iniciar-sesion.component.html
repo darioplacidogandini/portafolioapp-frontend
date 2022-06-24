@@ -1,7 +1,10 @@
-<div class="container">
-  <div>
-    Usuario : <input type="text" name="username" [(ngModel)]="username">
-    Contraseña : <input type="password" name="password" [(ngModel)]="password">
-  </div>
-  <button (click)=checkLogin() class="btn btn-theme">Login</button>
+<div class="card m-3">
+  <form (ngSubmit)="checkLogin()">
+    <label for="username">Usuario</label>
+    <input type="text" name="username" [(ngModel)]="username">
+    <label for="password">Contraseña</label>
+    <input type="password" name="password" [(ngModel)]="password">
+    <button type="submit" class="btn btn-theme">INGRESAR</button>
+    <a [routerLink]="'/portfolio' "><button class="btn btn-secondary">SALIR</button></a>
+  </form>
 </div>
