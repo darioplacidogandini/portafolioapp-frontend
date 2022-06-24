@@ -1,5 +1,5 @@
 <div class="card m-3" *ngFor="let acerca of acerca">
-    <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}">
+    <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}" alt="Foto de Portada">
     <div class="row"> 
         <div class="col-9">
 
@@ -10,7 +10,7 @@
     </div>
     <div class="row">   
         <div class="col-3">
-            <img class="img-fluid rounded-circle" [src]="acerca.foto">                
+            <img class="img-fluid rounded-circle" alt="Foto de Perfil" [src]="acerca.foto">                
         </div>
         <div class="col-9">
 
