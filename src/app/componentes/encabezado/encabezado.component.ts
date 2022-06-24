@@ -8,11 +8,15 @@ import { AuthenticationService } from 'src/app/servicios/authentication.service'
 })
 export class EncabezadoComponent implements OnInit {
   headerList:any;
-  constructor(private authenticationService:AuthenticationService) {}
+  constructor(private authenticationService:AuthenticationService,private authService:AuthenticationService) {}
 
   ngOnInit(): void {}
 
-  cerrarSesion() {
+  public isUserLoggedIn() {
+    return this.authService.isUserLoggedIn();
+  }
+
+  closeSession() {
     this.authenticationService.logOut();
   }
     

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Acerca } from 'src/app/model/acerca.model';
 import { AcercaService } from 'src/app/servicios/acerca.service';
+import { AuthenticationService } from 'src/app/servicios/authentication.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -13,11 +13,15 @@ export class AcercaDeComponent implements OnInit {
 
   acerca: Acerca[] = [];
 
-  constructor(private datosAcerca:AcercaService,private ruta:Router) { }
+  constructor(private datosAcerca:AcercaService,private authService:AuthenticationService,private ruta:Router) {}
 
   ngOnInit(): void {
     this.listar();
     }
+
+  public isUserLoggedIn() {
+    return this.authService.isUserLoggedIn();
+  }
     
   public listar() {
     this.datosAcerca.listar().subscribe(data => {

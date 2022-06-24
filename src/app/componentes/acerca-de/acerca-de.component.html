@@ -5,7 +5,7 @@
 
         </div>
         <div class="col">
-            <button (click)="editar(acerca.id)" class="btn btn-theme float-end">EDITAR</button>
+            <button *ngIf="isUserLoggedIn()" (click)="editar(acerca.id)" class="btn btn-theme float-end">EDITAR</button>
         </div>
     </div>
     <div class="row">   
