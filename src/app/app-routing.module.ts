@@ -12,20 +12,21 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { AgregarProyectosComponent } from './componentes/proyectos/agregar-proyectos/agregar-proyectos.component';
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
+import { AuthGuard } from './servicios/auth.guard';
 
 const routes: Routes = [
   {path: 'portfolio',component:PortfolioComponent},
   {path: 'iniciar-sesion',component:IniciarSesionComponent},
   {path: '',redirectTo: 'portfolio', pathMatch: 'full'},
-  {path: 'editar-acerca/:id',component:EditarAcercaComponent},
-  {path: 'agregar-experiencia',component:AgregarExperienciaComponent},
-  {path: 'editar-experiencia/:id',component:EditarExperienciaComponent},
-  {path: 'agregar-educacion',component:AgregarEducacionComponent},
-  {path: 'editar-educacion/:id',component:EditarEducacionComponent},
-  {path: "agregar-habilidades",component:AgregarHabilidadesComponent},
-  {path: 'editar-habilidades/:id',component:EditarHabilidadesComponent},
-  {path: "agregar-proyectos",component:AgregarProyectosComponent},
-  {path: 'editar-proyectos/:id',component:EditarProyectosComponent},
+  {path: 'editar-acerca/:id',component:EditarAcercaComponent,canActivate: [AuthGuard]},
+  {path: 'agregar-experiencia',component:AgregarExperienciaComponent,canActivate: [AuthGuard]},
+  {path: 'editar-experiencia/:id',component:EditarExperienciaComponent,canActivate: [AuthGuard]},
+  {path: 'agregar-educacion',component:AgregarEducacionComponent,canActivate: [AuthGuard]},
+  {path: 'editar-educacion/:id',component:EditarEducacionComponent,canActivate: [AuthGuard]},
+  {path: "agregar-habilidades",component:AgregarHabilidadesComponent,canActivate: [AuthGuard]},
+  {path: 'editar-habilidades/:id',component:EditarHabilidadesComponent,canActivate: [AuthGuard]},
+  {path: "agregar-proyectos",component:AgregarProyectosComponent,canActivate: [AuthGuard]},
+  {path: 'editar-proyectos/:id',component:EditarProyectosComponent,canActivate: [AuthGuard]},
 ];
 
 @NgModule({
