@@ -1,15 +1,16 @@
 <div class="card m-3">
     <div class="row m-2">
             <div class="col-9">
-                <h1 class="text-theme">Educacion</h1>
-            </div>
-            <div class="col">
-                <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-educacion'">
-                    <button class="btn btn-theme rounded-circle float-end" data-toggle="tooltip" data-placement="bottom" 
-                        title="Agregar educacion">
-                        <i class="bi bi-plus-circle"></i>
-                    </button>
-                </a>
+                <h1 class="text-theme">
+                    Educacion
+                    <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-educacion'">
+                        <button class="btn btn-theme rounded-circle" 
+                            data-toggle="tooltip" data-placement="bottom" 
+                            title="Agregar educacion">
+                            <i class="bi bi-plus-circle"></i>
+                        </button>
+                    </a>
+                </h1>
             </div>
         <ol class="list-unstyled">
             <li *ngFor="let educacion of educacion">
@@ -20,17 +21,19 @@
                         [alt]="'Logo' + educacion.institucion">
                     </div>
                     <div class="col-11">
-                        <h3 class="text-secondary">{{educacion.titulo}}</h3>
-                        <button *ngIf="isUserLoggedIn()" (click)="editar(educacion.id)" 
+                        <h3 class="text-secondary">
+                            {{educacion.titulo}}
+                            <button *ngIf="isUserLoggedIn()" (click)="editar(educacion.id)" 
                                 class="btn btn-secondary rounded-circle" 
                                 data-toggle="tooltip" data-placement="bottom" title="Editar">
                                 <i class="bi bi-pencil"></i>
-                        </button>
-                        <button *ngIf="isUserLoggedIn()" (click)="eliminar(educacion.id)" 
-                                class="btn btn-danger rounded-circle float-end" 
-                                data-toggle="tooltip" data-placement="bottom" title="Eliminar">
-                                <i class="bi bi-x-circle"></i>
-                        </button>
+                            </button>
+                            <button *ngIf="isUserLoggedIn()" (click)="eliminar(educacion.id)" 
+                                    class="btn btn-danger rounded-circle" 
+                                    data-toggle="tooltip" data-placement="bottom" title="Eliminar">
+                                    <i class="bi bi-x-circle"></i>
+                            </button>
+                        </h3>
                         <h5>{{educacion.institucion}}</h5>
                         <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
                     </div>

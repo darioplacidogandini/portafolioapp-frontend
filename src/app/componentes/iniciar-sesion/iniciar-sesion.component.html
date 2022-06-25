@@ -2,15 +2,27 @@
   <form (ngSubmit)="checkLogin()">
     <div class="mb-3">
       <label for="username">Usuario</label>
-      <input type="text" name="username" autocomplete="username" [(ngModel)]="username">
+      <input type="text" name="username" autocomplete="username" 
+      [(ngModel)]="username">
     </div>
     <div class="mb-3">
       <label for="password">Contraseña</label>
-      <input type="password" name="password" autocomplete="current-password" [(ngModel)]="password">
+      <input type="password" name="password" autocomplete="current-password" 
+      [(ngModel)]="password">
     </div>
     <div class="mb-3">
-      <button type="submit" class="btn btn-theme">INGRESAR</button>
-      <a [routerLink]="'/portfolio'"><button class="btn btn-secondary">SALIR</button></a>
+      <button type="submit" class="btn btn-theme" 
+      data-toggle="tooltip" data-placement="bottom" 
+      title="Iniciar sesion">
+          <i class="bi bi-plus-circle"></i>
+      </button>
+      <a [routerLink]="'/portfolio'">
+        <button class="btn btn-secondary" 
+        data-toggle="tooltip" data-placement="bottom" 
+        title="Salir">
+          <i class="bi bi-x-circle"></i>
+        </button>
+      </a>
     </div>
   </form>
 </div>
