@@ -1,7 +1,7 @@
-<div class="card m-3 h-100">
-    <div class="row h-100 justify-content-center align-items-center">
+<div class="card m-3">
+    <div class="row">
         <div class="col">
-            <img class="img-fluid rounded-circle border" src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" alt="Logo Argentina Programa">
+            <img class="rounded-circle border" src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" alt="Logo Argentina Programa">
         </div>
       <div class="col-5">
             <p class="text-theme">Argentina Programa - #Yo Programo</p>
@@ -11,7 +11,7 @@
                 <a href="https://ar.linkedin.com/in/darioplacidogandini"><button class="btn btn-sm btn-secondary rounded-circle"><i class="bi-linkedin"></i></button></a>
                 <a href="https://github.com/darioplacidogandini"><button class="btn btn-sm btn-secondary rounded-circle"><i class="bi-github"></i></button></a>
                 <a class="text-light" href="mailto:darioplacidogandini@outlook.com"><button class="btn btn-sm btn-secondary rounded-circle"><i class="bi-envelope"></i></button></a>
-                <a [routerLink]="'/iniciar-sesion'"><button class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Haga click aquí para iniciar sesión">LOGIN</button></a>
+                <a *ngIf="!isUserLoggedIn()" [routerLink]="'/iniciar-sesion'"><button class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Haga click aquí para iniciar sesión">LOGIN</button></a>
                 <button *ngIf="isUserLoggedIn()" (click)="closeSession()" class="btn btn-danger float-end" data-toggle="tooltip" data-placement="bottom" title="Haga click aquí para cerrar sesión">SALIR</button>
             </div>
         </div>

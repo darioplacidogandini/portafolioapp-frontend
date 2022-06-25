@@ -8,7 +8,7 @@
         </div>
         <ol class="list-unstyled">
             <li *ngFor="let proyecto of proyectos">
-                <div class="row justify-content-center align-items-center border-top border-bottom">
+                <div class="row border-top border-bottom">
                     <div class="row">
                         <div class="col">
                         </div>
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="col-1">
-                        <img class="img-fluid rounded-circle border" [src]="proyecto.logo" [alt]="'Logo' + proyecto.nombre">
+                        <img class="rounded-circle border" [src]="proyecto.logo" [alt]="'Logo' + proyecto.nombre">
                     </div>
                     <div class="col-11">
                         <h3 class="text-secondary">{{proyecto.nombre}}</h3>
