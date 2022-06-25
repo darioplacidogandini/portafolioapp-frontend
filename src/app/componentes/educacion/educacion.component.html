@@ -21,7 +21,6 @@
                     </div>
                     <div class="col-11">
                         <h3 class="text-secondary">{{educacion.titulo}}</h3>
-                        <h5>{{educacion.institucion}}</h5>
                         <button *ngIf="isUserLoggedIn()" (click)="editar(educacion.id)" 
                                 class="btn btn-secondary rounded-circle" 
                                 data-toggle="tooltip" data-placement="bottom" title="Editar">
@@ -32,6 +31,7 @@
                                 data-toggle="tooltip" data-placement="bottom" title="Eliminar">
                                 <i class="bi bi-x-circle"></i>
                         </button>
+                        <h5>{{educacion.institucion}}</h5>
                         <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
                     </div>
                 </div>
