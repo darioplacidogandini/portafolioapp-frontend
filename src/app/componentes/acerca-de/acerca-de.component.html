@@ -1,19 +1,17 @@
 <div class="card m-3" *ngFor="let acerca of acerca">
     <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}" alt="Foto de Portada">
-    <div class="row"> 
-        <div class="col-9">
-
-        </div>
-        <div class="col">
-            <button *ngIf="isUserLoggedIn()" (click)="editar(acerca.id)" class="btn btn-theme float-end">EDITAR</button>
-        </div>
-    </div>
     <div class="row">   
         <div class="col-3">
-            <img class="img-fluid rounded-circle" alt="Foto de Perfil" [src]="acerca.foto">                
+            <img class="img-fluid rounded-circle" alt="Foto de Perfil" 
+            [src]="acerca.foto">                
         </div>
         <div class="col-9">
-
+            <button *ngIf="isUserLoggedIn()" 
+                (click)="editar(acerca.id)" 
+                class="btn btn-theme rounded-circle float-end" data-toggle="tooltip" 
+                data-placement="bottom" title="Editar perfil">
+                <i class="bi bi-pencil"></i>
+            </button>
         </div>
     </div>
     </div>
