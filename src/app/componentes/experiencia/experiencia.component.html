@@ -3,7 +3,7 @@
         <div class="col">
             <h1 class="text-theme">Experiencia Laboral
                 <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-experiencia'">
-                    <button class="btn btn-theme rounded-circle float-end" data-toggle="tooltip" data-placement="bottom" 
+                    <button class="btn btn-theme rounded-circle" data-toggle="tooltip" data-placement="bottom" 
                         title="Agregar experiencia">
                         <i class="bi bi-plus-circle"></i>
                     </button>
@@ -25,7 +25,7 @@
                                 <i class="bi bi-pencil"></i>
                             </button>
                             <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
-                                class="btn btn-danger rounded-circle float-end" data-toggle="tooltip" data-placement="bottom" 
+                                class="btn btn-danger rounded-circle" data-toggle="tooltip" data-placement="bottom" 
                                 title="Eliminar">
                                 <i class="bi bi-x-circle"></i>
                             </button>

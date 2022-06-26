@@ -4,7 +4,7 @@
             <h1 class="text-theme">
                 Habilidades
                 <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
-                    <button class="btn btn-theme rounded-circle float-end" data-toggle="tooltip" 
+                    <button class="btn btn-theme rounded-circle" data-toggle="tooltip" 
                         data-placement="bottom" title="Agregar habilidad">
                         <i class="bi bi-plus-circle"></i>
                     </button>
@@ -20,7 +20,7 @@
                     <i class="bi bi-pencil"></i>
                 </button>    
                 <button *ngIf="isUserLoggedIn()" (click)="eliminar(habilidad.id)" 
-                    class="btn btn-danger rounded-circle float-end" data-toggle="tooltip" 
+                    class="btn btn-danger rounded-circle" data-toggle="tooltip" 
                     data-placement="bottom" title="Eliminar">
                     <i class="bi bi-x-circle"></i>
                 </button>

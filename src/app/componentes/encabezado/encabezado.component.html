@@ -9,18 +9,18 @@
             <p class="text-theme">Argentina Programa - #Yo Programo</p>
         </div>
         <div class="col-6">
-            <div class="btn-toolbar gap-2 justify-content-center align-items-center float-end">
+            <div class="btn-toolbar">
                 <a href="https://ar.linkedin.com/in/darioplacidogandini">
-                    <button class="btn btn-sm btn-secondary rounded-circle">
+                    <button class="btn btn-secondary rounded-circle">
                         <i class="bi-linkedin"></i>
                     </button></a>
                 <a href="https://github.com/darioplacidogandini">
-                    <button class="btn btn-sm btn-secondary rounded-circle">
+                    <button class="btn btn-secondary rounded-circle">
                         <i class="bi-github"></i>
                     </button>
                 </a>
                 <a class="text-light" href="mailto:darioplacidogandini@outlook.com">
-                    <button class="btn btn-sm btn-secondary rounded-circle">
+                    <button class="btn btn-secondary rounded-circle">
                         <i class="bi-envelope"></i>
                     </button>
                 </a>
@@ -29,7 +29,8 @@
                         LOGIN
                     </button>
                 </a>
-                <button *ngIf="isUserLoggedIn()" (click)="closeSession()" class="btn btn-danger float-end" 
+                <button *ngIf="isUserLoggedIn()" (click)="closeSession()" 
+                    class="btn btn-danger" 
                     data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
                     SALIR
                 </button>
