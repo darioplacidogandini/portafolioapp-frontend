@@ -29,9 +29,7 @@ export class IniciarSesionComponent implements OnInit {
         console.log(error);
         this.invalidLogin = true;
       }
-    )
-    );
-
+    ));
   }
 
 }

@@ -22,6 +22,7 @@ import { EditarExperienciaComponent } from './componentes/experiencia/editar-exp
 import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades/editar-habilidades.component';
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
 import { InterceptorService } from './servicios/interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { InterceptorService } from './servicios/interceptor.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [ {  
     provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true 
