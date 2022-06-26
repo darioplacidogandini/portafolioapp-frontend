@@ -5,7 +5,7 @@
                 Proyectos
                 <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-proyectos'">
                     <button class="btn btn-theme rounded-circle" 
-                        data-toggle="tooltip" 
+                        id="editButton" data-toggle="tooltip" 
                         data-placement="bottom" title="Agregar proyecto">
                         <i class="bi bi-plus-circle"></i>
                     </button>
@@ -35,11 +35,19 @@
                         </h3>
                         <h5>{{proyecto.descripcion}}</h5>
                         <a href="{{proyecto.url}}">
-                            <button class="btn btn-theme" data-toggle="tooltip" 
+                            <button class="btn btn-theme" id="editButton"
+                            data-toggle="tooltip" 
+                            data-placement="bottom" title="Código fuente">
+                                <i class="bi bi-github"></i>
+                            </button>
+                        </a>
+                        <a href="{{proyecto.url}}">
+                            <button class="btn btn-theme" id="editButton"
+                            data-toggle="tooltip" 
                             data-placement="bottom" title="Ver proyecto">
                                 <i class="bi bi-eye"></i>
                             </button>
-                    </a>
+                        </a>
                     </div>
                 </div>
             </li>

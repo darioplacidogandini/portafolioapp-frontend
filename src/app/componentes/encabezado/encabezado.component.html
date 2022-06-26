@@ -11,24 +11,27 @@
         <div class="col-6">
             <div class="btn-toolbar">
                 <a href="https://ar.linkedin.com/in/darioplacidogandini">
-                    <button class="btn btn-secondary rounded-circle">
+                    <button class="btn btn-secondary rounded-circle" id="headerButon" 
+                    data-toggle="tooltip" data-placement="bottom" title="Cuenta de Linkedin">
                         <i class="bi-linkedin"></i>
                     </button></a>
                 <a href="https://github.com/darioplacidogandini">
-                    <button class="btn btn-secondary rounded-circle">
+                    <button class="btn btn-secondary rounded-circle" id="headerButon"
+                    data-toggle="tooltip" data-placement="bottom" title="Repositorio de GitHub">
                         <i class="bi-github"></i>
                     </button>
                 </a>
                 <a class="text-light" href="mailto:darioplacidogandini@outlook.com">
-                    <button class="btn btn-secondary rounded-circle">
+                    <button class="btn btn-secondary rounded-circle" id="headerButon"
+                    data-toggle="tooltip" data-placement="bottom" title="Email de contacto">
                         <i class="bi-envelope"></i>
                     </button>
                 </a>
-                <a *ngIf="!isUserLoggedIn()" [routerLink]="'/iniciar-sesion'">
-                    <button class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesión">
+                <button class="btn btn-theme" 
+                    data-bs-toggle="modal" data-bs-target="#loginModal"
+                    data-toggle="tooltip" data-placement="bottom" title="Iniciar sesión">
                         LOGIN
-                    </button>
-                </a>
+                </button>
                 <button *ngIf="isUserLoggedIn()" (click)="closeSession()" 
                     class="btn btn-danger" 
                     data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
@@ -36,5 +39,44 @@
                 </button>
             </div>
         </div>
+    </div>
+</div>
+
+  <!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form (ngSubmit)="checkLogin()">
+                <div class="mb-3">
+                  <label for="username">Usuario</label>
+                  <input type="text" name="username" autocomplete="username" 
+                  [(ngModel)]="username">
+                </div>
+                <div class="mb-3">
+                  <label for="password">Contraseña</label>
+                  <input type="password" name="password" autocomplete="current-password" 
+                  [(ngModel)]="password">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-theme" 
+                data-toggle="tooltip" data-placement="bottom" 
+                title="Iniciar sesion">
+                <i class="bi bi-check-circle"></i>
+            </button>
+            <button class="btn btn-secondary"
+                data-bs-dismiss="modal" 
+                data-toggle="tooltip" data-placement="bottom" 
+                title="Salir">
+                <i class="bi bi-x-circle"></i>
+            </button>    
+        </div>
+      </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 
 @Component({
@@ -7,8 +8,14 @@ import { AuthenticationService } from 'src/app/servicios/authentication.service'
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
+
   headerList:any;
-  constructor(private authenticationService:AuthenticationService,private authService:AuthenticationService) {}
+  username = '';
+  password = '';
+  invalidLogin = false;
+
+  constructor(private authenticationService:AuthenticationService,
+    private authService:AuthenticationService,private route:Router) {}
 
   ngOnInit(): void {}
 
@@ -19,5 +26,19 @@ export class EncabezadoComponent implements OnInit {
   closeSession() {
     this.authenticationService.logOut();
   }
-    
+
+  checkLogin() {
+    (this.authService.authenticate(this.username, this.password).subscribe(
+      data => {
+        console.log(data);
+        this.route.navigate(['']);
+        this.invalidLogin = false;
+      },
+      error => {
+        console.log(error);
+        this.invalidLogin = true;
+      }
+    ));
+  }
+
 }

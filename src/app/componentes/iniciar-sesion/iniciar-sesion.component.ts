@@ -9,9 +9,9 @@ import { AuthenticationService } from '../../servicios/authentication.service';
 })
 export class IniciarSesionComponent implements OnInit {
 
-  username = ''
-  password = ''
-  invalidLogin = false
+  username = '';
+  password = '';
+  invalidLogin = false;
 
   constructor(private router: Router,
     private loginservice: AuthenticationService) {}
