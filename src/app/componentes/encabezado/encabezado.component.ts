@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
+import { IniciarSesionComponent } from '../iniciar-sesion/iniciar-sesion.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +10,8 @@ import { AuthenticationService } from 'src/app/servicios/authentication.service'
 })
 export class EncabezadoComponent implements OnInit {
 
-  headerList:any;
-  username = '';
-  password = '';
-  invalidLogin = false;
-
   constructor(private authenticationService:AuthenticationService,
-    private authService:AuthenticationService,private route:Router) {}
+    private authService:AuthenticationService,public loginDialog:MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -23,22 +19,11 @@ export class EncabezadoComponent implements OnInit {
     return this.authService.isUserLoggedIn();
   }
 
+  openLoginDialog(): void {
+    this.loginDialog.open(IniciarSesionComponent);
+  }
+
   closeSession() {
     this.authenticationService.logOut();
   }
-
-  checkLogin() {
-    (this.authService.authenticate(this.username, this.password).subscribe(
-      data => {
-        console.log(data);
-        this.route.navigate(['']);
-        this.invalidLogin = false;
-      },
-      error => {
-        console.log(error);
-        this.invalidLogin = true;
-      }
-    ));
-  }
-
 }

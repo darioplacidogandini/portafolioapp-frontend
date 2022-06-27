@@ -23,6 +23,8 @@ import { EditarHabilidadesComponent } from './componentes/habilidades/editar-hab
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
+  ], exports: [
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [ {  
     provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true 
