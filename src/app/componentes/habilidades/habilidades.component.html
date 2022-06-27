@@ -4,7 +4,7 @@
         <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
             <button mat-fab 
                 id="editButton" matTooltip="Agregar habilidad">
-                <mat-icon></mat-icon>
+                <mat-icon>plus</mat-icon>
             </button>
         </a>
     </h1>
@@ -16,13 +16,13 @@
                     class="btn btn-secondary rounded-circle" 
                     id="editButton" data-toggle="tooltip" 
                     data-placement="bottom" title="Editar">
-                    <i class="bi bi-pencil"></i>
+                    <mat-icon>edit</mat-icon>
                 </button>    
                 <button *ngIf="isUserLoggedIn()" (click)="eliminar(habilidad.id)" 
                     class="btn btn-danger rounded-circle" 
                     id="editButton" data-toggle="tooltip" 
                     data-placement="bottom" title="Eliminar">
-                    <i class="bi bi-x-circle"></i>
+                    <mat-icon>close</mat-icon>
                 </button>
             </h2>
             <mat-progress-spinner
