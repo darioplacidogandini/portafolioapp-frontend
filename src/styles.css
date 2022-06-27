@@ -8,3 +8,8 @@ body {
     height: 35px;
     width: 35px;
 }
+
+.mat-list-item {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
