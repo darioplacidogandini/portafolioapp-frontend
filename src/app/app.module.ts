@@ -22,11 +22,14 @@ import { EditarExperienciaComponent } from './componentes/experiencia/editar-exp
 import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades/editar-habilidades.component';
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
 import { InterceptorService } from './servicios/interceptor.service';
+import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input'
+
 
 @NgModule({
   declarations: [
@@ -55,16 +58,20 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatIconModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatTooltipModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ], exports: [
+    MatIconModule,
     MatCardModule,
     MatTooltipModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [ {  
     provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true 
