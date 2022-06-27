@@ -1,3 +1,4 @@
+<br>
 <mat-card>
     <mat-list *ngFor="let acerca of acerca">
         <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}" 
@@ -10,7 +11,7 @@
                 matTooltip="Editar perfil">
                 <mat-icon></mat-icon>
         </button>
-        <h1 class="text-theme">{{acerca.nombre}}</h1>
-        <h3 class="text-secondary">{{acerca.puesto}}</h3>
+        <h1>{{acerca.nombre}}</h1>
+        <h3>{{acerca.puesto}}</h3>
     </mat-list>
 </mat-card>
