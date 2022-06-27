@@ -1,31 +1,31 @@
 <mat-card>
-<h1 color="primary">Experiencia Laboral
-    <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-experiencia'">
-        <button mat-fab color="primary" id="editButton" 
-        matTooltip="Agregar experiencia">
-            <mat-icon></mat-icon>
-        </button>
-    </a>
-</h1>            
-<mat-list>
-    <mat-list-item *ngFor="let experiencia of experiencia">
-        <img [src]="experiencia.logo" 
-        id="companyLogo" [alt]="'Logo' + experiencia.empresa">
-        <h3 color="accent">{{experiencia.empresa}}
-            <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" 
-                mat-fab id="editButton"
-                matTooltip="Editar">
+    <h1 color="primary">Experiencia Laboral
+        <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-experiencia'">
+            <button mat-fab color="primary" id="editButton" 
+            matTooltip="Agregar experiencia">
                 <mat-icon></mat-icon>
             </button>
-            <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
-                mat-fab id="editButton"
-                matTooltip="Eliminar">
-                <mat-icon></mat-icon>
-            </button>
-        </h3>
-        <h5>{{experiencia.puesto}}</h5>
-        <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
-    </mat-list-item>
-</mat-list>
+        </a>
+    </h1>            
+    <mat-list>
+        <mat-list-item *ngFor="let experiencia of experiencia">
+            <img [src]="experiencia.logo" 
+            id="companyLogo" [alt]="'Logo' + experiencia.empresa">
+            <h3 color="accent">{{experiencia.empresa}}
+                <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" 
+                    mat-fab id="editButton"
+                    matTooltip="Editar">
+                    <mat-icon></mat-icon>
+                </button>
+                <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
+                    mat-fab id="editButton"
+                    matTooltip="Eliminar">
+                    <mat-icon></mat-icon>
+                </button>
+            </h3>
+            <h5>{{experiencia.puesto}}</h5>
+            <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
+        </mat-list-item>
+    </mat-list>
 </mat-card>       
               
