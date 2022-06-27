@@ -1,11 +1,12 @@
 <mat-card>
-    <img class="rounded-circle border" id="headerLogo"
+    <img id="headerLogo"
     src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" 
     alt="Logo Argentina Programa">
-    <p class="text-theme">Argentina Programa - #Yo Programo</p>
+    <p color="primary">Argentina Programa - #Yo Programo</p>
         <a href="https://ar.linkedin.com/in/darioplacidogandini">
             <button mat-fab id="headerButton" 
             matTooltip="Cuenta de Linkedin">
+            <mat-icon>Link</mat-icon>
             </button></a>
         <a href="https://github.com/darioplacidogandini">
             <button mat-fab id="headerButton"
@@ -23,7 +24,8 @@
             matTooltip="Iniciar sesión">
                 LOGIN
         </button>
-        <button mat-raised-button color="danger" *ngIf="isUserLoggedIn()" (click)="closeSession()"  
+        <button mat-raised-button color="danger" 
+            *ngIf="isUserLoggedIn()" (click)="closeSession()"  
             matTooltip="Cerrar sesión">
             SALIR
         </button>    

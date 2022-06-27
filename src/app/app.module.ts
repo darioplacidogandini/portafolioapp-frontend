@@ -28,8 +28,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input'
-
+import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list'
 
 @NgModule({
   declarations: [
@@ -64,14 +64,16 @@ import {MatInputModule} from '@angular/material/input'
     MatTooltipModule,
     MatDialogModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ], exports: [
     MatIconModule,
     MatCardModule,
     MatTooltipModule,
     MatDialogModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   providers: [ {  
     provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true 

@@ -1,44 +1,31 @@
-<div class="card m-3">
-    <div class="row m-2">
-            <div class="col-9">
-                <h1 class="text-theme">
-                    Educacion
-                    <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-educacion'">
-                        <button class="btn btn-theme rounded-circle" 
-                            data-toggle="tooltip" data-placement="bottom" 
-                            title="Agregar educacion">
-                            <i class="bi bi-plus-circle"></i>
-                        </button>
-                    </a>
-                </h1>
-            </div>
-        <ol class="list-unstyled">
-            <li *ngFor="let educacion of educacion">
-                <div class="row border-top border-bottom">
-                    <div class="col-1">
-                        <img class="rounded-circle border" 
-                        [src]="educacion.logo" id="educacionPhoto"
-                        [alt]="'Logo' + educacion.institucion">
-                    </div>
-                    <div class="col-11">
-                        <h3 class="text-secondary">
-                            {{educacion.titulo}}
-                            <button *ngIf="isUserLoggedIn()" (click)="editar(educacion.id)" 
-                                class="btn btn-secondary rounded-circle" 
-                                data-toggle="tooltip" data-placement="bottom" title="Editar">
-                                <i class="bi bi-pencil"></i>
-                            </button>
-                            <button *ngIf="isUserLoggedIn()" (click)="eliminar(educacion.id)" 
-                                    class="btn btn-danger rounded-circle" 
-                                    data-toggle="tooltip" data-placement="bottom" title="Eliminar">
-                                    <i class="bi bi-x-circle"></i>
-                            </button>
-                        </h3>
-                        <h5>{{educacion.institucion}}</h5>
-                        <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
-                    </div>
-                </div>
-            </li>
-        </ol>
-    </div>
-</div>
+<mat-card>
+    <h1 color="primary">
+        Educacion
+        <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-educacion'">
+            <button mat-fab color="primary"
+                matTooltip="Agregar educacion">
+                <mat-icon>+</mat-icon>
+            </button>
+        </a>
+    </h1>
+    <mat-list>
+        <mat-list-item *ngFor="let educacion of educacion">
+            <img 
+            [src]="educacion.logo" id="educacionPhoto"
+            [alt]="'Logo' + educacion.institucion">
+            <h3 color="accent">
+                {{educacion.titulo}}
+                <button *ngIf="isUserLoggedIn()" (click)="editar(educacion.id)" 
+                    mat-fab matTooltip="Editar">
+                    <mat-icon></mat-icon>>
+                </button>
+                <button *ngIf="isUserLoggedIn()" (click)="eliminar(educacion.id)" 
+                    mat-fab matTooltip="Eliminar">
+                    <mat-icon></mat-icon>
+                </button>
+            </h3>
+            <h5>{{educacion.institucion}}</h5>
+            <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
+        </mat-list-item>
+    </mat-list>            
+</mat-card>>

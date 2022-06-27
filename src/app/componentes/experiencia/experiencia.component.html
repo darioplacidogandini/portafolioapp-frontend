@@ -1,43 +1,31 @@
-<div class="card m-3">
-    <div class="row m-2">
-        <div class="col">
-            <h1 class="text-theme">Experiencia Laboral
-                <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-experiencia'">
-                    <button class="btn btn-theme rounded-circle" id="editButton" 
-                    data-toggle="tooltip" data-placement="bottom" 
-                        title="Agregar experiencia">
-                        <i class="bi bi-plus-circle"></i>
-                    </button>
-                </a>
-            </h1>
-        </div>
-        <ol class="list-unstyled">
-            <li *ngFor="let experiencia of experiencia">
-                <div class="row border-top border-bottom">
-                    <div class="col-1">
-                        <img class="rounded-circle border" [src]="experiencia.logo" 
-                        id="companyLogo" [alt]="'Logo' + experiencia.empresa">
-                    </div>
-                    <div class="col-11">
-                        <h3 class="text-secondary">{{experiencia.empresa}}
-                            <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" 
-                                class="btn btn-secondary rounded-circle" id="editButton"
-                                data-toggle="tooltip" data-placement="bottom" 
-                                title="Editar">
-                                <i class="bi bi-pencil"></i>
-                            </button>
-                            <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
-                                class="btn btn-danger rounded-circle" id="editButton"
-                                data-toggle="tooltip" data-placement="bottom" 
-                                title="Eliminar">
-                                <i class="bi bi-x-circle"></i>
-                            </button>
-                        </h3>
-                        <h5>{{experiencia.puesto}}</h5>
-                        <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
-                    </div>
-                </div>
-            </li>
-        </ol>
-    </div>
-</div>
+<mat-card>
+<h1 color="primary">Experiencia Laboral
+    <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-experiencia'">
+        <button mat-fab color="primary" id="editButton" 
+        matTooltip="Agregar experiencia">
+            <mat-icon></mat-icon>
+        </button>
+    </a>
+</h1>            
+<mat-list>
+    <mat-list-item *ngFor="let experiencia of experiencia">
+        <img [src]="experiencia.logo" 
+        id="companyLogo" [alt]="'Logo' + experiencia.empresa">
+        <h3 color="accent">{{experiencia.empresa}}
+            <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" 
+                mat-fab id="editButton"
+                matTooltip="Editar">
+                <mat-icon></mat-icon>
+            </button>
+            <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
+                mat-fab id="editButton"
+                matTooltip="Eliminar">
+                <mat-icon></mat-icon>
+            </button>
+        </h3>
+        <h5>{{experiencia.puesto}}</h5>
+        <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
+    </mat-list-item>
+</mat-list>
+</mat-card>       
+              
