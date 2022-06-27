@@ -23,6 +23,8 @@ import { EditarHabilidadesComponent } from './componentes/habilidades/editar-hab
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -54,9 +56,13 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatTooltipModule,
     MatDialogModule,
     MatButtonModule
   ], exports: [
+    MatCardModule,
+    MatTooltipModule,
     MatDialogModule,
     MatButtonModule
   ],
