@@ -28,8 +28,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatListModule} from '@angular/material/list'
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {MatListModule} from '@angular/material/list'
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ], exports: [
     MatIconModule,
     MatCardModule,
@@ -73,7 +75,8 @@ import {MatListModule} from '@angular/material/list'
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   providers: [ {  
     provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true 

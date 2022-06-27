@@ -1,19 +1,16 @@
-<div class="card m-3">
-    <div class="row m-2">
-        <div class="col-9">
-            <h1 class="text-theme">
-                Habilidades
-                <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
-                    <button class="btn btn-theme rounded-circle" 
-                        id="editButton" data-toggle="tooltip" 
-                        data-placement="bottom" title="Agregar habilidad">
-                        <i class="bi bi-plus-circle"></i>
-                    </button>
-                </a>
-            </h1>
-        </div>
-        <ol class="list-unstyled" *ngFor="let habilidad of habilidades">
-            <h2 class="text-secondary">
+<mat-card>
+    <h1 color="primary">
+        Habilidades
+        <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
+            <button mat-fab 
+                id="editButton" matTooltip="Agregar habilidad">
+                <mat-icon></mat-icon>
+            </button>
+        </a>
+    </h1>
+    <mat-list>
+        <mat-list-item *ngFor="let habilidad of habilidades">
+            <h2 color="primary">
                 {{habilidad.habilidad}}
                 <button *ngIf="isUserLoggedIn()" (click)="editar(habilidad.id)" 
                     class="btn btn-secondary rounded-circle" 
@@ -28,13 +25,10 @@
                     <i class="bi bi-x-circle"></i>
                 </button>
             </h2>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-theme fw-bold" 
-                    role="progressbar" [style.width]="habilidad.porcentaje + '%'" 
-                    attr.aria-valuenow="habilidad.porcentaje" aria-valuemin="0" 
-                    aria-valuemax="100">{{habilidad.porcentaje}}%
-                </div>
-            </div>
-        </ol>
-    </div>
-</div>
+            <mat-progress-spinner
+                [value]="habilidad.porcentaje"
+                mode="determinate"
+            ></mat-progress-spinner>
+        </mat-list-item>
+    </mat-list>
+</mat-card>
