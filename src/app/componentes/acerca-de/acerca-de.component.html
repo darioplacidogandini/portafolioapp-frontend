@@ -1,28 +1,16 @@
-<div class="card m-3" *ngFor="let acerca of acerca">
-    <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}" 
-    alt="Foto de Portada">
-    <div class="row">   
-        <div class="col-3">
+<mat-card>
+    <mat-list *ngFor="let acerca of acerca">
+        <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}" 
+        alt="Foto de Portada">
             <img class="rounded-circle" alt="Foto de Perfil" id="profilePhoto"
             [src]="acerca.foto">                
         </div>
-        <div class="col-9">
-            <button *ngIf="isUserLoggedIn()" 
+        <button *ngIf="isUserLoggedIn()" 
                 (click)="editar(acerca.id)" id="editButton"
-                class="btn btn-theme rounded-circle float-end" data-toggle="tooltip" 
-                data-placement="bottom" title="Editar perfil">
-                <i class="bi bi-pencil"></i>
-            </button>
-        </div>
-    </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h1 class="text-theme">{{acerca.nombre}}</h1>
-            <h3 class="text-secondary">{{acerca.puesto}}</h3>
-        </div>
-        <div class="col">
-    
-        </div>
-    </div>
-</div>
+                matTooltip="Editar perfil">
+                <mat-icon></mat-icon>
+        </button>
+        <h1 class="text-theme">{{acerca.nombre}}</h1>
+        <h3 class="text-secondary">{{acerca.puesto}}</h3>
+    </mat-list>
+</mat-card>
