@@ -1,9 +1,7 @@
 body {
     margin: 0;
-}
-
-.basic-container {
-    margin: 5px;
+    padding: 5px;
+    height: 100%;
 }
 
 #editButton {

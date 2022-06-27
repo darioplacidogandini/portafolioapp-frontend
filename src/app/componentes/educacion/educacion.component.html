@@ -1,5 +1,5 @@
 <mat-card>
-    <h1 color="primary">
+    <h1>
         Educacion
         <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-educacion'">
             <button mat-fab color="primary"
@@ -13,7 +13,7 @@
             <img 
             [src]="educacion.logo" id="educacionPhoto"
             [alt]="'Logo' + educacion.institucion">
-            <h3 color="accent">
+            <h3>
                 {{educacion.titulo}}
                 <button *ngIf="isUserLoggedIn()" (click)="editar(educacion.id)" 
                     mat-fab matTooltip="Editar">

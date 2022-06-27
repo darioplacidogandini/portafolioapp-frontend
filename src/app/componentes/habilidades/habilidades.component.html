@@ -1,5 +1,5 @@
 <mat-card>
-    <h1 color="primary">
+    <h1>
         Habilidades
         <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
             <button mat-fab 
@@ -10,7 +10,7 @@
     </h1>
     <mat-list>
         <mat-list-item *ngFor="let habilidad of habilidades">
-            <h2 color="primary">
+            <h2>
                 {{habilidad.habilidad}}
                 <button *ngIf="isUserLoggedIn()" (click)="editar(habilidad.id)" 
                     class="btn btn-secondary rounded-circle" 
