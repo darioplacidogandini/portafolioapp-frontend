@@ -1,5 +1,5 @@
-mat card {
-    height: 200px;
+#habilidadesCard {
+    max-height: 200px;
 }
 
 mat-list {
