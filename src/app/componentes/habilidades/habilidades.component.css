@@ -1,7 +1,5 @@
 mat-card {
-    height: 120px;
-    width: 250px;
+    height: 200px;
     display: flex;
-    align-content: center;
     align-items: flex-start;
 }
