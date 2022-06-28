@@ -1,3 +1,7 @@
+#headerContentContainer {
+    height: 100px;
+}
+
 #headerTitle {
     float: left;
 }

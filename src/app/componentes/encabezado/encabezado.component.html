@@ -1,37 +1,39 @@
 <mat-card>
-    <div id="headerTitle">
-        <img id="headerLogo"
-        src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" 
-        alt="Logo Argentina Programa">
-        Argentina Programa - #Yo Programo
-    </div>    
-    <div id="headerMenu">
-        <a href="https://ar.linkedin.com/in/darioplacidogandini">
-            <button mat-fab id="headerButton" 
-            matTooltip="Cuenta de Linkedin">
-            <mat-icon>work</mat-icon>
-            </button></a>
-        <a href="https://github.com/darioplacidogandini">
-            <button mat-fab id="headerButton"
-            matTooltip="Repositorio de GitHub">
-            <mat-icon>code</mat-icon>
+    <div id="headerContentContainer">
+        <div id="headerTitle">
+            <img id="headerLogo"
+            src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" 
+            alt="Logo Argentina Programa">
+            Argentina Programa - #Yo Programo
+        </div>    
+        <div id="headerMenu">
+            <a href="https://ar.linkedin.com/in/darioplacidogandini">
+                <button mat-fab id="headerButton" 
+                matTooltip="Cuenta de Linkedin">
+                <mat-icon>work</mat-icon>
+                </button></a>
+            <a href="https://github.com/darioplacidogandini">
+                <button mat-fab id="headerButton"
+                matTooltip="Repositorio de GitHub">
+                <mat-icon>code</mat-icon>
+                </button>
+            </a>
+            <a class="text-light" href="mailto:darioplacidogandini@outlook.com">
+                <button mat-fab id="headerButton"
+                matTooltip="Email de contacto">
+                <mat-icon>email</mat-icon>
+                </button>
+            </a>
+            <button mat-raised-button color="primary" (click)="openLoginDialog()"
+                matTooltip="Iniciar sesión">
+                    LOGIN
             </button>
-        </a>
-        <a class="text-light" href="mailto:darioplacidogandini@outlook.com">
-            <button mat-fab id="headerButton"
-            matTooltip="Email de contacto">
-            <mat-icon>email</mat-icon>
+            <button mat-raised-button color="danger" 
+                *ngIf="isUserLoggedIn()" (click)="closeSession()"  
+                matTooltip="Cerrar sesión">
+                SALIR
             </button>
-        </a>
-        <button mat-raised-button color="primary" (click)="openLoginDialog()"
-            matTooltip="Iniciar sesión">
-                LOGIN
-        </button>
-        <button mat-raised-button color="danger" 
-            *ngIf="isUserLoggedIn()" (click)="closeSession()"  
-            matTooltip="Cerrar sesión">
-            SALIR
-        </button>
+        </div>
     </div>        
 </mat-card>
    
