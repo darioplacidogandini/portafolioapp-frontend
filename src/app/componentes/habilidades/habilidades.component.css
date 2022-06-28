@@ -1,4 +1,7 @@
-#habilidadContainer {
+mat-card {
     height: 120px;
     width: 250px;
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
 }

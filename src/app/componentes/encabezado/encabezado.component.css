@@ -19,4 +19,10 @@
 #headerButton {
     height: 35px;
     width: 35px;
+    align-content: center;
+}
+
+mat-icon {
+    height: 15px;
+    width: 15px;
 }
