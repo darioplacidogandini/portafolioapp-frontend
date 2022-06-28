@@ -1,8 +1,4 @@
 #habilidadContainer {
-    height: 100px;
-}
-
-mat-list {
-    display: flex;
-    flex-direction: row;
+    height: 120px;
+    width: 250px;
 }
