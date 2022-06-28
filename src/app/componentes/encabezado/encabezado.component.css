@@ -1,3 +1,11 @@
+#headerTitle {
+    float: left;
+}
+
+#headerMenu {
+    float: right;
+}
+
 #headerLogo {
     height: 50px;
     width: 50px;
