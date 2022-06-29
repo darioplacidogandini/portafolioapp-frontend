@@ -1,38 +1,36 @@
 <mat-card>
-    <h1 color="primary">
-        Proyectos
+    <h1 color="primary">Proyectos</h1>
         <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-proyectos'">
             <button mat-fab color="primary"
-                id="editButton" matTooltip="Agregar proyecto">
+                class="editButton" matTooltip="Agregar proyecto">
+                <mat-icon>add</mat-icon>
             </button>
         </a>
-    </h1>
     <mat-list>
         <mat-list-item *ngFor="let proyecto of proyectos">
             <img [src]="proyecto.logo" 
             id="proyectPhoto" [alt]="'Logo' + proyecto.nombre">
-            <h3 color="accent">
-                {{proyecto.nombre}}
+            <h3>{{proyecto.nombre}}</h3>
                 <button *ngIf="isUserLoggedIn()" (click)="editar(proyecto.id)" 
                     mat-fab color="primary"
                     matTooltip="Editar">
-                    <mat-icon></mat-icon>
+                    <mat-icon>edit</mat-icon>
                 </button>
                 <button *ngIf="isUserLoggedIn()" (click)="eliminar(proyecto.id)" 
                     mat-fab color="primary"
                     matTooltip="Eliminar">
+                    <mat-icon>delete</mat-icon>
                 </button>
-            </h3>
             <h5>{{proyecto.descripcion}}</h5>
                         <a href="{{proyecto.codigoFuente}}">
-                            <button mat-raised-button color="primary" id="editButton"
+                            <button mat-raised-button color="primary" class="editButton"
                             data-toggle="tooltip" 
                             matTooltip="Código fuente">
                                 <mat-icon>code</mat-icon>
                             </button>
                         </a>
                         <a href="{{proyecto.url}}">
-                            <button mat-raised-button color="primary" id="editButton"
+                            <button mat-raised-button color="primary" class="editButton"
                             matTooltip="Ver proyecto">
                                 <mat-icon>visibility</mat-icon>
                             </button>

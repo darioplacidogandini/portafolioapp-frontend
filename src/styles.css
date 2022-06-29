@@ -4,20 +4,7 @@ body {
     height: 100%;
 }
 
-h1 {
-    color: blueviolet;
-}
-
-h3 {
-    color: gold;
-}
-
-#editButton {
+.editButton {
     height: 35px;
     width: 35px;
-}
-
-.mat-list-item {
-    padding-bottom: 3px;
-    padding-top: 3px;
 }
