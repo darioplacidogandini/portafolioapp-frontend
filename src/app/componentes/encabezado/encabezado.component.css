@@ -1,5 +1,7 @@
-#headerContentContainer {
-    height: 60px;
+mat-card {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
 }
 
 #headerTitle {

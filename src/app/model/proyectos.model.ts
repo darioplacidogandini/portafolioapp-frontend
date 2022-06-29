@@ -3,5 +3,6 @@ export class Proyectos {
     nombre: String = '';
     descripcion: String = '';
     url: String = '';
+    codigoFuente: String = '';
     logo: String = '';
 }
