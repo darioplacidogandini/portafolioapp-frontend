@@ -1,15 +1,19 @@
 <br>
 <mat-card>
-    <h1>Habilidades</h1>
-    <mat-list>
-        <mat-list-item *ngFor="let habilidad of habilidades">
-            <mat-progress-spinner
-                [value]="habilidad.porcentaje"
-                mode="determinate">
-            </mat-progress-spinner>
-            <h2>{{habilidad.habilidad}}</h2>
+    <mat-card-title>
+        <h1>Habilidades</h1>
+    </mat-card-title>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let habilidad of habilidades">
+                <mat-progress-spinner
+                    [value]="habilidad.porcentaje"
+                    mode="determinate">
+                </mat-progress-spinner>
+                <h2>{{habilidad.habilidad}}</h2>
             </mat-list-item>
-    </mat-list>
+        </mat-list>        
+    </mat-card-content>
 </mat-card>
 <br>
 

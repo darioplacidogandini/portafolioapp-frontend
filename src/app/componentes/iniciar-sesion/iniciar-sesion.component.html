@@ -1,6 +1,5 @@
 <h2 mat-dialog-title>Iniciar sesion</h2>
 <mat-dialog-content class="mat-typography">
-  <form (ngSubmit)="checkLogin()">
     <mat-form-field>
       <label for="username">Usuario</label>
       <input matInput type="text" name="username" autocomplete="username" 
@@ -12,11 +11,10 @@
       <input matInput type="password" name="password" autocomplete="current-password" 
       [(ngModel)]="password">
     </mat-form-field>
-  </form>  
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button type="submit" mat-raised-button color="primary"
-    cdkFocusInitial
+    (click)="checkLogin()" cdkFocusInitial
     matTooltip="Iniciar sesion">
     <mat-icon>check</mat-icon>
   </button>

@@ -1,7 +1,10 @@
 mat-card {
-    height: 150px;
+    height: 100%;
+}
+
+mat-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 #educacionPhoto {
@@ -10,4 +13,5 @@ mat-card {
     border-radius: 50%;
     border: 2px solid;
 }
+
 

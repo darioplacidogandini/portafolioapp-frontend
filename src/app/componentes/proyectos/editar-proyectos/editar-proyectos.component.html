@@ -1,6 +1,5 @@
 <h2 mat-dialog-title>Editar proyecto</h2>
 <mat-dialog-content class="mat-typography">
-  <form (ngSubmit)="guardarCambios()">
     <mat-form-field>
         <label for="nombre">Nombre del proyecto</label>
         <input [(ngModel)]="proyecto.nombre" type="text" 
@@ -28,11 +27,10 @@
         <input [(ngModel)]="proyecto.logo" type="text" 
         class="form-control" id="logo" name="logo">
     </mat-form-field>
-  </form>  
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button type="submit" mat-raised-button color="primary"
-    cdkFocusInitial
+    (click)="guardarCambios()" cdkFocusInitial
     matTooltip="Guardar cambios">
     <mat-icon>check</mat-icon>
   </button>

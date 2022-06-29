@@ -18,12 +18,8 @@ mat-card {
 }
 
 #headerButton {
-    height: 35px;
-    width: 35px;
-    align-content: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
 }
 
-mat-icon {
-    height: 15px;
-    width: 15px;
-}
