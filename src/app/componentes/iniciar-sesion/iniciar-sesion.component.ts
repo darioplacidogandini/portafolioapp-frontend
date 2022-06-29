@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../../servicios/authentication.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class IniciarSesionComponent implements OnInit {
   password = '';
   invalidLogin = false;
 
-  constructor(private router: Router,
+  constructor(public loginDialog:MatDialog,
     private loginservice: AuthenticationService) {}
 
  ngOnInit() {}
@@ -22,7 +22,7 @@ export class IniciarSesionComponent implements OnInit {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['']);
+        this.loginDialog.closeAll();
         this.invalidLogin = false;
       },
       error => {

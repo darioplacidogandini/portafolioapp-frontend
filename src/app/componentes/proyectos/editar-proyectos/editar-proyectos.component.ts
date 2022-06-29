@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos.model';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
@@ -10,7 +11,8 @@ import { ProyectosService } from 'src/app/servicios/proyectos.service';
 })
 export class EditarProyectosComponent implements OnInit {
 
-  constructor(private datosProyectos:ProyectosService,private router:ActivatedRoute,private ruta:Router) {}
+  constructor(private datosProyectos:ProyectosService,
+    private router:ActivatedRoute,private editDialog:MatDialog) {}
 
   id: number = 0;
   proyecto: Proyectos = new Proyectos();
@@ -26,7 +28,7 @@ export class EditarProyectosComponent implements OnInit {
   public guardarCambios() {
     this.datosProyectos.editar(this.id,this.proyecto).subscribe(data => {
       console.log(data);
-      this.ruta.navigate(['/portfolio']);
+      this.editDialog.closeAll();
     },error => console.log(error));
   }
 
