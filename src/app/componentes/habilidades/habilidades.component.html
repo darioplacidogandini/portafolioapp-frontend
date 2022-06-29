@@ -3,6 +3,10 @@
     <mat-card-title>
         <h1>Habilidades</h1>
     </mat-card-title>
+    <button *ngIf="isUserLoggedIn()" mat-fab 
+        id="editButton" matTooltip="Agregar habilidad">
+        <mat-icon>plus</mat-icon>
+    </button>
     <mat-card-content>
         <mat-list>
             <mat-list-item *ngFor="let habilidad of habilidades">
@@ -11,27 +15,18 @@
                     mode="determinate">
                 </mat-progress-spinner>
                 <h2>{{habilidad.habilidad}}</h2>
+                <button mat-fab *ngIf="isUserLoggedIn()" 
+                    (click)="editar(habilidad.id)" 
+                    class="editButton" matTooltip="Editar">
+                <mat-icon>edit</mat-icon>
+                </button>    
+                <button mat-fab *ngIf="isUserLoggedIn()" 
+                    (click)="eliminar(habilidad.id)" 
+                    class="editButton" matTooltip="Eliminar">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-list-item>
         </mat-list>        
     </mat-card-content>
 </mat-card>
 <br>
-
-<!-- <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
-    <button mat-fab 
-        id="editButton" matTooltip="Agregar habilidad">
-        <mat-icon>plus</mat-icon>
-    </button>
-</a> -->
-<!-- <button *ngIf="isUserLoggedIn()" (click)="editar(habilidad.id)" 
-                        class="btn btn-secondary rounded-circle" 
-                        id="editButton" data-toggle="tooltip" 
-                        data-placement="bottom" title="Editar">
-                        <mat-icon>edit</mat-icon>
-                    </button>    
-                    <button *ngIf="isUserLoggedIn()" (click)="eliminar(habilidad.id)" 
-                        class="btn btn-danger rounded-circle" 
-                        id="editButton" data-toggle="tooltip" 
-                        data-placement="bottom" title="Eliminar">
-                        <mat-icon>close</mat-icon>
-                    </button> -->

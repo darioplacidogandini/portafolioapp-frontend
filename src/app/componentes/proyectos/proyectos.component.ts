@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';

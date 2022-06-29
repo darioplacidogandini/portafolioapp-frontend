@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
@@ -12,15 +12,15 @@ export class AgregarEducacionComponent implements OnInit {
 
   educacion: Educacion = new Educacion();
 
-  constructor(private educacionService:EducacionService, private ruta:Router) {}
+  constructor(private educacionService:EducacionService,public editDialog:MatDialog) {}
 
   ngOnInit(): void {}
 
-  agregar() {
+  add() {
     this.educacionService.agregar(this.educacion).subscribe(data => {
       console.log(data);
-      this.ruta.navigate(['/portfolio']);
     });
+    this.editDialog.closeAll();
   }
 
 }

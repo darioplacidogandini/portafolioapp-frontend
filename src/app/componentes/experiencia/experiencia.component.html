@@ -1,33 +1,29 @@
 <br>
 <mat-card>
     <h1 color="primary">Experiencia Laboral
-        <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-experiencia'">
-            <button mat-fab color="primary" id="editButton" 
+        <button *ngIf="isUserLoggedIn()" mat-fab color="primary" class="editButton" 
             matTooltip="Agregar experiencia">
-                <mat-icon></mat-icon>
-            </button>
-        </a>
+            <mat-icon>add</mat-icon>
+        </button>
     </h1>            
     <mat-list>
-        <div id="experienciaContentContainer">
-            <mat-list-item *ngFor="let experiencia of experiencia">
-                <img [src]="experiencia.logo" 
-                id="companyLogo" [alt]="'Logo' + experiencia.empresa">
-                <h3>{{experiencia.empresa}}</h3>
-                <h5>{{experiencia.puesto}}</h5>
-                <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
-            </mat-list-item>
-        </div>
+        <mat-list-item *ngFor="let experiencia of experiencia">
+            <img [src]="experiencia.logo" 
+            id="companyLogo" [alt]="'Logo' + experiencia.empresa">
+            <h3>{{experiencia.empresa}}</h3>
+            <h5>{{experiencia.puesto}}</h5>
+            <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
+            <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" 
+                mat-fab class="editButton"
+                matTooltip="Editar">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
+                mat-fab class="editButton"
+                matTooltip="Eliminar">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-list-item>            
     </mat-list>
-    <!-- <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" 
-                    mat-fab id="editButton"
-                    matTooltip="Editar">
-                    <mat-icon></mat-icon>
-    </button>
-    <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
-                    mat-fab id="editButton"
-                    matTooltip="Eliminar">
-                    <mat-icon></mat-icon>
-     </button> -->
 </mat-card>       
               

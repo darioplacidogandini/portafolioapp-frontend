@@ -1,6 +1,10 @@
 <br>
 <mat-card>
     <h1>Educacion</h1>
+        <button *ngIf="isUserLoggedIn()" mat-fab color="primary"
+            (click)="openAddDialog()" matTooltip="Agregar educacion">
+            <mat-icon>add</mat-icon>
+        </button>
     <mat-list>
         <mat-list-item *ngFor="let educacion of educacion">
             <img 
@@ -11,22 +15,19 @@
             <h5>{{educacion.institucion}}</h5>
             <br>
             <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
+            <button mat-fab *ngIf="isUserLoggedIn()" 
+                (click)="openEditDialog(educacion.id)" 
+                matTooltip="Editar">
+                <mat-icon>edit</mat-icon>>
+            </button>
+            <button mat-fab *ngIf="isUserLoggedIn()" 
+                (click)="eliminar(educacion.id)" 
+                matTooltip="Eliminar">
+                <mat-icon>remove</mat-icon>
+            </button> 
         </mat-list-item>
     </mat-list>            
 </mat-card>
 <br>
 
-<!-- <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-educacion'">
-    <button mat-fab color="primary"
-        matTooltip="Agregar educacion">
-        <mat-icon>plus</mat-icon>
-    </button>
-</a>
-<button *ngIf="isUserLoggedIn()" (click)="editar(educacion.id)" 
-    mat-fab matTooltip="Editar">
-    <mat-icon></mat-icon>>
-</button>
-<button *ngIf="isUserLoggedIn()" (click)="eliminar(educacion.id)" 
-    mat-fab matTooltip="Eliminar">
-    <mat-icon></mat-icon>
-</button> -->
+

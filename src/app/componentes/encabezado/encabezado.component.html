@@ -18,13 +18,14 @@
                 <mat-icon>code</mat-icon>
                 </button>
             </a>
-            <a class="text-light" href="mailto:darioplacidogandini@outlook.com">
+            <a href="mailto:darioplacidogandini@outlook.com">
                 <button mat-fab class="headerButton"
                 matTooltip="Email de contacto">
                 <mat-icon>email</mat-icon>
                 </button>
             </a>
-            <button mat-raised-button color="primary" (click)="openLoginDialog()"
+            <button mat-raised-button color="primary" 
+                *ngIf="!isUserLoggedIn()" (click)="openLoginDialog()"
                 matTooltip="Iniciar sesión">
                     LOGIN
             </button>

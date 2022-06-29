@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/model/educacion.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+import { AgregarEducacionComponent } from './agregar-educacion/agregar-educacion.component';
+import { EditarEducacionComponent } from './editar-educacion/editar-educacion.component';
 
 @Component({
   selector: 'app-educacion',
@@ -14,7 +15,8 @@ export class EducacionComponent implements OnInit {
 
   educacion: Educacion[] = [];
 
-  constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,private ruta:Router) {}
+  constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,
+    public addDialog:MatDialog,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -30,8 +32,12 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  public editar(id: number) {
-    this.ruta.navigate(['editar-educacion', id]);
+  public openAddDialog() {
+    this.addDialog.open(AgregarEducacionComponent);
+  }
+
+  public openEditDialog(id: number) {
+    this.editDialog.open(EditarEducacionComponent);
   }
 
   public eliminar(id: number) {

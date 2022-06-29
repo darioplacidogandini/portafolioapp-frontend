@@ -7,9 +7,9 @@
             [src]="acerca.foto">                
         </div>
         <button *ngIf="isUserLoggedIn()" 
-                (click)="editar(acerca.id)" id="editButton"
+                (click)="editar(acerca.id)" class="editButton"
                 matTooltip="Editar perfil">
-                <mat-icon></mat-icon>
+                <mat-icon>edit</mat-icon>
         </button>
         <h1>{{acerca.nombre}}</h1>
         <h3>{{acerca.puesto}}</h3>
