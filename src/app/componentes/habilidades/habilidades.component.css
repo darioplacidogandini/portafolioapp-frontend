@@ -1,10 +1,5 @@
 mat-card {
-    height: 150px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
 
-mat-list-item {
-    display: flex;
-    flex-direction: row;
-}
