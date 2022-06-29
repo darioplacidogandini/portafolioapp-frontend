@@ -3,3 +3,8 @@ mat-card {
     display: flex;
     flex-direction: row;
 }
+
+mat-list-item {
+    display: flex;
+    flex-direction: row;
+}
