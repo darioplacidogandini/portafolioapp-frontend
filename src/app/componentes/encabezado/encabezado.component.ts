@@ -10,8 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor(private authenticationService:AuthenticationService,
-    private authService:AuthenticationService,public loginDialog:MatDialog) {}
+  constructor(private authService:AuthenticationService,public loginDialog:MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -24,6 +23,6 @@ export class EncabezadoComponent implements OnInit {
   }
 
   closeSession() {
-    this.authenticationService.logOut();
+    this.authService.logOut();
   }
 }

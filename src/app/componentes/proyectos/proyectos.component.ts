@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
+import { EditarProyectosComponent } from './editar-proyectos/editar-proyectos.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-proyectos',
@@ -13,7 +15,8 @@ export class ProyectosComponent implements OnInit {
   
   proyectos: Proyectos[] = [];
 
-  constructor(private datosProyectos:ProyectosService,private authService:AuthenticationService,private ruta:Router) {}
+  constructor(private datosProyectos:ProyectosService,private authService:AuthenticationService,
+      private editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -30,7 +33,7 @@ export class ProyectosComponent implements OnInit {
   }
 
   public editar(id: number) {
-    this.ruta.navigate(['editar-proyectos', id]);
+    this.editDialog.open(EditarProyectosComponent);
   }
 
   public eliminar(id: number) {
