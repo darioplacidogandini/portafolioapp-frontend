@@ -1,4 +1,4 @@
-mat-card {
+mat-list {
     display: flex;
     flex-direction: row-reverse;
 }

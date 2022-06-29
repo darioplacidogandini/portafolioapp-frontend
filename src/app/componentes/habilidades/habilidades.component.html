@@ -1,14 +1,6 @@
 <br>
-<mat-card id="habilidadesCard">
-    <h1>
-        Habilidades
-        <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
-            <button mat-fab 
-                id="editButton" matTooltip="Agregar habilidad">
-                <mat-icon>plus</mat-icon>
-            </button>
-        </a>
-    </h1>
+<mat-card>
+    <h1>Habilidades</h1>
     <mat-list>
         <mat-list-item *ngFor="let habilidad of habilidades">
             <mat-progress-spinner
@@ -16,7 +8,18 @@
                 mode="determinate">
             </mat-progress-spinner>
             <h2>{{habilidad.habilidad}}</h2>
-                <!-- <button *ngIf="isUserLoggedIn()" (click)="editar(habilidad.id)" 
+            </mat-list-item>
+    </mat-list>
+</mat-card>
+<br>
+
+<!-- <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-habilidades'">
+    <button mat-fab 
+        id="editButton" matTooltip="Agregar habilidad">
+        <mat-icon>plus</mat-icon>
+    </button>
+</a> -->
+<!-- <button *ngIf="isUserLoggedIn()" (click)="editar(habilidad.id)" 
                         class="btn btn-secondary rounded-circle" 
                         id="editButton" data-toggle="tooltip" 
                         data-placement="bottom" title="Editar">
@@ -28,7 +31,3 @@
                         data-placement="bottom" title="Eliminar">
                         <mat-icon>close</mat-icon>
                     </button> -->
-            </mat-list-item>
-    </mat-list>
-</mat-card>
-<br>
