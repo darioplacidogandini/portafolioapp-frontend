@@ -7,7 +7,7 @@
             [src]="acerca.foto">                
         </div>
         <button mat-fab *ngIf="isUserLoggedIn()" 
-                (click)="editar(acerca.id)" class="editButton"
+                (click)="openEditDialog(acerca.id)" class="editButton"
                 matTooltip="Editar perfil">
                 <mat-icon>edit</mat-icon>
         </button>

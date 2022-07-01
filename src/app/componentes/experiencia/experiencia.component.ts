@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { AgregarExperienciaComponent } from './agregar-experiencia/agregar-experiencia.component';
+import { EditarExperienciaComponent } from './editar-experiencia/editar-experiencia.component';
 
 @Component({
   selector: 'app-experiencia',
@@ -13,7 +16,8 @@ export class ExperienciaComponent implements OnInit {
   
   experiencia: Experiencia[] = [];
 
-  constructor(private datosExperiencia:ExperienciaService,private authService:AuthenticationService,private ruta:Router) {}
+  constructor(private datosExperiencia:ExperienciaService,private authService:AuthenticationService,
+    public addDiaglog:MatDialog,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -29,8 +33,12 @@ export class ExperienciaComponent implements OnInit {
     return this.authService.isUserLoggedIn();
   }
 
-  public editar(id: number) {
-    this.ruta.navigate(['editar-experiencia', id]);
+  public openAddDialog() {
+    this.addDiaglog.open(AgregarExperienciaComponent)
+  }
+
+  public openEditDialog(id: number) {
+    this.editDialog.open(EditarExperienciaComponent);
   }
 
   public eliminar(id: number) {

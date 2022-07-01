@@ -16,7 +16,7 @@ export class AgregarEducacionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  add() {
+  agregar() {
     this.educacionService.agregar(this.educacion).subscribe(data => {
       console.log(data);
     });

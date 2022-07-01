@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
@@ -12,15 +13,16 @@ export class AgregarHabilidadesComponent implements OnInit {
 
   habilidad: Habilidades = new Habilidades();
 
-  constructor(private habilidadesService:HabilidadesService, private ruta:Router) {}
+  constructor(private habilidadesService:HabilidadesService, 
+    public addDialog:MatDialog) {}
 
   ngOnInit(): void {}
 
   agregar() {
     this.habilidadesService.agregar(this.habilidad).subscribe(data => {
       console.log(data);
-      this.ruta.navigate(['/portfolio']);
     });
+    this.addDialog.closeAll();
   }
 
 }

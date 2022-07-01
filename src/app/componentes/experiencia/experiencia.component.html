@@ -1,7 +1,8 @@
 <br>
 <mat-card>
     <h1>Experiencia Laboral
-        <button *ngIf="isUserLoggedIn()" mat-fab color="primary" class="editButton" 
+        <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()"
+            mat-fab color="primary" class="editButton" 
             matTooltip="Agregar experiencia">
             <mat-icon>add</mat-icon>
         </button>
@@ -13,7 +14,7 @@
             <h3>{{experiencia.empresa}}</h3>
             <h5>{{experiencia.puesto}}</h5>
             <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
-            <button *ngIf="isUserLoggedIn()" (click)="editar(experiencia.id)" 
+            <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(experiencia.id)" 
                 mat-fab class="editButton"
                 matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
