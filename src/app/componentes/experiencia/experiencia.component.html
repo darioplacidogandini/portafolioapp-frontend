@@ -3,7 +3,7 @@
     <h1 color="primary">Experiencia Laboral
         <button *ngIf="isUserLoggedIn()" mat-fab color="primary" class="editButton" 
             matTooltip="Agregar experiencia">
-            <mat-icon>plus</mat-icon>
+            <mat-icon>add</mat-icon>
         </button>
     </h1>            
     <mat-list>
@@ -21,7 +21,7 @@
             <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
                 mat-fab class="editButton"
                 matTooltip="Eliminar">
-                <mat-icon>remove</mat-icon>
+                <mat-icon>delete</mat-icon>
             </button>
         </mat-list-item>            
     </mat-list>

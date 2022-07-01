@@ -3,7 +3,7 @@
     <h1>Educacion</h1>
         <button *ngIf="isUserLoggedIn()" mat-fab color="primary"
             (click)="openAddDialog()" matTooltip="Agregar educacion">
-            <mat-icon>plus</mat-icon>
+            <mat-icon>add</mat-icon>
         </button>
     <mat-list>
         <mat-list-item *ngFor="let educacion of educacion">

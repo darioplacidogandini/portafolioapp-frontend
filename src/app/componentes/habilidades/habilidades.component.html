@@ -5,7 +5,7 @@
     </mat-card-title>
     <button *ngIf="isUserLoggedIn()" mat-fab 
         id="editButton" matTooltip="Agregar habilidad">
-        <mat-icon>plus</mat-icon>
+        <mat-icon>add</mat-icon>
     </button>
     <mat-card-content>
         <mat-list>
@@ -23,7 +23,7 @@
                 <button mat-fab *ngIf="isUserLoggedIn()" 
                     (click)="eliminar(habilidad.id)" 
                     class="editButton" matTooltip="Eliminar">
-                    <mat-icon>remove</mat-icon>
+                    <mat-icon>delete</mat-icon>
                 </button>
             </mat-list-item>
         </mat-list>        

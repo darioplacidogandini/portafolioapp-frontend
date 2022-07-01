@@ -3,7 +3,7 @@
         <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-proyectos'">
             <button mat-fab color="primary"
                 class="editButton" matTooltip="Agregar proyecto">
-                <mat-icon>plus</mat-icon>
+                <mat-icon>add</mat-icon>
             </button>
         </a>
     <mat-list>
@@ -19,7 +19,7 @@
                 <button *ngIf="isUserLoggedIn()" (click)="eliminar(proyecto.id)" 
                     mat-fab color="primary"
                     matTooltip="Eliminar">
-                    <mat-icon>remove</mat-icon>
+                    <mat-icon>delete</mat-icon>
                 </button>
             <h5>{{proyecto.descripcion}}</h5>
                         <a href="{{proyecto.codigoFuente}}">
