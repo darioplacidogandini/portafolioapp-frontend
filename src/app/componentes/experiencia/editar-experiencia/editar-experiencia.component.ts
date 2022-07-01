@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
@@ -13,7 +14,8 @@ export class EditarExperienciaComponent implements OnInit {
   id: number = 0;
   experiencia: Experiencia = new Experiencia();
 
-  constructor(private datosExperiencia:ExperienciaService,private rutaActual:ActivatedRoute,private ruta:Router) {}
+  constructor(private datosExperiencia:ExperienciaService,private rutaActual:ActivatedRoute,
+    public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.id = this.rutaActual.snapshot.params['id'];
@@ -26,8 +28,8 @@ export class EditarExperienciaComponent implements OnInit {
     public guardarCambios(id: number) {
       this.datosExperiencia.editar(id,this.experiencia).subscribe(data => {
         console.log(data);
-        this.ruta.navigate(['/portfolio']);
       },error => console.log(error));
+      this.editDialog.closeAll();
     }
 
 }
