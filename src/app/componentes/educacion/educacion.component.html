@@ -15,15 +15,15 @@
             <h5>{{educacion.institucion}}</h5>
             <br>
             <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
-            <button mat-fab *ngIf="isUserLoggedIn()" 
+            <button mat-fab color="secondary" *ngIf="isUserLoggedIn()" 
                 (click)="openEditDialog(educacion.id)" 
                 matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button mat-fab *ngIf="isUserLoggedIn()" 
+            <button mat-fab color="secondary" *ngIf="isUserLoggedIn()" 
                 (click)="eliminar(educacion.id)" 
                 matTooltip="Eliminar">
-                <mat-icon>remove</mat-icon>
+                <mat-icon>delete</mat-icon>
             </button> 
         </mat-list-item>
     </mat-list>            

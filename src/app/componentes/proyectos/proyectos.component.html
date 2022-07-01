@@ -1,17 +1,15 @@
 <mat-card>
     <h1 color="primary">Proyectos</h1>
-        <a *ngIf="isUserLoggedIn()" [routerLink]="'/agregar-proyectos'">
-            <button mat-fab color="primary"
-                class="editButton" matTooltip="Agregar proyecto">
-                <mat-icon>add</mat-icon>
-            </button>
-        </a>
+    <button (click)="openAddDialog()" mat-fab color="primary"
+        class="editButton" matTooltip="Agregar proyecto">
+        <mat-icon>add</mat-icon>
+    </button>            
     <mat-list>
         <mat-list-item *ngFor="let proyecto of proyectos">
             <img [src]="proyecto.logo" 
             id="proyectPhoto" [alt]="'Logo' + proyecto.nombre">
             <h3>{{proyecto.nombre}}</h3>
-                <button *ngIf="isUserLoggedIn()" (click)="editar(proyecto.id)" 
+                <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(proyecto.id)" 
                     mat-fab color="primary"
                     matTooltip="Editar">
                     <mat-icon>edit</mat-icon>

@@ -3,8 +3,9 @@
     <mat-card-title>
         <h1>Habilidades</h1>
     </mat-card-title>
-    <button *ngIf="isUserLoggedIn()" mat-fab color="primary"
-        id="editButton" matTooltip="Agregar habilidad">
+    <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()" 
+        mat-fab color="primary" id="editButton" 
+        matTooltip="Agregar habilidad">
         <mat-icon>add</mat-icon>
     </button>
     <mat-card-content>
@@ -15,12 +16,12 @@
                     mode="determinate">
                 </mat-progress-spinner>
                 <h2>{{habilidad.habilidad}}</h2>
-                <button mat-fab *ngIf="isUserLoggedIn()" 
-                    (click)="editar(habilidad.id)" 
+                <button mat-fab color="secondary" *ngIf="isUserLoggedIn()" 
+                    (click)="openEditDialog(habilidad.id)" 
                     class="editButton" matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
                 </button>    
-                <button mat-fab *ngIf="isUserLoggedIn()" 
+                <button mat-fab color="secondary" *ngIf="isUserLoggedIn()" 
                     (click)="eliminar(habilidad.id)" 
                     class="editButton" matTooltip="Eliminar">
                     <mat-icon>delete</mat-icon>

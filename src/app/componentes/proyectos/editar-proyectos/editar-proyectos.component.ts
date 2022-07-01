@@ -28,8 +28,8 @@ export class EditarProyectosComponent implements OnInit {
   public guardarCambios() {
     this.datosProyectos.editar(this.id,this.proyecto).subscribe(data => {
       console.log(data);
-      this.editDialog.closeAll();
     },error => console.log(error));
+    this.editDialog.closeAll();
   }
 
 }

@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/servicios/authentication.service'
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 import { EditarProyectosComponent } from './editar-proyectos/editar-proyectos.component';
 import { MatDialog } from '@angular/material/dialog';
+import { AgregarProyectosComponent } from './agregar-proyectos/agregar-proyectos.component';
 
 @Component({
   selector: 'app-proyectos',
@@ -15,7 +16,7 @@ export class ProyectosComponent implements OnInit {
   proyectos: Proyectos[] = [];
 
   constructor(private datosProyectos:ProyectosService,private authService:AuthenticationService,
-      private editDialog:MatDialog) {}
+      public addDialog:MatDialog,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -31,7 +32,11 @@ export class ProyectosComponent implements OnInit {
     }); 
   }
 
-  public editar(id: number) {
+  public openAddDialog() {
+    this.addDialog.open(AgregarProyectosComponent);
+  }
+
+  public openEditDialog(id: number) {
     this.editDialog.open(EditarProyectosComponent);
   }
 
