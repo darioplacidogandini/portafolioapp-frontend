@@ -2,29 +2,34 @@
 <mat-dialog-content class="mat-typography">
     <mat-form-field>
         <label for="nombre">Nombre del proyecto</label>
-        <input [(ngModel)]="proyecto.nombre" type="text" 
+        <input [(ngModel)]="proyecto.nombre" 
+        type="text" appearance="fill"
         class="form-control" id="nombre" name="nombre">
     </mat-form-field>
     <mat-form-field>
         <label for="descripcion">Descripcion del proyecto</label>
-        <input [(ngModel)]="proyecto.descripcion" type="text" 
+        <input [(ngModel)]="proyecto.descripcion" 
+        type="text" appearance="fill"
         class="form-control" id="descripcion" name="descripcion">
     </mat-form-field>
     <br>
     <mat-form-field>
         <label for="url">URL del proyecto</label>
-        <input [(ngModel)]="proyecto.url" type="text" 
+        <input [(ngModel)]="proyecto.url" 
+        type="text" appearance="fill"
         class="form-control" id="url" name="url">
     </mat-form-field>
     <mat-form-field>
       <label for="codigoFuente">Repositorio codigo</label>
-      <input [(ngModel)]="proyecto.codigoFuente" type="text" 
+      <input [(ngModel)]="proyecto.codigoFuente" 
+      type="text" appearance="fill"
       class="form-control" id="codigoFuente" name="codigoFuente">
     </mat-form-field>
     <br>
     <mat-form-field>
         <label for="logo">Logo del proyecto</label>
-        <input [(ngModel)]="proyecto.logo" type="text" 
+        <input [(ngModel)]="proyecto.logo" 
+        type="text" appearance="fill"
         class="form-control" id="logo" name="logo">
     </mat-form-field>
 </mat-dialog-content>

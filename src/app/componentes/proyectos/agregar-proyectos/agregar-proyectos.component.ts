@@ -18,7 +18,7 @@ export class AgregarProyectosComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregarProyecto() {
+  agregar() {
     this.proyectosService.agregar(this.proyecto).subscribe(data => {
       console.log(data);
     });
