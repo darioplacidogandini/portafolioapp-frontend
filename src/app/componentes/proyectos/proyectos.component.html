@@ -1,6 +1,6 @@
 <mat-card>
     <h1 color="primary">Proyectos</h1>
-    <button (click)="openAddDialog()" mat-fab color="primary"
+    <button (click)="openAddDialog()" mat--mini-fab color="primary"
         class="editButton" matTooltip="Agregar proyecto">
         <mat-icon>add</mat-icon>
     </button>            
@@ -10,25 +10,25 @@
             id="proyectPhoto" [alt]="'Logo' + proyecto.nombre">
             <h3>{{proyecto.nombre}}</h3>
                 <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(proyecto.id)" 
-                    mat-fab color="primary"
+                    mat--mini-fab color="accent"
                     matTooltip="Editar">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button *ngIf="isUserLoggedIn()" (click)="eliminar(proyecto.id)" 
-                    mat-fab color="primary"
+                    mat--mini-fab color="accent"
                     matTooltip="Eliminar">
                     <mat-icon>delete</mat-icon>
                 </button>
             <h5>{{proyecto.descripcion}}</h5>
                         <a href="{{proyecto.codigoFuente}}">
-                            <button mat-raised-button color="primary" class="editButton"
+                            <button mat-raised-button color="accent" class="editButton"
                             data-toggle="tooltip" 
                             matTooltip="Código fuente">
                                 <mat-icon>code</mat-icon>
                             </button>
                         </a>
                         <a href="{{proyecto.url}}">
-                            <button mat-raised-button color="primary" class="editButton"
+                            <button mat-raised-button color="accent" class="editButton"
                             matTooltip="Ver proyecto">
                                 <mat-icon>visibility</mat-icon>
                             </button>

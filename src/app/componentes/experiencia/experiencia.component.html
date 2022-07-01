@@ -2,7 +2,7 @@
 <mat-card>
     <h1>Experiencia Laboral
         <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()"
-            mat-fab color="primary" class="editButton" 
+            mat--mini-fab color="primary" class="editButton" 
             matTooltip="Agregar experiencia">
             <mat-icon>add</mat-icon>
         </button>
@@ -15,12 +15,12 @@
             <h5>{{experiencia.puesto}}</h5>
             <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
             <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(experiencia.id)" 
-                mat-fab class="editButton"
+                mat--mini-fab class="editButton"
                 matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
             </button>
             <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
-                mat-fab class="editButton"
+                mat--mini-fab class="editButton"
                 matTooltip="Eliminar">
                 <mat-icon>delete</mat-icon>
             </button>
