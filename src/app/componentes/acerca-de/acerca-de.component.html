@@ -6,7 +6,7 @@
             <img class="rounded-circle" alt="Foto de Perfil" id="profilePhoto"
             [src]="acerca.foto">                
         </div>
-        <button *ngIf="isUserLoggedIn()" 
+        <button mat-fab *ngIf="isUserLoggedIn()" 
                 (click)="editar(acerca.id)" class="editButton"
                 matTooltip="Editar perfil">
                 <mat-icon>edit</mat-icon>
