@@ -1,37 +1,37 @@
-<h2 mat-dialog-title>Editar educación/h2>
+<h2 mat-dialog-title>Editar educación</h2>
 <mat-dialog-content class="mat-typography">
     <mat-form-field>
         <label for="titulo">Titulo</label>
-        <input [(ngModel)]="educacion.titulo" 
+        <input matInput [(ngModel)]="educacion.titulo" 
         type="text" appearance="fill"
         id="titulo" name="titulo">
     </mat-form-field>
     <mat-form-field>
         <label for="institucion">Institucion</label>
-        <input [(ngModel)]="educacion.institucion" 
+        <input matInput [(ngModel)]="educacion.institucion" 
         type="text" appearance="fill"
         id="institucion" name="institucion">
     </mat-form-field>
     <br>
     <mat-form-field>
         <label for="fecha">Fecha</label>
-        <input [(ngModel)]="educacion.fecha" 
+        <input matInput [(ngModel)]="educacion.fecha" 
         type="text" appearance="fill"
         id="fecha" name="fecha">
     </mat-form-field>
     <mat-form-field>
         <label for="duracion">Duracion</label>
-        <input [(ngModel)]="educacion.duracion" 
+        <input matInput [(ngModel)]="educacion.duracion" 
         type="text" appearance="fill"
         id="duracion" name="duracion">
     </mat-form-field>
+    <br>
     <mat-form-field>
         <label for="logo">URL logo de la institucion</label>
-        <input [(ngModel)]="educacion.logo" 
+        <input matInput [(ngModel)]="educacion.logo" 
         type="text" appearance="fill"
         id="logo" name="logo">
     </mat-form-field>
-    <br>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button type="submit" mat-raised-button color="primary"
