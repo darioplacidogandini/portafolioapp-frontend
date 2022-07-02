@@ -4,3 +4,8 @@ body {
     height: 100%;
 }
 
+matInput {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+

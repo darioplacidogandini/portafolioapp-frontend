@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/model/educacion.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
@@ -14,12 +16,14 @@ import { EditarEducacionComponent } from './editar-educacion/editar-educacion.co
 export class EducacionComponent implements OnInit {
 
   educacion: Educacion[] = [];
+  currentURL: string = '';
 
   constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,
-    public addDialog:MatDialog,public editDialog:MatDialog) {}
+    private router:Router,private newURL:Location,public addDialog:MatDialog,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
+    this.currentURL = this.router.url;
   }
 
   public isUserLoggedIn() {
@@ -37,6 +41,7 @@ export class EducacionComponent implements OnInit {
   }
 
   public openEditDialog(id: number) {
+    this.newURL.replaceState(this.currentURL + id);
     this.editDialog.open(EditarEducacionComponent);
   }
 
