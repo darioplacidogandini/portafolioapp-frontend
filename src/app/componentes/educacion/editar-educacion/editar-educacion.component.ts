@@ -12,20 +12,23 @@ import { EducacionComponent } from '../educacion.component';
 export class EditarEducacionComponent implements OnInit {
 
 educacion: Educacion = new Educacion();
+id: number = 0;
   
     constructor(private datosEducacion:EducacionService,
-    private educacionId:EducacionComponent,public editarDialog:MatDialog) {}
+    private educacionId:EducacionComponent,public editarDialog:MatDialog) {
+      this.id = educacionId.id;
+    }
   
     ngOnInit(): void {
       
       this.educacion = new Educacion();
-      this.datosEducacion.buscar(this.educacionId.id).subscribe(data => {
+      this.datosEducacion.buscar(this.id).subscribe(data => {
         this.educacion = data;
       }, error => console.log(error));
     }
   
     public guardarCambios() {
-      this.datosEducacion.editar(this.educacionId.id,this.educacion).subscribe(data => {
+      this.datosEducacion.editar(this.id,this.educacion).subscribe(data => {
         console.log(data);
       }, error => console.log(error));
       this.editarDialog.closeAll();
