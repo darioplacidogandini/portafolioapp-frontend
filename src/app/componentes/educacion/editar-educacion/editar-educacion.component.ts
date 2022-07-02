@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+import { EducacionComponent } from '../educacion.component';
 
 @Component({
   selector: 'app-editar-educacion',
@@ -11,22 +11,21 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EditarEducacionComponent implements OnInit {
 
-id: number = 0;
 educacion: Educacion = new Educacion();
   
-    constructor(private datosEducacion:EducacionService,private rutaActiva:ActivatedRoute,
-      public editarDialog:MatDialog) {}
+    constructor(private datosEducacion:EducacionService,
+    private educacionId:EducacionComponent,public editarDialog:MatDialog) {}
   
     ngOnInit(): void {
-      this.id = this.rutaActiva.snapshot.params['id'];
+      
       this.educacion = new Educacion();
-      this.datosEducacion.buscar(this.id).subscribe(data => {
+      this.datosEducacion.buscar(this.educacionId.id).subscribe(data => {
         this.educacion = data;
       }, error => console.log(error));
     }
   
-    public guardarCambios(id: number) {
-      this.datosEducacion.editar(id,this.educacion).subscribe(data => {
+    public guardarCambios() {
+      this.datosEducacion.editar(this.educacionId.id,this.educacion).subscribe(data => {
         console.log(data);
       }, error => console.log(error));
       this.editarDialog.closeAll();

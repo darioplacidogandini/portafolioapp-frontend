@@ -16,7 +16,7 @@
             <br>
             <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
             <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
-                (click)="openEditDialog()" 
+                (click)="openEditDialog(educacion.id)" 
                 matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
             </button>

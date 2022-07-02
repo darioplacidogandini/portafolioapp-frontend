@@ -15,7 +15,8 @@ import { EditarEducacionComponent } from './editar-educacion/editar-educacion.co
 export class EducacionComponent implements OnInit {
 
   educacion: Educacion[] = [];
-  
+  id: number = 0;
+
   constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,
   public addDialog:MatDialog,public editDialog:MatDialog) {}
 
@@ -37,7 +38,8 @@ export class EducacionComponent implements OnInit {
     this.addDialog.open(AgregarEducacionComponent);
   }
 
-  public openEditDialog() {
+  public openEditDialog(id: number) {
+    this.id = id;
     this.editDialog.open(EditarEducacionComponent);
   }
 
