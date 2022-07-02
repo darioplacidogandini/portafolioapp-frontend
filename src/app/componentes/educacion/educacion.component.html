@@ -7,7 +7,7 @@
         </button>
     <mat-list>
         <mat-list-item *ngFor="let educacion of educacion">
-            <img 
+            <img mat-card-image
             [src]="educacion.logo" id="educacionPhoto"
             [alt]="'Logo' + educacion.institucion">
             <h3 mat-line>{{educacion.titulo}} </h3>

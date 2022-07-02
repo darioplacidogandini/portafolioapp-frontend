@@ -1,19 +1,4 @@
-mat-card {
-    display: flex;
-    flex-direction: row;
-}
-
-#headerTitle {
-    float: left;
-}
-
-#headerMenu {
-    float: right;
-}
-
 #headerLogo {
-    height: 50px;
-    width: 50px;
     border-radius: 50%;
 }
 
