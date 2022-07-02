@@ -1,8 +1,6 @@
 <br>
 <mat-card>
-    <mat-card-title>
-        <h1>Habilidades</h1>
-    </mat-card-title>
+    <h1>Habilidades</h1>
     <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()" 
         mat-mini-fab color="primary" id="editButton" 
         matTooltip="Agregar habilidad">
@@ -11,11 +9,11 @@
     <mat-card-content>
         <mat-list>
             <mat-list-item *ngFor="let habilidad of habilidades">
-                <mat-progress-spinner
+                <mat-progress-spinner mat-line
                     [value]="habilidad.porcentaje"
                     mode="determinate">
                 </mat-progress-spinner>
-                <h2>{{habilidad.habilidad}}</h2>
+                <h2 mat-line>{{habilidad.habilidad}}</h2>
                 <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
                     (click)="openEditDialog(habilidad.id)" 
                     class="editButton" matTooltip="Editar">

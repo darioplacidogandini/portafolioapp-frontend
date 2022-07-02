@@ -10,11 +10,11 @@
             <img 
             [src]="educacion.logo" id="educacionPhoto"
             [alt]="'Logo' + educacion.institucion">
-            <h3>{{educacion.titulo}} </h3>
+            <h3 mat-line>{{educacion.titulo}} </h3>
             <br>
-            <h5>{{educacion.institucion}}</h5>
+            <h5 mat-line>{{educacion.institucion}}</h5>
             <br>
-            <p>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
+            <p mat-line>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
             <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
                 (click)="openEditDialog(educacion.id)" 
                 matTooltip="Editar">

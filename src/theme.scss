@@ -1,13 +1,15 @@
 @import '~@angular/material/theming';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 @include mat-core();
 
 $primary: (
     Main: #4682b4,
-    Light:#804b85,
+    Light:#7ba7cc,
     Dark: #28002f,
     contrast: (
-        Main: #f5f5f5,
+        Main: #fff,
         Light: #000,
         Dark: #fff
     )
@@ -15,10 +17,10 @@ $primary: (
  
 $accent: (
     Main: #708090,
-    Light:#804b85,
+    Light:#9ba6b1,
     Dark: #28002f,
     contrast: (
-        Main: #f5f5f5,
+        Main: #fff,
         Light: #000,
         Dark: #fff
     )
@@ -26,10 +28,10 @@ $accent: (
  
 $warn: (
     Main: #dc143c,
-    Light:#804b85,
-    Dark: #28002f,
+    Light:#ef4e6e,
+    Dark: #000,
     contrast: (
-        Main: #f5f5f5,
+        Main: #fff,
         Light: #000,
         Dark: #fff
  )
@@ -43,3 +45,11 @@ $app-warn:    mat-palette($warn, Main, Light, Dark);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 @include angular-material-theme($app-theme);
+
+.material-icons {
+    font-size: 24px;
+    font-family: 'Material Icons', 'Material Icons';  
+    .mat-badge-content {
+      font-family: 'Roboto';
+}
+}
