@@ -18,7 +18,7 @@ export class EducacionComponent implements OnInit {
   id: number = 0;
 
   constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,
-  public addDialog:MatDialog,public editDialog:MatDialog) {}
+  private route:Router,public addDialog:MatDialog,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -39,8 +39,8 @@ export class EducacionComponent implements OnInit {
   }
 
   public openEditDialog(id: number) {
-    this.id = id;
     this.editDialog.open(EditarEducacionComponent);
+    this.route.navigate(['editar-educacion',id])
   }
 
   public eliminar(id: number) {

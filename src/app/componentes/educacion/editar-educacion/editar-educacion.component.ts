@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
-import { EducacionComponent } from '../educacion.component';
 
 @Component({
   selector: 'app-editar-educacion',
@@ -11,17 +11,16 @@ import { EducacionComponent } from '../educacion.component';
 })
 export class EditarEducacionComponent implements OnInit {
 
-educacion: Educacion = new Educacion();
-id: number = 0;
-  
-    constructor(private datosEducacion:EducacionService,
-    private educacionId:EducacionComponent,public editarDialog:MatDialog) {
-      this.id = educacionId.id;
+  id: number = 0;
+  educacion: Educacion = new Educacion();
+
+    constructor(private datosEducacion:EducacionService, private router:Router,
+    private route:ActivatedRoute,public editarDialog:MatDialog) {
     }
   
     ngOnInit(): void {
-      
       this.educacion = new Educacion();
+      this.id = this.route.snapshot.params['id'];
       this.datosEducacion.buscar(this.id).subscribe(data => {
         this.educacion = data;
       }, error => console.log(error));
@@ -31,6 +30,7 @@ id: number = 0;
       this.datosEducacion.editar(this.id,this.educacion).subscribe(data => {
         console.log(data);
       }, error => console.log(error));
+      this.router.navigate(['']);
       this.editarDialog.closeAll();
     }
 }
