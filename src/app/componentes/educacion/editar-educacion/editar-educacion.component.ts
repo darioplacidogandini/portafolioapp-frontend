@@ -31,7 +31,7 @@ export class EditarEducacionComponent implements OnInit {
         console.log(data);
       }, error => console.log(error));
       this.router.navigate(['']);
-      this.editarDialog.closeAll();
+      //this.editarDialog.closeAll();
     }
 }
 

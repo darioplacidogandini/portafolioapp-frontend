@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Acerca } from 'src/app/model/acerca.model';
 import { AcercaService } from 'src/app/servicios/acerca.service';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
@@ -15,7 +16,7 @@ export class AcercaDeComponent implements OnInit {
   acerca: Acerca[] = [];
 
   constructor(private datosAcerca:AcercaService,private authService:AuthenticationService,
-    public editDialog:MatDialog) {}
+    private router:Router,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -32,7 +33,7 @@ export class AcercaDeComponent implements OnInit {
   }
 
   public openEditDialog(id: number) {
-    this.editDialog.open(EditarAcercaComponent);
+    this.router.navigate(['/editar-acerca', id]);
   }
   
 }

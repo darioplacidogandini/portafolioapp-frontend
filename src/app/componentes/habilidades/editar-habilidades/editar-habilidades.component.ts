@@ -11,14 +11,14 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class EditarHabilidadesComponent implements OnInit {
 
-  constructor(private datosHabilidades:HabilidadesService,private router:ActivatedRoute,
+  constructor(private datosHabilidades:HabilidadesService,private route:ActivatedRoute,
     public editDialog:MatDialog) {}
 
   id: number = 0;
   habilidad: Habilidades = new Habilidades();
 
   ngOnInit(): void {
-    this.id = this.router.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
     this.datosHabilidades.buscar(this.id).subscribe(data => { 
       this.habilidad = data;
     },error => console.log(error));

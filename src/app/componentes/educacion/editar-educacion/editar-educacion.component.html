@@ -1,5 +1,4 @@
-<h2 mat-dialog-title>Editar educación</h2>
-<mat-dialog-content class="mat-typography">
+<form (ngSubmit)="guardarCambios()">
     <mat-form-field>
         <label for="titulo">Titulo</label>
         <input matInput [(ngModel)]="educacion.titulo" 
@@ -32,10 +31,8 @@
         type="text" appearance="fill"
         class="form-control" id="logo" name="logo">
     </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
   <button type="submit" mat-raised-button color="primary"
-    (click)="guardarCambios()" cdkFocusInitial
+    cdkFocusInitial
     matTooltip="Guardar cambios">
     <mat-icon>check</mat-icon>
   </button>
@@ -43,6 +40,7 @@
     mat-dialog-close matTooltip="Salir">
     <mat-icon>cancel</mat-icon>
   </button>
-</mat-dialog-actions>
+</form>
+
 
 

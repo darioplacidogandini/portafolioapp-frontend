@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Acerca } from 'src/app/model/acerca.model';
 import { AcercaService } from 'src/app/servicios/acerca.service';
 
@@ -15,7 +15,7 @@ export class EditarAcercaComponent implements OnInit {
   acerca: Acerca = new Acerca();
 
   constructor(private acercaService:AcercaService,private rutaActual:ActivatedRoute,
-    public editDialog:MatDialog) {}
+    private route:Router,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.id = this.rutaActual.snapshot.params['id'];
@@ -28,7 +28,7 @@ export class EditarAcercaComponent implements OnInit {
     this.acercaService.editar(this.id,this.acerca).subscribe(data => {
       console.log(data);
     }, error => console.log(error)); 
-    this.editDialog.closeAll();
+    this.route.navigate(['']);
   }
 
 }
