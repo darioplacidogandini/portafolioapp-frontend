@@ -39,7 +39,7 @@ export class EducacionComponent implements OnInit {
   }
 
   public openEditDialog(id: number) {
-    //this.editDialog.open(EditarEducacionComponent);
+    this.editDialog.open(EditarEducacionComponent);
     this.route.navigate(['editar-educacion',id])
   }
 
