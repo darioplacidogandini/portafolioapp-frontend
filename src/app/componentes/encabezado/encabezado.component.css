@@ -1,7 +1,9 @@
 #headerLogo {
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
+}
+
+#header-spacer {
+    flex: 1 1 auto;
 }
 
 

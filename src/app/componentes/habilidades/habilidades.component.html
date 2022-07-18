@@ -6,8 +6,9 @@
         matTooltip="Agregar habilidad">
         <mat-icon>add</mat-icon>
     </button>
-    <mat-card-content>
+    <mat-grid-list cols="4" rowHeight="300px">
         <mat-list>
+            <mat-grid-tile>
             <mat-list-item *ngFor="let habilidad of habilidades">
                 <mat-progress-spinner mat-list-icon
                     [value]="habilidad.porcentaje"
@@ -25,7 +26,8 @@
                     <mat-icon>delete</mat-icon>
                 </button>
             </mat-list-item>
+            </mat-grid-tile>
         </mat-list>        
-    </mat-card-content>
+    </mat-grid-list>
 </mat-card>
 <br>
