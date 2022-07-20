@@ -18,8 +18,9 @@ export class EditarExperienciaComponent implements OnInit {
     private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-     this.id = this.route.snapshot.params['id'];
-     this.searchExperiencia();
+    this.experiencia = new Experiencia;
+    this.id = this.route.snapshot.params['id'];
+    this.searchExperiencia();
   }
 
   public searchExperiencia() {

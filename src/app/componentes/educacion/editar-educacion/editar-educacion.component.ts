@@ -15,25 +15,26 @@ export class EditarEducacionComponent implements OnInit {
   id: number = 0;
   educacion: Educacion = new Educacion();
 
-    constructor(private datosEducacion:EducacionService, private router:Router,
+    constructor(private educacionService:EducacionService, private router:Router,
     private route:ActivatedRoute,public editarDialog:MatDialog, private edu:EducacionComponent) {
     }
   
     ngOnInit(): void {
       this.educacion = new Educacion();
-      this.id = this.edu.id;
-      //this.id = this.route.snapshot.params['id'];
-      this.datosEducacion.buscar(this.edu.id).subscribe(data => {
+      this.id = this.route.snapshot.params['id'];
+      this.searchExperiencia();
+    }
+
+    public searchExperiencia() {
+      this.educacionService.buscar(this.edu.id).subscribe(data => {
         this.educacion = data;
       }, error => console.log(error));
     }
   
-    public guardarCambios() {
-      this.datosEducacion.editar(this.id,this.educacion).subscribe(data => {
+    public saveChanges() {
+      this.educacionService.editar(this.id,this.educacion).subscribe(data => {
         console.log(data);
       }, error => console.log(error));
-      //this.router.navigate(['']);
-      this.editarDialog.closeAll();
     }
 }
 

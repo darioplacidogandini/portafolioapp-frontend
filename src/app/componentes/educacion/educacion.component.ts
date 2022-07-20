@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/model/educacion.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
@@ -18,7 +17,7 @@ export class EducacionComponent implements OnInit {
   id: number = 0;
 
   constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,
-  private route:Router,public addDialog:MatDialog,public editDialog:MatDialog) {}
+  public dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -35,13 +34,11 @@ export class EducacionComponent implements OnInit {
   }
 
   public openAddDialog() {
-    this.addDialog.open(AgregarEducacionComponent);
+    this.dialog.open(AgregarEducacionComponent);
   }
 
   public openEditDialog(id: number) {
-    //this.route.navigate(['editar-educacion',id])
-    this.id = id;
-    this.editDialog.open(EditarEducacionComponent);
+    this.dialog.open(EditarEducacionComponent);
   }
 
   public eliminar(id: number) {
