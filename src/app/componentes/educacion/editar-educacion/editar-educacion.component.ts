@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 import { EducacionComponent } from '../educacion.component';
@@ -12,19 +10,19 @@ import { EducacionComponent } from '../educacion.component';
 })
 export class EditarEducacionComponent implements OnInit {
 
-  id: number = this.educacionComponent.id;
+  id: number = 0;
   educacion: Educacion = new Educacion();
 
-    constructor(private educacionService:EducacionService,public editarDialog:MatDialog,
-      private educacionComponent:EducacionComponent) {
+    constructor(private educacionService:EducacionService,private educacionComponent:EducacionComponent) {
     }
   
     ngOnInit(): void {
+      this.id = this.educacionComponent.id;
       this.educacion = new Educacion();
-      this.searchExperiencia();
+      this.searchEducacion();
     }
 
-    public searchExperiencia() {
+    public searchEducacion() {
       this.educacionService.buscar(this.id).subscribe(data => {
         this.educacion = data;
       }, error => console.log(error));

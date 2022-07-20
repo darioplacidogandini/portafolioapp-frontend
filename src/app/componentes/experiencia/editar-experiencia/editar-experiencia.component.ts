@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { ExperienciaComponent } from '../experiencia.component';
 
 @Component({
   selector: 'app-editar-experiencia',
@@ -14,12 +13,11 @@ export class EditarExperienciaComponent implements OnInit {
   id: number = 0;
   experiencia: Experiencia = new Experiencia();
 
-  constructor(private experienciaService:ExperienciaService,
-    private route:ActivatedRoute) {}
+  constructor(private experienciaService:ExperienciaService,private experienciaComponent:ExperienciaComponent) {}
 
   ngOnInit(): void {
+    this.id = this.experienciaComponent.id;
     this.experiencia = new Experiencia;
-    this.id = this.route.snapshot.params['id'];
     this.searchExperiencia();
   }
 
