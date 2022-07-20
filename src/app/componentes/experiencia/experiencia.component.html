@@ -14,7 +14,7 @@
             <h3 mat-line>{{experiencia.empresa}}</h3>
             <h5 mat-line>{{experiencia.puesto}}</h5>
             <p mat-line>{{experiencia.inicio}} - {{experiencia.fin}}</p>
-            <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(experiencia.id)" 
+            <button *ngIf="isUserLoggedIn()" (click)="openEditDialog()" 
                 mat-mini-fab color="accent" class="editButton"
                 matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
