@@ -12,11 +12,11 @@ import { EducacionComponent } from '../educacion.component';
 })
 export class EditarEducacionComponent implements OnInit {
 
-  id: number = 0;
+  id: number = this.educacionComponent.id;
   educacion: Educacion = new Educacion();
 
-    constructor(private educacionService:EducacionService,private route:ActivatedRoute,
-      public editarDialog:MatDialog, private educacionComponent:EducacionComponent) {
+    constructor(private educacionService:EducacionService,public editarDialog:MatDialog,
+      private educacionComponent:EducacionComponent) {
     }
   
     ngOnInit(): void {
@@ -25,7 +25,7 @@ export class EditarEducacionComponent implements OnInit {
     }
 
     public searchExperiencia() {
-      this.educacionService.buscar(this.educacionComponent.id).subscribe(data => {
+      this.educacionService.buscar(this.id).subscribe(data => {
         this.educacion = data;
       }, error => console.log(error));
     }
