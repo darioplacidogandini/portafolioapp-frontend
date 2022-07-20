@@ -14,7 +14,6 @@ import { EditarExperienciaComponent } from './editar-experiencia/editar-experien
 export class ExperienciaComponent implements OnInit {
   
   experiencia: Experiencia[] = [];
-  editedExperiencia: Experiencia = new Experiencia();
   id: number = 0;
 
   constructor(private datosExperiencia:ExperienciaService,private authService:AuthenticationService,
@@ -30,12 +29,6 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
-  public searchExperiencia() {
-    this.datosExperiencia.buscar(this.id).subscribe(data => {
-      this.editedExperiencia = data;
-    },error => console.log(error));
-  }
-
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }
@@ -44,16 +37,8 @@ export class ExperienciaComponent implements OnInit {
     this.dialog.open(AgregarExperienciaComponent)
   }
 
-  public openEditDialog(id: number) {
-    this.id = id;
-    this.searchExperiencia();
+  public openEditDialog() {
     this.dialog.open(EditarExperienciaComponent);
-  }
-
-  public saveChanges() {
-    this.datosExperiencia.editar(this.id,this.editedExperiencia).subscribe(data => {
-      console.log(data);
-    },error => console.log(error));
   }
 
   public eliminar(id: number) {

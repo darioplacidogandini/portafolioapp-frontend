@@ -14,9 +14,25 @@ export class EditarExperienciaComponent implements OnInit {
   id: number = 0;
   experiencia: Experiencia = new Experiencia();
 
-  constructor() {}
+  constructor(private experienciaService:ExperienciaService,
+    private route:ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+     this.id = this.route.snapshot.params['id'];
+     this.searchExperiencia();
+  }
+
+  public searchExperiencia() {
+    this.experienciaService.buscar(this.id).subscribe(data => {
+      this.experiencia = data;
+    },error => console.log(error));
+  }
+
+  public saveChanges() {
+    this.experienciaService.editar(this.id,this.experiencia).subscribe(data => {
+      console.log(data);
+    },error => console.log(error));
+  }
 
 }
 
