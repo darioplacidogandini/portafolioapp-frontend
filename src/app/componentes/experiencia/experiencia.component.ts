@@ -4,6 +4,7 @@ import { Experiencia } from 'src/app/model/experiencia.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 import { AgregarExperienciaComponent } from './agregar-experiencia/agregar-experiencia.component';
+import { EditarExperienciaComponent } from './editar-experiencia/editar-experiencia.component';
 
 @Component({
   selector: 'app-experiencia',
@@ -17,7 +18,7 @@ export class ExperienciaComponent implements OnInit {
   id: number = 0;
 
   constructor(private datosExperiencia:ExperienciaService,private authService:AuthenticationService,
-    public addDiaglog:MatDialog,public editDialog:MatDialog) {}
+    public dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listar();
@@ -40,13 +41,13 @@ export class ExperienciaComponent implements OnInit {
   }
 
   public openAddDialog() {
-    this.addDiaglog.open(AgregarExperienciaComponent)
+    this.dialog.open(AgregarExperienciaComponent)
   }
 
   public openEditDialog(id: number) {
     this.id = id;
     this.searchExperiencia();
-    this.editDialog.open(editDialog);
+    this.dialog.open(EditarExperienciaComponent);
   }
 
   public saveChanges() {
@@ -63,9 +64,4 @@ export class ExperienciaComponent implements OnInit {
   }
 }
 
-@Component({
-  selector: 'edit-dialog',
-  templateUrl: 'edit-dialog.html',
-})
-export class editDialog {} 
 
