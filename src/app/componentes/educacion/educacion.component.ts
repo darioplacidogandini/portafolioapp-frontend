@@ -38,6 +38,7 @@ export class EducacionComponent implements OnInit {
   }
 
   public openEditDialog(id: number) {
+    this.id = id;
     this.dialog.open(EditarEducacionComponent);
   }
 
