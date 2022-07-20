@@ -26,7 +26,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "./src/stles.css",
+              "./src/styles.css",
               "./src/theme.scss"
             ],
             "scripts": []
