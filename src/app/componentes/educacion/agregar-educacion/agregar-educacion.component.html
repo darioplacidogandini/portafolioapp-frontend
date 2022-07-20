@@ -1,19 +1,19 @@
 <h2 mat-dialog-title>Editar educación</h2>
 <mat-dialog-content class="mat-typography">
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="titulo">Titulo</label>
         <input matInput [(ngModel)]="educacion.titulo" 
         type="text" appearance="fill"
         id="titulo" name="titulo">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="institucion">Institucion</label>
         <input matInput [(ngModel)]="educacion.institucion" 
         type="text" appearance="fill"
         id="institucion" name="institucion">
     </mat-form-field>
     <br>
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="fecha">Fecha</label>
         <input matInput [(ngModel)]="educacion.fecha" 
         type="text" appearance="fill"
@@ -26,7 +26,7 @@
         id="duracion" name="duracion">
     </mat-form-field>
     <br>
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="logo">URL logo de la institucion</label>
         <input matInput [(ngModel)]="educacion.logo" 
         type="text" appearance="fill"
