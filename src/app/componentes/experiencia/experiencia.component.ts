@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 import { AgregarExperienciaComponent } from './agregar-experiencia/agregar-experiencia.component';
-import { EditarExperienciaComponent } from './editar-experiencia/editar-experiencia.component';
 
 @Component({
   selector: 'app-experiencia',
@@ -15,6 +13,8 @@ import { EditarExperienciaComponent } from './editar-experiencia/editar-experien
 export class ExperienciaComponent implements OnInit {
   
   experiencia: Experiencia[] = [];
+  editedExperiencia: Experiencia = new Experiencia();
+  id: number = 0;
 
   constructor(private datosExperiencia:ExperienciaService,private authService:AuthenticationService,
     public addDiaglog:MatDialog,public editDialog:MatDialog) {}
@@ -29,6 +29,12 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
+  public searchExperiencia() {
+    this.datosExperiencia.buscar(this.id).subscribe(data => {
+      this.editedExperiencia = data;
+    },error => console.log(error));
+  }
+
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }
@@ -38,7 +44,15 @@ export class ExperienciaComponent implements OnInit {
   }
 
   public openEditDialog(id: number) {
-    this.editDialog.open(EditarExperienciaComponent);
+    this.id = id;
+    this.searchExperiencia();
+    this.editDialog.open(editDialog);
+  }
+
+  public saveChanges() {
+    this.datosExperiencia.editar(this.id,this.editedExperiencia).subscribe(data => {
+      console.log(data);
+    },error => console.log(error));
   }
 
   public eliminar(id: number) {
@@ -47,5 +61,11 @@ export class ExperienciaComponent implements OnInit {
       this.listar();
     });
   }
-
 }
+
+@Component({
+  selector: 'edit-dialog',
+  templateUrl: 'edit-dialog.html',
+})
+export class editDialog {} 
+

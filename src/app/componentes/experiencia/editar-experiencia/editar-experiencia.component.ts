@@ -25,11 +25,5 @@ export class EditarExperienciaComponent implements OnInit {
     },error => console.log(error));
   }
 
-    public guardarCambios(id: number) {
-      this.datosExperiencia.editar(id,this.experiencia).subscribe(data => {
-        console.log(data);
-      },error => console.log(error));
-      this.editDialog.closeAll();
-    }
-
 }
+

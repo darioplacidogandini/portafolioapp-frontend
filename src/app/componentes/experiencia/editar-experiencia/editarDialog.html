@@ -1,5 +1,5 @@
-<form (ngSubmit)="agregar()"> 
-    <h2 mat-dialog-title>Agregar experiencia</h2>
+<form (ngSubmit)="guardarCambios(experiencia.id)">
+    <h2 mat-dialog-title>Editar experiencia</h2>
     <mat-dialog-content class="mat-typography">
         <mat-form-field>
             <label for="empresa">Empresa</label>
@@ -45,4 +45,3 @@
       </button>
     </mat-dialog-actions>
 </form>
-    
