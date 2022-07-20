@@ -18,7 +18,6 @@ export class EditarEducacionComponent implements OnInit {
   
     ngOnInit(): void {
       this.id = this.educacionComponent.id;
-      this.educacion = new Educacion();
       this.searchEducacion();
     }
 

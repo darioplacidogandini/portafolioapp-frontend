@@ -1,32 +1,32 @@
 <h2 mat-dialog-title>Editar proyecto</h2>
 <mat-dialog-content class="mat-typography">
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="nombre">Nombre del proyecto</label>
         <input matInput [(ngModel)]="proyecto.nombre" 
         type="text" appearance="fill"
         class="form-control" id="nombre" name="nombre">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="descripcion">Descripcion del proyecto</label>
         <input matInput [(ngModel)]="proyecto.descripcion" 
         type="text" appearance="fill"
         class="form-control" id="descripcion" name="descripcion">
     </mat-form-field>
     <br>
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="url">URL del proyecto</label>
         <input matInput [(ngModel)]="proyecto.url" 
         type="text" appearance="fill"
         class="form-control" id="url" name="url">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="form-field">
       <label for="codigoFuente">Repositorio codigo</label>
       <input matInput [(ngModel)]="proyecto.codigoFuente" 
       type="text" appearance="fill"
       class="form-control" id="codigoFuente" name="codigoFuente">
     </mat-form-field>
     <br>
-    <mat-form-field>
+    <mat-form-field class="form-field">
         <label for="logo">Logo del proyecto</label>
         <input matInput [(ngModel)]="proyecto.logo" 
         type="text" appearance="fill"

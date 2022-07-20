@@ -17,7 +17,6 @@ export class EditarExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.experienciaComponent.id;
-    this.experiencia = new Experiencia;
     this.searchExperiencia();
   }
 
