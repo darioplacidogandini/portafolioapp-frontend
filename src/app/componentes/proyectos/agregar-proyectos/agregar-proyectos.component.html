@@ -21,6 +21,13 @@
             class="form-control" id="url" name="url">
         </mat-form-field>
         <mat-form-field class="form-field">
+            <label for="urlCodigo">URL código fuente</label>
+            <input matInput [(ngModel)]="proyecto.codigoFuente" 
+            type="text" appearance="fill"
+            class="form-control" id="urlCodigo" name="urlCodigo">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="form-field">
             <label for="logo">Logo del proyecto</label>
             <input matInput [(ngModel)]="proyecto.logo" 
             type="text" appearance="fill"
