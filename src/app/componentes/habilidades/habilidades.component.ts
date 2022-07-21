@@ -16,19 +16,19 @@ export class HabilidadesComponent implements OnInit {
 
   habilidades: Habilidades[] = [];
 
-  constructor(private datosHabilidades:HabilidadesService,private authService:AuthenticationService,
+  constructor(private abilitiesService:HabilidadesService,private authService:AuthenticationService,
     public addDialog:MatDialog,public editDialog:MatDialog) {}
 
   ngOnInit(): void {
-    this.listar();
+    this.listAbilities();
   }
 
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }
 
-  public listar() {
-    this.datosHabilidades.listar().subscribe(data => {
+  public listAbilities() {
+    this.abilitiesService.listar().subscribe(data => {
       this.habilidades = data;
     });
   }
@@ -41,10 +41,10 @@ export class HabilidadesComponent implements OnInit {
     this.editDialog.open(EditarHabilidadesComponent);
   }
 
-  public eliminar(id: number) {
-    this.datosHabilidades.eliminar(id).subscribe(data => {
+  public deleteAbility(id: number) {
+    this.abilitiesService.eliminar(id).subscribe(data => {
       console.log(data);
-      this.listar();
+      this.listAbilities();
     });
   }
   

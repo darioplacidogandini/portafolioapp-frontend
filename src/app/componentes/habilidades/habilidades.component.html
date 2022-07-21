@@ -11,7 +11,10 @@
             <mat-list-item *ngFor="let habilidad of habilidades">
                 <mat-progress-spinner mat-list-icon
                     [value]="habilidad.porcentaje"
-                    mode="determinate">{{habilidad.porcentaje}} %
+                    mode="determinate">
+                    <div class="spinnerText">
+                        {{habilidad.porcentaje}} %
+                    </div>
                 </mat-progress-spinner>
                 <h2 mat-line>{{habilidad.habilidad}}</h2>
                 <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
@@ -20,7 +23,7 @@
                 <mat-icon>edit</mat-icon>
                 </button>    
                 <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
-                    (click)="eliminar(habilidad.id)" 
+                    (click)="deleteAbility(habilidad.id)" 
                     class="editButton" matTooltip="Eliminar">
                     <mat-icon>delete</mat-icon>
                 </button>

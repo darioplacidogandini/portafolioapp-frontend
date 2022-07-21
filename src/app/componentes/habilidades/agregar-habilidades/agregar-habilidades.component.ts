@@ -13,16 +13,16 @@ export class AgregarHabilidadesComponent implements OnInit {
 
   habilidad: Habilidades = new Habilidades();
 
-  constructor(private habilidadesService:HabilidadesService, 
+  constructor(private abilitiesService:HabilidadesService, 
     public addDialog:MatDialog) {}
 
   ngOnInit(): void {}
 
   public addAbility() {
-    this.habilidadesService.agregar(this.habilidad).subscribe(data => {
+    this.abilitiesService.agregar(this.habilidad).subscribe(data => {
       console.log(data);
     });
-    this.addDialog.closeAll();
+    this.abilitiesService.listar();
   }
 
 }
