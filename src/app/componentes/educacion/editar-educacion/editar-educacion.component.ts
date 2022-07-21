@@ -10,15 +10,15 @@ import { EducacionComponent } from '../educacion.component';
 })
 export class EditarEducacionComponent implements OnInit {
 
-  id: number = 0;
+  id: number = 99;
   educacion: Educacion = new Educacion();
 
-    constructor(private educacionService:EducacionService,private educacionComponent:EducacionComponent) {
+    constructor(private educacionService:EducacionService,public educacionComponent:EducacionComponent) {
     }
   
     ngOnInit(): void {
-      this.id = this.educacionComponent.id;
-      this.searchEducacion();
+      this.id = this.educacionComponent.id;  
+      console.log("Id: ",this.id);
     }
 
     public searchEducacion() {

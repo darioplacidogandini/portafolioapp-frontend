@@ -20,7 +20,6 @@ export class AgregarEducacionComponent implements OnInit {
     this.educacionService.agregar(this.educacion).subscribe(data => {
       console.log(data);
     });
-    this.editDialog.closeAll();
   }
 
 }
