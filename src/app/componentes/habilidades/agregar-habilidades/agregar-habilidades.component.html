@@ -1,26 +1,29 @@
-<h2 mat-dialog-title>Agregar habilidad</h2>
-    <mat-dialog-content class="mat-typography">
-        <mat-form-field>
-            <label for="habilidad">Habilidad</label>
-            <input matInput [(ngModel)]="habilidad.habilidad" 
-            type="text" appearance="fill"
-            class="form-control" id="habilidad" name="habilidad">
-        </mat-form-field>
-        <mat-form-field>
-            <label for="porcentaje">Porcentaje</label>
-            <input matInput [(ngModel)]="habilidad.porcentaje" 
-            type="text" appearance="fill"
-            class="form-control" id="porcentaje" name="porcentaje">
-        </mat-form-field>
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button type="submit" mat-raised-button color="primary"
-        (click)="agregar()" cdkFocusInitial
-        matTooltip="Agregar">
-        <mat-icon>check</mat-icon>
-      </button>
-      <button mat-raised-button color="accent"
-        mat-dialog-close matTooltip="Salir">
-        <mat-icon>cancel</mat-icon>
-      </button>
-</mat-dialog-actions>    
+<form (ngSubmit)="addAbility()">
+  <h2 mat-dialog-title>Agregar habilidad</h2>
+  <mat-dialog-content class="mat-typography">
+      <mat-form-field>
+          <label for="habilidad">Habilidad</label>
+          <input matInput [(ngModel)]="habilidad.habilidad" 
+          type="text" appearance="fill"
+          class="form-control" id="habilidad" name="habilidad">
+      </mat-form-field>
+      <mat-form-field>
+          <label for="porcentaje">Porcentaje</label>
+          <input matInput [(ngModel)]="habilidad.porcentaje" 
+          type="text" appearance="fill"
+          class="form-control" id="porcentaje" name="porcentaje">
+      </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button type="submit" mat-raised-button color="primary"
+      [mat-dialog-close]="true" cdkFocusInitial
+      matTooltip="Agregar">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button type="button" mat-raised-button color="accent"
+      mat-dialog-close matTooltip="Salir">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-dialog-actions> 
+</form>
+   

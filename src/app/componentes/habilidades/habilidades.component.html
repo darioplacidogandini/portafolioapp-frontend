@@ -11,7 +11,7 @@
             <mat-list-item *ngFor="let habilidad of habilidades">
                 <mat-progress-spinner mat-list-icon
                     [value]="habilidad.porcentaje"
-                    mode="determinate">
+                    mode="determinate">{{habilidad.porcentaje}} %
                 </mat-progress-spinner>
                 <h2 mat-line>{{habilidad.habilidad}}</h2>
                 <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 

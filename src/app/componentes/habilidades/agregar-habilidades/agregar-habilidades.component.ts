@@ -18,7 +18,7 @@ export class AgregarHabilidadesComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregar() {
+  public addAbility() {
     this.habilidadesService.agregar(this.habilidad).subscribe(data => {
       console.log(data);
     });
