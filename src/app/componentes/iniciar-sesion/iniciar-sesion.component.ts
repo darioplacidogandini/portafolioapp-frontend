@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../../servicios/authentication.service';
 
@@ -11,10 +12,19 @@ export class IniciarSesionComponent implements OnInit {
 
   username = '';
   password = '';
+  loginForm: FormGroup;
+
   invalidLogin = false;
 
-  constructor(public loginDialog:MatDialog,
-    private loginservice: AuthenticationService) {}
+  constructor(private formBuilder:FormBuilder,public loginDialog:MatDialog,
+    private loginservice: AuthenticationService) {
+      this.loginForm = this.formBuilder.group(
+        {
+          username:['',[Validators.required,Validators.email]],
+          password:['',[Validators.required,Validators.minLength(8)]],
+        }
+      )
+    }
 
  ngOnInit() {}
 

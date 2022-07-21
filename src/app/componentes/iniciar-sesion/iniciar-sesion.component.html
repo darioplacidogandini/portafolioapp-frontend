@@ -1,5 +1,5 @@
-<form (ngSubmit)="checkLogin()" >
-  <h2 mat-dialog-title>Iniciar sesion</h2>
+<form [formGroup]="loginForm" (ngSubmit)="checkLogin()">
+  <h2 mat-dialog-title>Iniciar sesión</h2>
   <mat-dialog-content class="mat-typography">
     <mat-form-field>
       <label for="username">Usuario</label>
@@ -17,7 +17,7 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button type="submit" mat-raised-button color="primary"
-      (click)="checkLogin()" cdkFocusInitial
+      [mat-dialog-close]="true" cdkFocusInitial
       matTooltip="Iniciar sesion">
       <mat-icon>check</mat-icon>
     </button>
