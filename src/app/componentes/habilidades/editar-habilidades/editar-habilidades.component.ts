@@ -17,18 +17,12 @@ export class EditarHabilidadesComponent implements OnInit {
   id: number = 0;
   habilidad: Habilidades = new Habilidades();
 
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.datosHabilidades.buscar(this.id).subscribe(data => { 
-      this.habilidad = data;
-    },error => console.log(error));
-  }
+  ngOnInit(): void {}
 
-  public guardarCambios(id: number) {
+  public saveChanges() {
     this.datosHabilidades.editar(this.id,this.habilidad).subscribe(data => {
       console.log(data)
     },error => console.log(error));
-    this.editDialog.closeAll();
   }
 
 }

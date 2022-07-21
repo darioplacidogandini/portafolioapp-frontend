@@ -22,7 +22,6 @@ export class AgregarHabilidadesComponent implements OnInit {
     this.abilitiesService.agregar(this.habilidad).subscribe(data => {
       console.log(data);
     });
-    this.abilitiesService.listar();
   }
 
 }

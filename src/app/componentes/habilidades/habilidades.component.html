@@ -1,29 +1,31 @@
 <mat-card class="card">
     <h1>Habilidades</h1>
-    <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()" 
-        mat-mini-fab color="primary" id="editButton" 
+    <button *ngIf="isUserLoggedIn()" (click)="addAbility()" 
+        mat-mini-fab color="primary" class="editButton" 
         matTooltip="Agregar habilidad">
         <mat-icon>add</mat-icon>
     </button>
     <mat-grid-list cols="1" rowHeight="120px">
         <mat-list>
             <mat-grid-tile>
-            <mat-list-item *ngFor="let habilidad of habilidades">
+            <mat-list-item *ngFor="let ability of ability">
                 <mat-progress-spinner mat-list-icon
-                    [value]="habilidad.porcentaje"
+                    [value]="ability.porcentaje"
                     mode="determinate">
                     <div class="spinnerText">
-                        {{habilidad.porcentaje}} %
+                        {{ability.porcentaje}} %
                     </div>
                 </mat-progress-spinner>
-                <h2 mat-line>{{habilidad.habilidad}}</h2>
-                <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
-                    (click)="openEditDialog(habilidad.id)" 
+                <h2 mat-line>{{ability.habilidad}}</h2>
+                <button mat-mini-fab class="editButton" color="accent" 
+                    *ngIf="isUserLoggedIn()" 
+                    (click)="editAbility(ability.id)" 
                     class="editButton" matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
                 </button>    
-                <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
-                    (click)="deleteAbility(habilidad.id)" 
+                <button mat-mini-fab class="editButton" color="accent" 
+                    *ngIf="isUserLoggedIn()" 
+                    (click)="deleteAbility(ability.id)" 
                     class="editButton" matTooltip="Eliminar">
                     <mat-icon>delete</mat-icon>
                 </button>

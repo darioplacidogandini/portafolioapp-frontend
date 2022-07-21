@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
@@ -14,10 +14,10 @@ import { EditarHabilidadesComponent } from './editar-habilidades/editar-habilida
 })
 export class HabilidadesComponent implements OnInit {
 
-  habilidades: Habilidades[] = [];
+  ability: Habilidades[] = [];
 
   constructor(private abilitiesService:HabilidadesService,private authService:AuthenticationService,
-    public addDialog:MatDialog,public editDialog:MatDialog) {}
+    public dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.listAbilities();
@@ -29,23 +29,28 @@ export class HabilidadesComponent implements OnInit {
 
   public listAbilities() {
     this.abilitiesService.listar().subscribe(data => {
-      this.habilidades = data;
+      this.ability = data;
     });
   }
 
-  public openAddDialog() {
-    this.addDialog.open(AgregarHabilidadesComponent);
+  public addAbility() {
+    this.dialog.open(AgregarHabilidadesComponent);
   }
 
-  public openEditDialog(id: number) {
-    this.editDialog.open(EditarHabilidadesComponent);
+  public editAbility(id:number) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+        id: id
+    };
+    this.dialog.open(EditarHabilidadesComponent,dialogConfig);
   }
 
-  public deleteAbility(id: number) {
+  public deleteAbility(id:number) {
     this.abilitiesService.eliminar(id).subscribe(data => {
       console.log(data);
-      this.listAbilities();
     });
   }
-  
 }

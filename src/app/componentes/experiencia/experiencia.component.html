@@ -1,11 +1,10 @@
 <mat-card class="card">
-    <h1>Experiencia Laboral
+    <h1>Experiencia Laboral</h1>
         <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()"
             mat-mini-fab color="primary" class="editButton" 
             matTooltip="Agregar experiencia">
             <mat-icon>add</mat-icon>
-        </button>
-    </h1>            
+        </button>          
     <mat-list>
         <mat-list-item *ngFor="let experiencia of experiencia">
             <img [src]="experiencia.logo" 
