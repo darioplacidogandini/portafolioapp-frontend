@@ -28,6 +28,13 @@ export class IniciarSesionComponent implements OnInit {
 
  ngOnInit() {}
 
+ getErrorMessage() {
+  if (this.loginForm.hasError('required')) {
+    return 'Ingrese un mail valido';
+  } 
+    return this.loginForm.hasError('email') ? 'Correo invalido' : '';
+  }
+
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {

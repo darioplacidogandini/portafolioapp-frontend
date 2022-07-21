@@ -6,6 +6,9 @@
       <input matInput appearance="fill" type="text" 
       name="username" autocomplete="username" 
       [(ngModel)]="username">
+      <mat-error *ngIf="loginForm.invalid">
+        {{getErrorMessage()}}
+      </mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
@@ -13,6 +16,9 @@
       <input matInput appearance="fill" type="password" 
       name="password" autocomplete="current-password" 
       [(ngModel)]="password">
+      <mat-error *ngIf="loginForm.invalid">
+        {{getErrorMessage()}}
+      </mat-error>
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
