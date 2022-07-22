@@ -25,14 +25,8 @@ export class IniciarSesionComponent implements OnInit {
 
  ngOnInit() {}
 
- public getErrorMessages() {
-  if (this.loginForm.hasError('email')) {
-    return 'Ingrese un mail valido';
-  } 
-  if (this.loginForm.hasError('minLenght')) {
-    return 'Debe contener minimo 6 caracteres';
-  }
-    return this.loginForm.hasError('required') ? 'Correo invalido' : '';
+  public getErrorMessages() {
+    return 'Error';
   }
 
   public checkLogin() {
