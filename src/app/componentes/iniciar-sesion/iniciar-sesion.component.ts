@@ -35,9 +35,6 @@ export class IniciarSesionComponent implements OnInit {
      if (this.loginForm.get('password')?.hasError('pattern')) {
       return 'La contraseña debe contener al menos uno de  los siguientes caracteres: @ -';
      }
-     if (this.invalidLogin === true) {
-      return 'Usuario y/o contraseña invalidos';
-     }
      return 'Rellene este campo';
   }
 
