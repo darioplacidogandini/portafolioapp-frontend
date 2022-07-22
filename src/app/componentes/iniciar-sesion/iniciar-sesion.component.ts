@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../../servicios/authentication.service';
 
@@ -10,36 +10,27 @@ import { AuthenticationService } from '../../servicios/authentication.service';
 })
 export class IniciarSesionComponent implements OnInit {
 
-  username = '';
-  password = '';
-  loginForm: FormGroup;
+  username = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required, Validators.email]);
 
   invalidLogin = false;
 
   constructor(private formBuilder:FormBuilder,public loginDialog:MatDialog,
-    private loginservice: AuthenticationService) {
-      this.loginForm = this.formBuilder.group(
-        {
-          username:['',[Validators.required,Validators.email]],
-          password:['',[Validators.required,Validators.minLength(8)]],
-        }
-      )
-    }
+    private loginservice: AuthenticationService) {}
 
  ngOnInit() {}
 
  getErrorMessage() {
-  if (this.loginForm.hasError('required')) {
+  if (this.username.hasError('required')) {
     return 'Ingrese un mail valido';
   } 
-    return this.loginForm.hasError('email') ? 'Correo invalido' : '';
+    return this.password.hasError('email') ? 'Correo invalido' : '';
   }
 
   checkLogin() {
-    (this.loginservice.authenticate(this.username, this.password).subscribe(
+    (this.loginservice.authenticate(this.username,this.password).subscribe(
       data => {
         console.log(data);
-        this.loginDialog.closeAll();
         this.invalidLogin = false;
       },
       error => {
