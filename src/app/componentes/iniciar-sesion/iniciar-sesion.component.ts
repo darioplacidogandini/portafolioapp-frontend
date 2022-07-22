@@ -26,7 +26,13 @@ export class IniciarSesionComponent implements OnInit {
  ngOnInit() {}
 
   public getErrorMessages() {
-    return 'Error';
+     if (this.loginForm.get('username')?.invalid) {
+      return 'Usuario invalido';
+     }
+     if (this.loginForm.get('password')?.invalid) {
+      return 'Password invalido.'
+     }
+     return 'Rellene este campo';
   }
 
   public checkLogin() {
