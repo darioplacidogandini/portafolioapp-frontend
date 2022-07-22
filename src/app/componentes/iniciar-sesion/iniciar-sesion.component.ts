@@ -19,18 +19,18 @@ export class IniciarSesionComponent implements OnInit {
     private loginservice: AuthenticationService) {
       this.loginForm = this.formBuilder.group({
         username: new FormControl('', [Validators.required, Validators.email]),
-        password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+        password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       })
     }
 
  ngOnInit() {}
 
   public getErrorMessages() {
-     if (this.loginForm.get('username')?.invalid) {
-      return 'Usuario invalido';
+     if (this.loginForm.get('username')?.hasError('email')) {
+      return 'Ingrese un mail invalido';
      }
-     if (this.loginForm.get('password')?.invalid) {
-      return 'Password invalido.'
+     if (this.loginForm.get('password')?.hasError('minLength')) {
+      return 'La contraseña debe contener al menos 8 caracteres.'
      }
      return 'Rellene este campo';
   }
