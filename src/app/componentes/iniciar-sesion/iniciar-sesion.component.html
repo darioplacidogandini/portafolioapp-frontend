@@ -3,19 +3,19 @@
   <mat-dialog-content class="mat-typography">
     <mat-form-field>
       <label for="username">Usuario</label>
-      <input matInput appearance="fill" type="text" 
-      name="username" autocomplete="username" formControlName="username" >
+      <input matInput appearance="fill" type="text" name="username" 
+      autocomplete="username" formControlName="username" required>
       <mat-error *ngIf="loginForm.invalid">
-        {{getErrorMessage()}}
+        {{getErrorMessages()}}
       </mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
       <label for="password">Contraseña</label>
-      <input matInput appearance="fill" type="password" 
-      name="password" autocomplete="current-password" formControlName="password">
+      <input matInput appearance="fill" type="password" name="password" 
+      autocomplete="current-password" formControlName="password" required>
       <mat-error *ngIf="loginForm.invalid">
-        {{getErrorMessage()}}
+        {{getErrorMessages()}}
       </mat-error>
     </mat-form-field>
   </mat-dialog-content>

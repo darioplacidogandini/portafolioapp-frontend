@@ -11,7 +11,8 @@ import { AuthenticationService } from '../../servicios/authentication.service';
 export class IniciarSesionComponent implements OnInit {
 
   loginForm: FormGroup;
-
+  usernameFieldValue: string = '';
+  passmwordFieldValue: string = '';
   invalidLogin = false;
 
   constructor(private formBuilder:FormBuilder,public loginDialog:MatDialog,
@@ -24,15 +25,20 @@ export class IniciarSesionComponent implements OnInit {
 
  ngOnInit() {}
 
- getErrorMessage() {
-  if (this.loginForm.hasError('required')) {
+ public getErrorMessages() {
+  if (this.loginForm.hasError('email')) {
     return 'Ingrese un mail valido';
   } 
-    return this.loginForm.hasError('email') ? 'Correo invalido' : '';
+  if (this.loginForm.hasError('minLenght')) {
+    return 'Debe contener minimo 6 caracteres';
+  }
+    return this.loginForm.hasError('required') ? 'Correo invalido' : '';
   }
 
-  checkLogin() {
-    (this.loginservice.authenticate(this.loginForm.get('username')?.value,this.loginForm.get('password')?.value).subscribe(
+  public checkLogin() {
+    this.usernameFieldValue = this.loginForm.get('username')?.value;
+    this.passmwordFieldValue = this.loginForm.get('password')?.value;
+    (this.loginservice.authenticate(this.usernameFieldValue,this.passmwordFieldValue).subscribe(
       data => {
         console.log(data);
         this.invalidLogin = false;
