@@ -27,10 +27,10 @@ export class IniciarSesionComponent implements OnInit {
 
   public getErrorMessages() {
      if (this.loginForm.get('username')?.hasError('email')) {
-      return 'Ingrese un mail invalido';
+      return 'Ingrese un mail valido';
      }
      if (this.loginForm.get('password')?.hasError('minLength')) {
-      return 'La contraseña debe contener al menos 8 caracteres.'
+      return 'La contraseña debe contener al menos 8 caractere';
      }
      return 'Rellene este campo';
   }
