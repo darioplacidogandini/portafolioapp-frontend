@@ -12,7 +12,7 @@ export class IniciarSesionComponent implements OnInit {
 
   loginForm: FormGroup;
   usernameFieldValue: string = '';
-  passmwordFieldValue: string = '';
+  passwordFieldValue: string = '';
   invalidLogin = false;
 
   constructor(private formBuilder:FormBuilder,public loginDialog:MatDialog,
@@ -37,8 +37,8 @@ export class IniciarSesionComponent implements OnInit {
 
   public checkLogin() {
     this.usernameFieldValue = this.loginForm.get('username')?.value;
-    this.passmwordFieldValue = this.loginForm.get('password')?.value;
-    (this.loginservice.authenticate(this.usernameFieldValue,this.passmwordFieldValue).subscribe(
+    this.passwordFieldValue = this.loginForm.get('password')?.value;
+    (this.loginservice.authenticate(this.usernameFieldValue,this.passwordFieldValue).subscribe(
       data => {
         console.log(data);
         this.invalidLogin = false;
