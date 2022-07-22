@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { IniciarSesionComponent } from '../iniciar-sesion/iniciar-sesion.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +19,12 @@ export class EncabezadoComponent implements OnInit {
   }
 
   openLoginDialog(): void {
-    this.loginDialog.open(IniciarSesionComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.height = '800px';
+    dialogConfig.width = '800px';
+    this.loginDialog.open(IniciarSesionComponent,dialogConfig);
   }
 
   closeSession() {
