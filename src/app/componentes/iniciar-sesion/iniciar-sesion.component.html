@@ -1,11 +1,11 @@
-<form (ngSubmit)="checkLogin()">
+<form [formGroup]="loginForm" (ngSubmit)="checkLogin()">
   <h2 mat-dialog-title>Iniciar sesión</h2>
   <mat-dialog-content class="mat-typography">
     <mat-form-field>
       <label for="username">Usuario</label>
       <input matInput appearance="fill" type="text" 
-      name="username" autocomplete="username" [formControl]="username" >
-      <mat-error *ngIf="username.invalid">
+      name="username" autocomplete="username" formControlName="username" >
+      <mat-error *ngIf="loginForm.invalid">
         {{getErrorMessage()}}
       </mat-error>
     </mat-form-field>
@@ -13,8 +13,8 @@
     <mat-form-field>
       <label for="password">Contraseña</label>
       <input matInput appearance="fill" type="password" 
-      name="password" autocomplete="current-password" [formControl]="password">
-      <mat-error *ngIf="password.invalid">
+      name="password" autocomplete="current-password" formControlName="password">
+      <mat-error *ngIf="loginForm.invalid">
         {{getErrorMessage()}}
       </mat-error>
     </mat-form-field>
