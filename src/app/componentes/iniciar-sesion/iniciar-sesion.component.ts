@@ -18,8 +18,8 @@ export class IniciarSesionComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,public loginDialog:MatDialog,
     private loginservice: AuthenticationService) {
       this.loginForm = this.formBuilder.group({
-        username: new FormControl('', [Validators.required, Validators.email]),
-        password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+        username: new FormControl('', [Validators.required,Validators.email]),
+        password: new FormControl('', [Validators.required,Validators.minLength(8),Validators.pattern('@-')]),
       })
     }
 
@@ -30,7 +30,10 @@ export class IniciarSesionComponent implements OnInit {
       return 'Ingrese un mail valido';
      }
      if (this.loginForm.get('password')?.hasError('minLength')) {
-      return 'La contraseña debe contener al menos 8 caractere';
+      return 'La contraseña debe contener al menos 8 caracteres';
+     }
+     if (this.loginForm.get('password')?.hasError('pattern')) {
+      return 'La contraseña debe contener al menos uno de los siguientes caracteres: @ -';
      }
      return 'Rellene este campo';
   }
