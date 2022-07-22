@@ -1,10 +1,12 @@
 <mat-card class="card">
-    <h1>Habilidades</h1>
-    <button *ngIf="isUserLoggedIn()" (click)="addAbility()" 
-        mat-mini-fab color="primary" class="editButton" 
-        matTooltip="Agregar habilidad">
-        <mat-icon>add</mat-icon>
-    </button>
+    <h1>
+        Habilidades
+        <button *ngIf="isUserLoggedIn()" (click)="addAbility()" 
+            mat-mini-fab color="primary" class="editButton" 
+            matTooltip="Agregar habilidad">
+            <mat-icon>add</mat-icon>
+        </button>
+    </h1>
     <mat-grid-list cols="1" rowHeight="120px">
         <mat-list>
             <mat-grid-tile>

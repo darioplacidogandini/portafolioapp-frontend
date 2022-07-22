@@ -3,13 +3,13 @@
         <div [ngStyle]="{'background-image': 'url(' + acerca.portada + ')'}" 
         alt="Foto de Portada">
             <img class="rounded-circle" alt="Foto de Perfil" id="profilePhoto"
-            [src]="acerca.foto">                
-        </div>
-        <button mat-mini-fab *ngIf="isUserLoggedIn()" 
+            [src]="acerca.foto">    
+            <button mat-mini-fab *ngIf="isUserLoggedIn()" 
                 (click)="openEditDialog(acerca.id)" class="editButton"
                 matTooltip="Editar perfil">
                 <mat-icon>edit</mat-icon>
-        </button>
+            </button>            
+        </div>
         <h1>{{acerca.nombre}}</h1>
         <h3>{{acerca.puesto}}</h3>
     </mat-list>

@@ -1,10 +1,12 @@
 <mat-card class="card">
-    <h1>Educación</h1>
+    <h1>
+        Educación
         <button *ngIf="isUserLoggedIn()" mat-mini-fab color="primary"
             (click)="openAddDialog()" class="editButton"
             matTooltip="Agregar educacion">
             <mat-icon>add</mat-icon>
         </button>
+    </h1>
     <mat-list>
         <mat-list-item *ngFor="let educacion of educacion">
             <img mat-card-image

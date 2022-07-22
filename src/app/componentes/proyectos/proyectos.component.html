@@ -1,9 +1,12 @@
 <mat-card class="card">
-    <h1>Proyectos</h1>
-    <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()" mat-mini-fab color="primary"
-        class="editButton" matTooltip="Agregar proyecto">
+    <h1>
+        Proyectos
+        <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()" 
+            mat-mini-fab color="primary"
+            class="editButton" matTooltip="Agregar proyecto">
         <mat-icon>add</mat-icon>
-    </button>            
+        </button>
+    </h1>          
     <mat-list>
         <mat-list-item *ngFor="let proyecto of proyectos">
             <img [src]="proyecto.logo" 
