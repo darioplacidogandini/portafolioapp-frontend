@@ -22,8 +22,8 @@ export class EncabezadoComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.height = '800px';
-    dialogConfig.width = '800px';
+    dialogConfig.height = '400px';
+    dialogConfig.width = '400px';
     this.loginDialog.open(IniciarSesionComponent,dialogConfig);
   }
 

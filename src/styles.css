@@ -23,6 +23,13 @@ body {
     margin-right: 2px;
 }
 
+.spinnerText {
+    color: steelblue;
+    position:relative; 
+    top: 0px; 
+    left: 0px;
+}
+
 
 
 
