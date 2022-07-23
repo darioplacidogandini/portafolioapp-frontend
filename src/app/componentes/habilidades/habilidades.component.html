@@ -14,10 +14,10 @@
                 <mat-progress-spinner mat-list-icon
                     [value]="ability.porcentaje"
                     mode="determinate">
-                    <div class="spinnerText">
-                        {{ability.porcentaje}} %
-                    </div>
                 </mat-progress-spinner>
+                <div class="spinnerText">
+                    {{ability.porcentaje}} %
+                </div>
                 <h2 mat-line>{{ability.habilidad}}</h2>
                 <button mat-mini-fab class="editButton" color="accent" 
                     *ngIf="isUserLoggedIn()" 
