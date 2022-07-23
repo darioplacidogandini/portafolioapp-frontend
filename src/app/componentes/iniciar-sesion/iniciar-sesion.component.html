@@ -1,7 +1,11 @@
 <form [formGroup]="loginForm" (ngSubmit)="checkLogin()">
-  <mat-grid-list cols="1" rowHeight="100px">
+  <mat-grid-list cols="1" rowHeight="30px">
     <mat-grid-tile>
       <h2 mat-dialog-title>Iniciar sesión</h2>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="120px">
+    <mat-grid-tile>
       <mat-dialog-content class="mat-typography">
         <mat-form-field>
           <label for="username">Usuario</label>
@@ -11,7 +15,6 @@
             {{getErrorMessages()}}
           </mat-error>
         </mat-form-field>
-        <br>
         <mat-form-field>
           <label for="password">Contraseña</label>
           <input matInput appearance="fill" type="password" name="password" 
@@ -22,6 +25,8 @@
         </mat-form-field>
       </mat-dialog-content>
     </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="40px">
     <mat-grid-tile>
       <mat-dialog-actions align="end">
         <button type="submit" mat-raised-button color="primary"

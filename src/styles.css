@@ -25,9 +25,9 @@ body {
 
 .spinnerText {
     color: steelblue;
-    position:relative; 
+    position: relative; 
     top: 0px; 
-    left: -100px;
+    left: 0px;
 }
 
 
