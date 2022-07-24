@@ -36,7 +36,7 @@ export class HabilidadesComponent implements OnInit {
     this.dialog.open(AgregarHabilidadesComponent);
   }
 
-  public editAbility(id:number) {
+  public editAbility() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
