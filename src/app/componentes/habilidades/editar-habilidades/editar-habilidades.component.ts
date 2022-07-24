@@ -11,16 +11,20 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class EditarHabilidadesComponent implements OnInit {
 
-  constructor(private datosHabilidades:HabilidadesService,private route:ActivatedRoute,
-    public editDialog:MatDialog) {}
+  constructor(private abilityService:HabilidadesService) {}
 
   id: number = 0;
-  habilidad: Habilidades = new Habilidades();
+  ability: Habilidades = new Habilidades();
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.id = this.abilityService.id;
+    this.abilityService.search(this.id).subscribe(data => {
+      this.ability = data;
+    }, error => console.log(error));
+  }
 
   public saveChanges() {
-    this.datosHabilidades.editar(this.id,this.habilidad).subscribe(data => {
+    this.abilityService.edit(this.id,this.ability).subscribe(data => {
       console.log(data)
     },error => console.log(error));
   }

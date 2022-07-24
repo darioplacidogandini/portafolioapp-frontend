@@ -4,9 +4,7 @@
       <h2 mat-dialog-title>Iniciar sesión</h2>
     </mat-grid-tile>
   </mat-grid-list>
-  <mat-grid-list cols="1" rowHeight="50px">
       <mat-dialog-content class="mat-typography">
-        <mat-grid-tile>
         <mat-form-field>
           <label for="username">Usuario</label>
           <input matInput appearance="fill" type="text" name="username" 
@@ -15,8 +13,6 @@
             {{getErrorMessages()}}
           </mat-error>
         </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
         <mat-form-field>
           <label for="password">Contraseña</label>
           <input matInput appearance="fill" type="password" name="password" 
@@ -25,9 +21,7 @@
             {{getErrorMessages()}}
           </mat-error>
         </mat-form-field>
-      </mat-grid-tile>
       </mat-dialog-content>
-  </mat-grid-list>
   <mat-grid-list cols="1" rowHeight="40px">
     <mat-grid-tile>
       <mat-dialog-actions align="end">

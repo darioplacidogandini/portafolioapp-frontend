@@ -9,26 +9,27 @@ import { Habilidades } from '../model/habilidades.model';
 export class HabilidadesService {
 
   private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/habilidades';
+  id: number = 0;
 
   constructor(private http:HttpClient) {}
 
-  listar(): Observable<Habilidades[]> {
+  list(): Observable<Habilidades[]> {
     return this.http.get<Habilidades[]>(`${this.baseUrl}/listar`);
   } 
 
-  buscar(id: number): Observable<Habilidades> {
+  search(id:number): Observable<Habilidades> {
     return this.http.get<Habilidades>(`${this.baseUrl}/buscar/${id}`);
   }
 
-  agregar(habilidades: Habilidades): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/agregar`, habilidades);
+  add(ability:Habilidades): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/agregar`,ability);
   }
 
-  editar(id: number,habilidades: Habilidades): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, habilidades);
+  edit(id:number,ability:Habilidades): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`,ability);
   }
 
-  eliminar(id: number): Observable<Object> {
+  delete(id:number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

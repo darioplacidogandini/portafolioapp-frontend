@@ -27,7 +27,7 @@ export class HabilidadesComponent implements OnInit {
   }
 
   public listAbilities() {
-    this.abilitiesService.listar().subscribe(data => {
+    this.abilitiesService.list().subscribe(data => {
       this.ability = data;
     });
   }
@@ -40,15 +40,11 @@ export class HabilidadesComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-
-    dialogConfig.data = {
-        id: id
-    };
     this.dialog.open(EditarHabilidadesComponent,dialogConfig);
   }
 
   public deleteAbility(id:number) {
-    this.abilitiesService.eliminar(id).subscribe(data => {
+    this.abilitiesService.delete(id).subscribe(data => {
       console.log(data);
     });
   }
