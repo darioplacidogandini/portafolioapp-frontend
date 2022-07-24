@@ -11,7 +11,7 @@ import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 })
 export class AgregarHabilidadesComponent implements OnInit {
 
-  habilidad: Habilidades = new Habilidades();
+  ability:Habilidades = new Habilidades();
 
   constructor(private abilitiesService:HabilidadesService, 
     public addDialog:MatDialog) {}
@@ -19,7 +19,7 @@ export class AgregarHabilidadesComponent implements OnInit {
   ngOnInit(): void {}
 
   public addAbility() {
-    this.abilitiesService.agregar(this.habilidad).subscribe(data => {
+    this.abilitiesService.add(this.ability).subscribe(data => {
       console.log(data);
     });
   }
