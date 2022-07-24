@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Educacion } from 'src/app/model/educacion.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
@@ -34,11 +34,17 @@ export class EducacionComponent implements OnInit {
   }
 
   public openAddDialog() {
-    this.dialog.open(AgregarEducacionComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(AgregarEducacionComponent,dialogConfig);
   }
 
   public openEditDialog() {
-    this.dialog.open(EditarEducacionComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(EditarEducacionComponent,dialogConfig);
   }
 
   public eliminar(id: number) {

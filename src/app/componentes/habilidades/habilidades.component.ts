@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
