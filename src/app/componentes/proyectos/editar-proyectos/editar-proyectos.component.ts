@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos.model';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
@@ -11,25 +10,22 @@ import { ProyectosService } from 'src/app/servicios/proyectos.service';
 })
 export class EditarProyectosComponent implements OnInit {
 
-  constructor(private datosProyectos:ProyectosService,
-    private router:ActivatedRoute,private editDialog:MatDialog) {}
+  constructor(private projectsService:ProyectosService) {}
 
-  id: number = 0;
-  proyecto: Proyectos = new Proyectos();
+  id:number = 0;
+  project:Proyectos = new Proyectos();
 
   ngOnInit(): void {
-    this.id = this.router.snapshot.params['id'];
-    this.proyecto = new Proyectos();
-    this.datosProyectos.buscar(this.id).subscribe(data => {
-      this.proyecto = data;
+    this.id = this.projectsService.id;
+    this.projectsService.search(this.id).subscribe(data => {
+      this.project = data;
     },error => console.log(error));
   }
 
-  public guardarCambios() {
-    this.datosProyectos.editar(this.id,this.proyecto).subscribe(data => {
+  public saveChanges() {
+    this.projectsService.edit(this.id,this.project).subscribe(data => {
       console.log(data);
     },error => console.log(error));
-    this.editDialog.closeAll();
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
@@ -13,19 +13,19 @@ import { EditarExperienciaComponent } from './editar-experiencia/editar-experien
 })
 export class ExperienciaComponent implements OnInit {
   
-  experiencia: Experiencia[] = [];
-  id: number = 0;
-
-  constructor(private datosExperiencia:ExperienciaService,private authService:AuthenticationService,
+  experience:Experiencia[] = [];
+  id:number = 0;
+  
+  constructor(private experienceService:ExperienciaService,private authService:AuthenticationService,
     public dialog:MatDialog) {}
 
   ngOnInit(): void {
-    this.listar();
+    this.list();
   }
 
-  public listar() {
-    this.datosExperiencia.listar().subscribe(data => {
-      this.experiencia = data;
+  public list() {
+    this.experienceService.list().subscribe(data => {
+      this.experience = data;
     });
   }
 
@@ -34,17 +34,23 @@ export class ExperienciaComponent implements OnInit {
   }
 
   public openAddDialog() {
-    this.dialog.open(AgregarExperienciaComponent)
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(AgregarExperienciaComponent,dialogConfig);
   }
 
   public openEditDialog() {
-    this.dialog.open(EditarExperienciaComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(EditarExperienciaComponent,dialogConfig);
   }
 
-  public eliminar(id: number) {
-    this.datosExperiencia.eliminar(id).subscribe(data => {
+  public delete(id:number) {
+    this.experienceService.eliminar(id).subscribe(data => {
       console.log(data);
-      this.listar();
+      this.list();
     });
   }
 }

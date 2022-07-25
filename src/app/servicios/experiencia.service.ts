@@ -9,26 +9,27 @@ import { Experiencia } from '../model/experiencia.model';
 export class ExperienciaService {
 
   private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/experiencia';
+  id:number = 0;
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<Experiencia[]> {
+  list(): Observable<Experiencia[]> {
     return this.http.get<Experiencia[]>(`${this.baseUrl}/listar`);
   }
 
-  buscar(id: number): Observable<Experiencia> {
+  search(id:number): Observable<Experiencia> {
     return this.http.get<Experiencia>(`${this.baseUrl}/buscar/${id}`);
   }
 
-  agregar(experiencia: Experiencia): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/agregar`, experiencia);
+  add(experience:Experiencia): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/agregar`,experience);
   }
 
-  editar(id: number,experiencia: Experiencia): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, experiencia);
+  edit(id:number,experience:Experiencia): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`,experience);
   }
 
-  eliminar(id: number): Observable<Object> {
+  eliminar(id:number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

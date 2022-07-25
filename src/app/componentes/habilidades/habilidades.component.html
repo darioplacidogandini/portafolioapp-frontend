@@ -21,7 +21,7 @@
                 <h2 mat-line>{{ability.habilidad}}</h2>
                 <button mat-mini-fab class="editButton" color="accent" 
                     *ngIf="isUserLoggedIn()" 
-                    (click)="editAbility()" 
+                    (click)="editAbility(ability.id)" 
                     class="editButton" matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
                 </button>    

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
-import { ExperienciaComponent } from '../experiencia.component';
 
 @Component({
   selector: 'app-editar-experiencia',
@@ -10,24 +9,20 @@ import { ExperienciaComponent } from '../experiencia.component';
 })
 export class EditarExperienciaComponent implements OnInit {
 
-  id: number = 0;
-  experiencia: Experiencia = new Experiencia();
+  id:number = 0;
+  experience:Experiencia = new Experiencia();
 
-  constructor(private experienciaService:ExperienciaService,private experienciaComponent:ExperienciaComponent) {}
+  constructor(private experienciaService:ExperienciaService) {}
 
   ngOnInit(): void {
-    this.id = this.experienciaComponent.id;
-    this.searchExperiencia();
-  }
-
-  public searchExperiencia() {
-    this.experienciaService.buscar(this.id).subscribe(data => {
-      this.experiencia = data;
+    this.id = this.experienciaService.id;
+    this.experienciaService.search(this.id).subscribe(data => {
+      this.experience = data;
     },error => console.log(error));
   }
 
   public saveChanges() {
-    this.experienciaService.editar(this.id,this.experiencia).subscribe(data => {
+    this.experienciaService.edit(this.id,this.experience).subscribe(data => {
       console.log(data);
     },error => console.log(error));
   }

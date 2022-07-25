@@ -8,29 +8,29 @@
         </button>
     </h1>          
     <mat-list>
-        <mat-list-item *ngFor="let proyecto of proyectos">
-            <img [src]="proyecto.logo" 
-            id="proyectPhoto" [alt]="'Logo' + proyecto.nombre">
-            <h3 mat-line>{{proyecto.nombre}}</h3>
-                <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(proyecto.id)" 
+        <mat-list-item *ngFor="let project of proyectos">
+            <img [src]="project.logo" 
+            id="proyectPhoto" [alt]="'Logo' + project.nombre">
+            <h3 mat-line>{{project.nombre}}</h3>
+                <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(project.id)" 
                     mat-mini-fab color="accent"
                     matTooltip="Editar">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button *ngIf="isUserLoggedIn()" (click)="eliminar(proyecto.id)" 
+                <button *ngIf="isUserLoggedIn()" (click)="delete(project.id)" 
                     mat-mini-fab color="accent"
                     matTooltip="Eliminar">
                     <mat-icon>delete</mat-icon>
                 </button>
-            <h5 mat-line>{{proyecto.descripcion}}</h5>
-                        <a href="{{proyecto.codigoFuente}}">
+            <h5 mat-line>{{project.descripcion}}</h5>
+                        <a href="{{project.codigoFuente}}">
                             <button mat-mini-fab color="accent" class="editButton"
                             data-toggle="tooltip" 
                             matTooltip="Código fuente">
                                 <mat-icon>code</mat-icon>
                             </button>
                         </a>
-                        <a href="{{proyecto.url}}">
+                        <a href="{{project.url}}">
                             <button mat-mini-fab color="accent" class="editButton"
                             matTooltip="Ver proyecto">
                                 <mat-icon>visibility</mat-icon>

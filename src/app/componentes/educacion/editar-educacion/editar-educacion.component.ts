@@ -10,25 +10,21 @@ import { EducacionComponent } from '../educacion.component';
 })
 export class EditarEducacionComponent implements OnInit {
 
-  id: number = 99;
-  educacion: Educacion = new Educacion();
+  id:number = 0;
+  education:Educacion = new Educacion();
 
-    constructor(private educacionService:EducacionService,public educacionComponent:EducacionComponent) {
+    constructor(private educationService:EducacionService) {
     }
   
     ngOnInit(): void {
-      this.id = this.educacionComponent.id;  
-      console.log("Id: ",this.id);
+      this.id = this.educationService.id;
+      this.educationService.search(this.id).subscribe(data => {
+        this.education = data;
+      }, error => console.log(error));  
     }
 
-    public searchEducacion() {
-      this.educacionService.buscar(this.id).subscribe(data => {
-        this.educacion = data;
-      }, error => console.log(error));
-    }
-  
     public saveChanges() {
-      this.educacionService.editar(this.id,this.educacion).subscribe(data => {
+      this.educationService.edit(this.id,this.education).subscribe(data => {
         console.log(data);
       }, error => console.log(error));
     }

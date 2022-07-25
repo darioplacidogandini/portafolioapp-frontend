@@ -13,8 +13,8 @@ export class EditarHabilidadesComponent implements OnInit {
 
   constructor(private abilityService:HabilidadesService) {}
 
-  id: number = 0;
-  ability: Habilidades = new Habilidades();
+  id:number = 0;
+  ability:Habilidades = new Habilidades();
 
   ngOnInit(): void {
     this.id = this.abilityService.id;

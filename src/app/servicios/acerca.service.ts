@@ -9,19 +9,20 @@ import { Acerca } from '../model/acerca.model';
 export class AcercaService {
 
   private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/acerca';
+  id:number = 0;
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<Acerca[]> {
+  list(): Observable<Acerca[]> {
     return this.http.get<Acerca[]>(`${this.baseUrl}/listar`);
   }
 
-  buscar(id: number): Observable<Acerca> {
+  search(id:number): Observable<Acerca> {
     return this.http.get<Acerca>(`${this.baseUrl}/buscar/${id}`);
   }
 
-  editar(id: number,acerca: Acerca): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, acerca);
+  edit(id:number,about: Acerca): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`,about);
   }
 
 }

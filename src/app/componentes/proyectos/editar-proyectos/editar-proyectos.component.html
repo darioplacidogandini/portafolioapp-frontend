@@ -1,46 +1,49 @@
-<h2 mat-dialog-title>Editar proyecto</h2>
+<form (ngSubmit)="saveChanges()">
+  <h2 mat-dialog-title>Editar proyecto</h2>
 <mat-dialog-content class="mat-typography">
     <mat-form-field class="form-field">
         <label for="nombre">Nombre del proyecto</label>
-        <input matInput [(ngModel)]="proyecto.nombre" 
+        <input matInput [(ngModel)]="project.nombre" 
         type="text" appearance="fill"
         class="form-control" id="nombre" name="nombre">
     </mat-form-field>
     <mat-form-field class="form-field">
         <label for="descripcion">Descripcion del proyecto</label>
-        <input matInput [(ngModel)]="proyecto.descripcion" 
+        <input matInput [(ngModel)]="project.descripcion" 
         type="text" appearance="fill"
         class="form-control" id="descripcion" name="descripcion">
     </mat-form-field>
     <br>
     <mat-form-field class="form-field">
         <label for="url">URL del proyecto</label>
-        <input matInput [(ngModel)]="proyecto.url" 
+        <input matInput [(ngModel)]="project.url" 
         type="text" appearance="fill"
         class="form-control" id="url" name="url">
     </mat-form-field>
     <mat-form-field class="form-field">
       <label for="codigoFuente">Repositorio codigo</label>
-      <input matInput [(ngModel)]="proyecto.codigoFuente" 
+      <input matInput [(ngModel)]="project.codigoFuente" 
       type="text" appearance="fill"
       class="form-control" id="codigoFuente" name="codigoFuente">
     </mat-form-field>
     <br>
     <mat-form-field class="form-field">
         <label for="logo">Logo del proyecto</label>
-        <input matInput [(ngModel)]="proyecto.logo" 
+        <input matInput [(ngModel)]="project.logo" 
         type="text" appearance="fill"
         class="form-control" id="logo" name="logo">
     </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button type="submit" mat-raised-button color="primary"
-    (click)="guardarCambios()" cdkFocusInitial
+    cdkFocusInitial
     matTooltip="Guardar cambios">
     <mat-icon>check</mat-icon>
   </button>
-  <button mat-raised-button color="accent"
+  <button type="button" mat-raised-button color="accent"
     mat-dialog-close matTooltip="Salir">
     <mat-icon>cancel</mat-icon>
   </button>
 </mat-dialog-actions>
+</form>
+

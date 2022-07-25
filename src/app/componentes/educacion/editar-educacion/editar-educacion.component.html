@@ -3,40 +3,41 @@
   <mat-dialog-content class="mat-typography">
     <mat-form-field>
       <label for="titulo">Titulo</label>
-      <input matInput [(ngModel)]="educacion.titulo" 
+      <input matInput [(ngModel)]="education.titulo" 
       type="text" appearance="fill"
       class="form-control" id="titulo" name="titulo">
     </mat-form-field>
     <mat-form-field>
       <label for="institucion">Institucion</label>
-      <input matInput [(ngModel)]="educacion.institucion" 
+      <input matInput [(ngModel)]="education.institucion" 
       type="text" appearance="fill"
       class="form-control" id="institucion" name="institucion">
     </mat-form-field>
     <br>
     <mat-form-field>
       <label for="fecha">Fecha</label>
-      <input matInput [(ngModel)]="educacion.fecha" 
+      <input matInput [(ngModel)]="education.fecha" 
       type="text" appearance="fill"
       class="form-control" id="fecha" name="fecha">
     </mat-form-field>
     <mat-form-field>
       <label for="duracion">Duracion</label>
-      <input matInput [(ngModel)]="educacion.duracion" 
+      <input matInput [(ngModel)]="education.duracion" 
       type="text" appearance="fill"
       class="form-control" id="duracion" name="duracion">
     </mat-form-field>
     <br>
     <mat-form-field>
       <label for="logo">URL logo de la institucion</label>
-      <input matInput [(ngModel)]="educacion.logo" 
+      <input matInput [(ngModel)]="education.logo" 
       type="text" appearance="fill"
       class="form-control" id="logo" name="logo">
   </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button type="submit" mat-raised-button color="primary"
-    cdkFocusInitial matTooltip="Guardar cambios">
+    [mat-dialog-close]="true" cdkFocusInitial 
+    matTooltip="Guardar cambios">
       <mat-icon>check</mat-icon>
     </button>
     <button type="button" mat-raised-button color="accent"

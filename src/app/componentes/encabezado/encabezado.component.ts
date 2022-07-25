@@ -10,7 +10,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor(private authService:AuthenticationService,public loginDialog:MatDialog) {}
+  constructor(private authService:AuthenticationService,public dialog:MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -22,7 +22,7 @@ export class EncabezadoComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    this.loginDialog.open(IniciarSesionComponent,dialogConfig);
+    this.dialog.open(IniciarSesionComponent,dialogConfig);
   }
 
   closeSession() {

@@ -10,15 +10,16 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class AgregarEducacionComponent implements OnInit {
 
-  educacion: Educacion = new Educacion();
+  education:Educacion = new Educacion();
 
-  constructor(private educacionService:EducacionService,public editDialog:MatDialog) {}
+  constructor(private educationService:EducacionService) {}
 
   ngOnInit(): void {}
 
-  agregar() {
-    this.educacionService.agregar(this.educacion).subscribe(data => {
+  public add() {
+    this.educationService.add(this.education).subscribe(data => {
       console.log(data);
+      this.educationService.list();
     });
   }
 

@@ -9,26 +9,27 @@ import { Proyectos } from '../model/proyectos.model';
 export class ProyectosService {
 
   private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/proyectos';
+  id:number = 0;
 
   constructor(private http:HttpClient) {}
 
-  listar(): Observable<Proyectos[]> {
+  list(): Observable<Proyectos[]> {
     return this.http.get<Proyectos[]>(`${this.baseUrl}/listar`);
   }
 
-  buscar(id: number): Observable<Proyectos> {
+  search(id:number): Observable<Proyectos> {
     return this.http.get<Proyectos>(`${this.baseUrl}/buscar/${id}`);
   }
 
-  agregar(proyectos: Proyectos): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/agregar`, proyectos);
+  add(projects:Proyectos): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/agregar`,projects);
   }
 
-  editar(id: number,proyectos: Proyectos): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, proyectos);
+  edit(id:number,projects:Proyectos): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`,projects);
   }
 
-  eliminar(id: number): Observable<Object> {
+  delete(id:number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

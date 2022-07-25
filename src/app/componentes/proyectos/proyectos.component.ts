@@ -3,7 +3,7 @@ import { Proyectos } from 'src/app/model/proyectos.model';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 import { EditarProyectosComponent } from './editar-proyectos/editar-proyectos.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AgregarProyectosComponent } from './agregar-proyectos/agregar-proyectos.component';
 
 @Component({
@@ -13,37 +13,44 @@ import { AgregarProyectosComponent } from './agregar-proyectos/agregar-proyectos
 })
 export class ProyectosComponent implements OnInit {
   
-  proyectos: Proyectos[] = [];
+  proyectos:Proyectos[] = [];
 
-  constructor(private datosProyectos:ProyectosService,private authService:AuthenticationService,
-      public addDialog:MatDialog,public editDialog:MatDialog) {}
+  constructor(private proyectsService:ProyectosService,private authService:AuthenticationService,
+      public dialog:MatDialog) {}
 
   ngOnInit(): void {
-    this.listar();
+    this.list();
   }
 
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }
 
-  public listar() {
-    this.datosProyectos.listar().subscribe(data => {
+  public list() {
+    this.proyectsService.list().subscribe(data => {
       this.proyectos = data;
     }); 
   }
 
   public openAddDialog() {
-    this.addDialog.open(AgregarProyectosComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(AgregarProyectosComponent);
   }
 
-  public openEditDialog(id: number) {
-    this.editDialog.open(EditarProyectosComponent);
+  public openEditDialog(id:number) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.proyectsService.id = id;
+    this.dialog.open(EditarProyectosComponent);
   }
 
-  public eliminar(id: number) {
-    this.datosProyectos.eliminar(id).subscribe(data => {
+  public delete(id:number) {
+    this.proyectsService.delete(id).subscribe(data => {
       console.log(data);
-      this.listar();
+      this.list();
     })
   }
 

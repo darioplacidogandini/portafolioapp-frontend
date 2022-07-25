@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Acerca } from 'src/app/model/acerca.model';
 import { AcercaService } from 'src/app/servicios/acerca.service';
 import { AuthenticationService } from 'src/app/servicios/authentication.service';
@@ -13,27 +12,31 @@ import { EditarAcercaComponent } from './editar-acerca/editar-acerca.component';
 })
 export class AcercaDeComponent implements OnInit {
 
-  acerca: Acerca[] = [];
+  about:Acerca[] = [];
 
-  constructor(private datosAcerca:AcercaService,private authService:AuthenticationService,
-    private router:Router,public editDialog:MatDialog) {}
+  constructor(private aboutService:AcercaService,private authService:AuthenticationService,
+    public dialog:MatDialog) {}
 
   ngOnInit(): void {
-    this.listar();
+    this.list();
     }
 
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }
     
-  public listar() {
-    this.datosAcerca.listar().subscribe(data => {
-      this.acerca = data;
+  public list() {
+    this.aboutService.list().subscribe(data => {
+      this.about = data;
     });
   }
 
-  public openEditDialog(id: number) {
-    this.router.navigate(['/editar-acerca', id]);
+  public openEditDialog(id:number) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.aboutService.id = id;
+    this.dialog.open(EditarAcercaComponent);
   }
   
 }

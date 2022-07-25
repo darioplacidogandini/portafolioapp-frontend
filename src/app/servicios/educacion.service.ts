@@ -9,26 +9,27 @@ import { Educacion } from '../model/educacion.model';
 export class EducacionService {
 
   private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/educacion';
+  id:number = 0;
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<Educacion[]> {
+  list(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(`${this.baseUrl}/listar`);
   }
 
-  buscar(id: number): Observable<Educacion> {
+  search(id:number): Observable<Educacion> {
     return this.http.get<Educacion>(`${this.baseUrl}/buscar/${id}`);
   }
 
-  agregar(educacion: Educacion): Observable<any> {
-    return this.http.post(`${this.baseUrl}/agregar`, educacion);
+  add(education:Educacion): Observable<any> {
+    return this.http.post(`${this.baseUrl}/agregar`,education);
   }
 
-  editar(id: number,educacion: Educacion): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/editar/${id}`, educacion);
+  edit(id:number,education:Educacion): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/editar/${id}`,education);
   }
 
-  eliminar(id: number): Observable<Object> {
+  delete(id:number): Observable<Object> {
     return this.http.delete(`${this.baseUrl}/eliminar/${id}`);
   }
 

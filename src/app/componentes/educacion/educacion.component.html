@@ -8,24 +8,24 @@
         </button>
     </h1>
     <mat-list>
-        <mat-list-item *ngFor="let educacion of educacion">
+        <mat-list-item *ngFor="let education of education">
             <img mat-card-image
-            [src]="educacion.logo" id="educacionPhoto"
-            [alt]="'Logo' + educacion.institucion">
-            <h3 mat-line>{{educacion.titulo}} </h3>
+            [src]="education.logo" id="educacionPhoto"
+            [alt]="'Logo' + education.institucion">
+            <h3 mat-line>{{education.titulo}} </h3>
             <br>
-            <h5 mat-line>{{educacion.institucion}}</h5>
+            <h5 mat-line>{{education.institucion}}</h5>
             <br>
-            <p mat-line>{{educacion.fecha}} - {{educacion.duracion}} hs</p>
+            <p mat-line>{{education.fecha}} - {{education.duracion}} hs</p>
             <button mat-mini-fab color="accent" class="editButton"
                 *ngIf="isUserLoggedIn()" 
-                (click)="openEditDialog()" 
+                (click)="openEditDialog(education.id)" 
                 matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
             </button>
             <button mat-mini-fab color="accent" class="editButton"
                 *ngIf="isUserLoggedIn()" 
-                (click)="eliminar(educacion.id)" 
+                (click)="delete(education.id)" 
                 matTooltip="Eliminar">
                 <mat-icon>delete</mat-icon>
             </button> 

@@ -9,7 +9,7 @@ import { Habilidades } from '../model/habilidades.model';
 export class HabilidadesService {
 
   private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/habilidades';
-  id: number = 0;
+  id:number = 0;
 
   constructor(private http:HttpClient) {}
 

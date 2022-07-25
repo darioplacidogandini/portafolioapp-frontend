@@ -11,14 +11,14 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class AgregarExperienciaComponent implements OnInit {
 
-  experiencia: Experiencia = new Experiencia();
+  experience:Experiencia = new Experiencia();
 
   constructor(private experienciaService:ExperienciaService, public addDialog:MatDialog) {}
 
   ngOnInit(): void {}
 
   agregar() {
-    this.experienciaService.agregar(this.experiencia).subscribe(data => {
+    this.experienciaService.add(this.experience).subscribe(data => {
       console.log(data);
     });
     this.addDialog.closeAll();

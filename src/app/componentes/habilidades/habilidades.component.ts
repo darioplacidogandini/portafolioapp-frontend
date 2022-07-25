@@ -33,10 +33,14 @@ export class HabilidadesComponent implements OnInit {
   }
 
   public addAbility() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
     this.dialog.open(AgregarHabilidadesComponent);
   }
 
-  public editAbility() {
+  public editAbility(id:number) {
+    this.abilitiesService.id = id;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

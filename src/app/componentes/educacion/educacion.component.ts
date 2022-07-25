@@ -13,23 +13,23 @@ import { EditarEducacionComponent } from './editar-educacion/editar-educacion.co
 })
 export class EducacionComponent implements OnInit {
 
-  educacion: Educacion[] = [];
-  id: number = 0;
+  education:Educacion[] = [];
+  id:number = 0;
 
-  constructor(private datosEducacion:EducacionService,private authService:AuthenticationService,
+  constructor(private educationService:EducacionService,private authService:AuthenticationService,
   public dialog:MatDialog) {}
 
   ngOnInit(): void {
-    this.listar();
+    this.list();
   }
 
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }
 
-  public listar() {
-    this.datosEducacion.listar().subscribe(data => {
-      this.educacion = data;
+  public list() {
+    this.educationService.list().subscribe(data => {
+      this.education = data;
     });
   }
 
@@ -40,17 +40,18 @@ export class EducacionComponent implements OnInit {
     this.dialog.open(AgregarEducacionComponent,dialogConfig);
   }
 
-  public openEditDialog() {
+  public openEditDialog(id:number) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    this.educationService.id = id;
     this.dialog.open(EditarEducacionComponent,dialogConfig);
   }
 
-  public eliminar(id: number) {
-    this.datosEducacion.eliminar(id).subscribe(data => {
+  public delete(id:number) {
+    this.educationService.delete(id).subscribe(data => {
       console.log(data);
-      this.listar();
+      this.list();
     });
   }
 

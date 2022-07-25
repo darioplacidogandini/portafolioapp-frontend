@@ -8,18 +8,18 @@
         </button> 
     </h1>           
     <mat-list>
-        <mat-list-item *ngFor="let experiencia of experiencia">
-            <img [src]="experiencia.logo" 
-            id="companyLogo" [alt]="'Logo' + experiencia.empresa">
-            <h3 mat-line>{{experiencia.empresa}}</h3>
-            <h5 mat-line>{{experiencia.puesto}}</h5>
-            <p mat-line>{{experiencia.inicio}} - {{experiencia.fin}}</p>
+        <mat-list-item *ngFor="let experience of experience">
+            <img [src]="experience.logo" 
+            id="companyLogo" [alt]="'Logo' + experience.empresa">
+            <h3 mat-line>{{experience.empresa}}</h3>
+            <h5 mat-line>{{experience.puesto}}</h5>
+            <p mat-line>{{experience.inicio}} - {{experience.fin}}</p>
             <button *ngIf="isUserLoggedIn()" (click)="openEditDialog()" 
                 mat-mini-fab color="accent" class="editButton"
                 matTooltip="Editar">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button *ngIf="isUserLoggedIn()" (click)="eliminar(experiencia.id)" 
+            <button *ngIf="isUserLoggedIn()" (click)="delete(experience.id)" 
                 mat-mini-fab color="accent" class="editButton"
                 matTooltip="Eliminar">
                 <mat-icon>delete</mat-icon>

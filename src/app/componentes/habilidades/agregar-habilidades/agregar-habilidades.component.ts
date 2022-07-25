@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/model/habilidades.model';
 import { HabilidadesService } from 'src/app/servicios/habilidades.service';
 
@@ -13,8 +11,7 @@ export class AgregarHabilidadesComponent implements OnInit {
 
   ability:Habilidades = new Habilidades();
 
-  constructor(private abilitiesService:HabilidadesService, 
-    public addDialog:MatDialog) {}
+  constructor(private abilitiesService:HabilidadesService) {}
 
   ngOnInit(): void {}
 
