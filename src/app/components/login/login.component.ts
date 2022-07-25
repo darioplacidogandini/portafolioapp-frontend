@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private loginservice: AuthenticationService) {
       this.loginForm = this.formBuilder.group({
         username: new FormControl('', [Validators.required,Validators.email]),
-        password: new FormControl('', [Validators.required,Validators.minLength(8),Validators.pattern('^[@-]')]),
+        password: new FormControl('', [Validators.required,Validators.minLength(8),Validators.pattern('@')]),
       })
     }
 
