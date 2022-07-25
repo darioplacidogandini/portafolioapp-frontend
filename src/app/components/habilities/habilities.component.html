@@ -1,0 +1,38 @@
+<mat-card class="card">
+    <h1>
+        Habilidades
+        <button *ngIf="isUserLoggedIn()" (click)="addAbility()" 
+            mat-mini-fab color="primary" class="editButton" 
+            matTooltip="Agregar habilidad">
+            <mat-icon>add</mat-icon>
+        </button>
+    </h1>
+    <mat-grid-list cols="1" rowHeight="120px">
+        <mat-list>
+            <mat-grid-tile>
+            <mat-list-item *ngFor="let hability of habilities">
+                <mat-progress-spinner mat-list-icon
+                    [value]="hability.percentage"
+                    mode="determinate">
+                </mat-progress-spinner>
+                <div class="spinnerText">
+                    {{hability.percentage} %
+                </div>
+                <h2 mat-line>{{hability.hability}}</h2>
+                <button mat-mini-fab class="editButton" color="accent" 
+                    *ngIf="isUserLoggedIn()" 
+                    (click)="editAbility(hability.id)" 
+                    class="editButton" matTooltip="Editar">
+                <mat-icon>edit</mat-icon>
+                </button>    
+                <button mat-mini-fab class="editButton" color="accent" 
+                    *ngIf="isUserLoggedIn()" 
+                    (click)="deleteAbility(hability.id)" 
+                    class="editButton" matTooltip="Eliminar">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-list-item>
+            </mat-grid-tile>
+        </mat-list>        
+    </mat-grid-list>
+</mat-card>

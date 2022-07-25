@@ -3,47 +3,47 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InterceptorService } from './servicios/interceptor.service';
+import { InterceptorService } from './services/interceptor.service';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './modules/material.module';
-import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
-import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
-import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
-import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
-import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
-import { EducacionComponent } from './componentes/educacion/educacion.component';
-import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
-import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
-import { AgregarEducacionComponent } from './componentes/educacion/agregar-educacion/agregar-educacion.component';
-import { AgregarHabilidadesComponent } from './componentes/habilidades/agregar-habilidades/agregar-habilidades.component';
-import { AgregarExperienciaComponent } from './componentes/experiencia/agregar-experiencia/agregar-experiencia.component';
-import { AgregarProyectosComponent } from './componentes/proyectos/agregar-proyectos/agregar-proyectos.component';
-import { EditarAcercaComponent } from './componentes/acerca-de/editar-acerca/editar-acerca.component';
-import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia/editar-experiencia.component';
-import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
-import { EditarHabilidadesComponent } from './componentes/habilidades/editar-habilidades/editar-habilidades.component';
-import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos/editar-proyectos.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { LoginComponent } from './components/login/login.component'
+import { HeaderComponent } from './components/header/header.component';
+import { AboutComponent } from './components/about/about.component';
+import { EditAboutComponent } from './components/about/edit-about/edit-about.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { AddExperienceComponent } from './components/experience/add-experience/add-experience.component';
+import { EditExperienceComponent } from './components/experience/edit-experience/edit-experience.component';
+import { EducationComponent } from './components/education/education.component';
+import { AddEducationComponent } from './components/education/add-education/add-education.component';
+import { EditEducationComponent } from './components/education/edit-education/edit-education.component';
+import { HabilitiesComponent } from './components/habilities/habilities.component';
+import { AddHabilitiesComponent } from './components/habilities/add-habilities/add-habilities.component';
+import { EditHabilitiesComponent } from './components/habilities/edit-habilities/edit-habilities.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { AddProjectsComponent } from './components/projects/add-projects/add-projects.component';
+import { EditProjectsComponent } from './components/projects/edit-projects/edit-projects.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     PortfolioComponent,
-    IniciarSesionComponent,
-    EncabezadoComponent,
-    AcercaDeComponent,
-    ExperienciaComponent,
-    EducacionComponent,
-    HabilidadesComponent,
-    ProyectosComponent,
-    AgregarEducacionComponent,
-    AgregarExperienciaComponent,
-    AgregarProyectosComponent,
-    AgregarHabilidadesComponent,
-    EditarAcercaComponent,
-    EditarExperienciaComponent,
-    EditarEducacionComponent,
-    EditarHabilidadesComponent,
-    EditarProyectosComponent,
+    LoginComponent,
+    HeaderComponent,
+    AboutComponent,
+    EditAboutComponent,
+    ExperienceComponent,
+    AddExperienceComponent,
+    EditExperienceComponent,
+    EducationComponent,
+    AddEducationComponent,
+    EditEducationComponent,
+    HabilitiesComponent,
+    AddHabilitiesComponent,
+    EditHabilitiesComponent,
+    ProjectsComponent,
+    AddProjectsComponent,
+    EditProjectsComponent
   ],
   imports: [
     BrowserModule,

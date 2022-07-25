@@ -1,0 +1,48 @@
+<form (ngSubmit)="add()">
+  <h2 mat-dialog-title>Agregar educación</h2>
+  <mat-dialog-content class="mat-typography">
+      <mat-form-field class="form-field">
+          <label for="title">Titulo</label>
+          <input matInput [(ngModel)]="education.title" 
+          type="text" appearance="fill"
+          id="title" name="title">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+          <label for="institution">Institucion</label>
+          <input matInput [(ngModel)]="education.institution" 
+          type="text" appearance="fill"
+          id="institution" name="institution">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-field">
+          <label for="date">Fecha</label>
+          <input matInput [(ngModel)]="education.date" 
+          type="text" appearance="fill"
+          id="date" name="date">
+      </mat-form-field>
+      <mat-form-field>
+          <label for="duration">Duracion</label>
+          <input matInput [(ngModel)]="education.duration" 
+          type="text" appearance="fill"
+          id="duration" name="duration">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-field">
+          <label for="institutionLogo">URL logo de la institucion</label>
+          <input matInput [(ngModel)]="education.institutionLogo" 
+          type="text" appearance="fill"
+          id="institutionLogo" name="institutionLogo">
+      </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button type="submit" mat-raised-button color="primary"
+      [mat-dialog-close]="true" 
+      cdkFocusInitial matTooltip="Agregar">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button mat-raised-button color="accent"
+      mat-dialog-close matTooltip="Salir">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-dialog-actions>    
+</form>

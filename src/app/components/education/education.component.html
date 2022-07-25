@@ -1,0 +1,38 @@
+<mat-card class="card">
+    <h1>
+        Educación
+        <button *ngIf="isUserLoggedIn()" mat-mini-fab color="primary"
+            (click)="openAddDialog()" class="editButton"
+            matTooltip="Agregar education">
+            <mat-icon>add</mat-icon>
+        </button>
+    </h1>
+    <mat-list>
+        <mat-list-item *ngFor="let education of education">
+            <img mat-card-image
+            [src]="education.institutionLogo" id="educacionPhoto"
+            [alt]="'Logo' + education.institutionLogo">
+            <h3 mat-line>{{education.title}} </h3>
+            <br>
+            <h5 mat-line>{{education.institution}}</h5>
+            <br>
+            <p mat-line>{{education.date}} - {{education.duration}} hs</p>
+            <button mat-mini-fab color="accent" class="editButton"
+                *ngIf="isUserLoggedIn()" 
+                (click)="openEditDialog(education.id)" 
+                matTooltip="Editar">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="accent" class="editButton"
+                *ngIf="isUserLoggedIn()" 
+                (click)="delete(education.id)" 
+                matTooltip="Eliminar">
+                <mat-icon>delete</mat-icon>
+            </button> 
+        </mat-list-item>
+    </mat-list>            
+</mat-card>
+
+
+
+

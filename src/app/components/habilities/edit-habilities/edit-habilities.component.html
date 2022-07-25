@@ -1,0 +1,30 @@
+<form (ngSubmit)="saveChanges()">
+  <h2 mat-dialog-title>Editar habilidad</h2>
+  <mat-dialog-content class="mat-typography">
+      <mat-form-field>
+          <label for="habilityName">Habilidad</label>
+          <input matInput [(ngModel)]="habilities.hability" 
+          type="text" appearance="fill"
+          class="form-control" id="habilityName" name="habilityName">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+          <label for="percentage">Porcentaje</label>
+          <input matInput [(ngModel)]="habilities.percentage" 
+          type="text" appearance="fill"
+          class="form-control" id="percentage" name="percentage">
+      </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button type="submit" mat-raised-button color="primary"
+      cdkFocusInitial
+      matTooltip="Guardar cambios">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button type="button" mat-raised-button color="accent"
+      mat-dialog-close matTooltip="Salir">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</form>
+

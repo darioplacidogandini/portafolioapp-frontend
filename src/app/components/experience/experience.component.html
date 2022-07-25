@@ -1,0 +1,30 @@
+<mat-card class="card">
+    <h1>
+        Experiencia Laboral
+        <button *ngIf="isUserLoggedIn()" (click)="openAddDialog()"
+            mat-mini-fab color="primary" class="editButton" 
+            matTooltip="Agregar experience">
+            <mat-icon>add</mat-icon>
+        </button> 
+    </h1>           
+    <mat-list>
+        <mat-list-item *ngFor="let experience of experience">
+            <img [src]="experience.companyLogo" 
+            id="companyLogo" [alt]="'Logo' + experience.company">
+            <h3 mat-line>{{experience.company}}</h3>
+            <h5 mat-line>{{experience.job}}</h5>
+            <p mat-line>{{experience.start}} - {{experience.end}}</p>
+            <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(experience.id)" 
+                mat-mini-fab color="accent" class="editButton"
+                matTooltip="Editar">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button *ngIf="isUserLoggedIn()" (click)="delete(experience.id)" 
+                mat-mini-fab color="accent" class="editButton"
+                matTooltip="Eliminar">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-list-item>            
+    </mat-list>
+</mat-card>       
+              
