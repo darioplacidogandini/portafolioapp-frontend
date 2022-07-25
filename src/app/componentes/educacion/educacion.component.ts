@@ -41,10 +41,10 @@ export class EducacionComponent implements OnInit {
   }
 
   public openEditDialog(id:number) {
+    this.educationService.id = id;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    this.educationService.id = id;
     this.dialog.open(EditarEducacionComponent,dialogConfig);
   }
 

@@ -40,7 +40,8 @@ export class ExperienciaComponent implements OnInit {
     this.dialog.open(AgregarExperienciaComponent,dialogConfig);
   }
 
-  public openEditDialog() {
+  public openEditDialog(id:number) {
+    this.experienceService.id = id;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
