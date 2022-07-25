@@ -9,7 +9,7 @@ import { About } from '../model/about.model';
 export class AboutService {
 
   private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/about';
-  id:number = 0;
+  id:number = 1;
 
   constructor(private http: HttpClient) {}
 

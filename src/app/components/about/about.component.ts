@@ -31,11 +31,10 @@ export class AboutComponent implements OnInit {
     });
   }
 
-  public openEditDialog(id:number) {
+  public openEditDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    this.aboutService.id = id;
     this.dialog.open(EditAboutComponent,dialogConfig);
   }
   
