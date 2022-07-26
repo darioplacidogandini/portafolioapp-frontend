@@ -1,14 +1,14 @@
 <form (ngSubmit)="saveChanges()">
   <h2 mat-dialog-title>Editar habilidad</h2>
   <mat-dialog-content class="mat-typography">
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="habilityName">Habilidad</label>
           <input matInput [(ngModel)]="habilities.hability" 
           type="text" appearance="fill"
           class="form-control" id="habilityName" name="habilityName">
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="percentage">Porcentaje</label>
           <input matInput [(ngModel)]="habilities.percentage" 
           type="text" appearance="fill"

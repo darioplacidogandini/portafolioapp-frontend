@@ -1,13 +1,13 @@
 <form (ngSubmit)="add()">
   <h2 mat-dialog-title>Agregar habilidad</h2>
   <mat-dialog-content class="mat-typography">
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="habilidad">Habilidad</label>
           <input matInput [(ngModel)]="hability.hability" 
           type="text" appearance="fill"
           class="form-control" id="habilidad" name="habilidad">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="porcentaje">Porcentaje</label>
           <input matInput [(ngModel)]="hability.percentage" 
           type="text" appearance="fill"

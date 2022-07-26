@@ -4,6 +4,14 @@ body {
     height: 100%;
 }
 
+h2 {
+    color: steelblue;
+}
+
+h3 {
+    color: slategray;
+}
+
 #headerToolbar {
     margin-bottom: 4px;
 }
@@ -35,7 +43,7 @@ body {
     font-weight: bolder;
     position: absolute;
     text-align: center;
-    transform: translate(50px,10px);
+    transform: translate(35px,0px);
 }
 
 
