@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { About } from 'src/app/model/about.model';
+import { DialogsService } from 'src/app/services/dialogs.service';
 import { AboutService } from 'src/app/services/about.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { EditAboutComponent } from './edit-about/edit-about.component';
@@ -14,8 +15,8 @@ export class AboutComponent implements OnInit {
 
   about:About[] = [];
 
-  constructor(private aboutService:AboutService,private authService:AuthenticationService,
-    public dialog:MatDialog) {}
+  constructor(private dialogsService:DialogsService,private aboutService:AboutService,
+    private authService:AuthenticationService,public dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.list();
@@ -32,10 +33,7 @@ export class AboutComponent implements OnInit {
   }
 
   public openEditDialog() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    this.dialog.open(EditAboutComponent,dialogConfig);
+    this.dialog.open(EditAboutComponent,this.dialogsService.dialogConfig);
   }
   
 }

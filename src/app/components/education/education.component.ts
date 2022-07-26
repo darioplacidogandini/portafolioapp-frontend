@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogsService } from 'src/app/services/dialogs.service';
 import { Education } from 'src/app/model/education.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { EducationService } from 'src/app/services/education.service';
@@ -16,8 +17,8 @@ export class EducationComponent implements OnInit {
   education:Education[] = [];
   id:number = 0;
 
-  constructor(private educationService:EducationService,private authService:AuthenticationService,
-  public dialog:MatDialog) {}
+  constructor(private dialogsService:DialogsService,private educationService:EducationService,
+    private authService:AuthenticationService,public dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.list();
@@ -34,18 +35,12 @@ export class EducationComponent implements OnInit {
   }
 
   public openAddDialog() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    this.dialog.open(AddEducationComponent,dialogConfig);
+    this.dialog.open(AddEducationComponent,this.dialogsService.dialogConfig);
   }
 
   public openEditDialog(id:number) {
     this.educationService.id = id;
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    this.dialog.open(EditEducationComponent,dialogConfig);
+    this.dialog.open(EditEducationComponent,this.dialogsService.dialogConfig);
   }
 
   public delete(id:number) {

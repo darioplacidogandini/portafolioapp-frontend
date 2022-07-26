@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogsService } from 'src/app/services/dialogs.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,15 +9,15 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialogsService:DialogsService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.loadingScreen();
   }
 
   public loadingScreen() {
-      this.dialog.open(LoadingDialog);
-      setTimeout(() => this.dialog.closeAll(),10000);
+      this.dialog.open(LoadingDialog,this.dialogsService.dialogConfig);
+      setTimeout(() => this.dialog.closeAll(),8000);
   }
 }
 

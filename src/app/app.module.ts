@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './modules/material.module';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { LoadingDialog, PortfolioComponent } from './components/portfolio/portfolio.component';
 import { LoginComponent } from './components/login/login.component'
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
@@ -28,6 +28,7 @@ import { EditProjectsComponent } from './components/projects/edit-projects/edit-
   declarations: [
     AppComponent, 
     PortfolioComponent,
+    LoadingDialog,
     LoginComponent,
     HeaderComponent,
     AboutComponent,
