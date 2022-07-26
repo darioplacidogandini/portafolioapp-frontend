@@ -25,9 +25,11 @@ body {
 
 .spinnerText {
     color: steelblue;
-    position: relative; 
-    top: 0px; 
-    left: 50px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 

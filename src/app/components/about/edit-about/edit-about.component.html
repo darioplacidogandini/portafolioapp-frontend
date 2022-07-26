@@ -29,7 +29,8 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button type="submit" mat-raised-button color="primary"
-      cdkFocusInitial matTooltip="Guardar cambios">
+      [mat-dialog-close]="true" cdkFocusInitial 
+      matTooltip="Guardar cambios">
       <mat-icon>check</mat-icon>
     </button>
     <button type="button" mat-raised-button color="accent"
