@@ -27,6 +27,7 @@ body {
 
 .accentText {
     color: slategray;
+    font-weight: bold;
 }
 
 .form-field {
