@@ -4,14 +4,6 @@ body {
     height: 100%;
 }
 
-h2 {
-    color: steelblue;
-}
-
-h3 {
-    color: slategray;
-}
-
 #headerToolbar {
     margin-bottom: 4px;
 }
@@ -26,6 +18,14 @@ h3 {
 .card {
     margin-bottom: 4px;
     margin-top: 4px;
+}
+
+.primaryText {
+    color: steelblue;
+}
+
+.accentText {
+    color: slategray;
 }
 
 .form-field {
