@@ -11,6 +11,7 @@ export class PortfolioComponent implements OnInit {
   constructor(private dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.loadingScreen();
   }
 
   public loadingScreen() {
