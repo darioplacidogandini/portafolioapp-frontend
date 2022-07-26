@@ -21,7 +21,7 @@ export class PortfolioComponent implements OnInit {
 
 @Component({
   selector: 'loading.dialog',
-  templateUrl: 'loading.dialog.html',
+  templateUrl: './loading.dialog.html'
 })
 export class LoadingDialog {}
 
