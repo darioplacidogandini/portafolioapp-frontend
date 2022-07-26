@@ -8,10 +8,6 @@ body {
     margin-bottom: 4px;
 }
 
-#headerImage {
-    object-fit: contain
-}
-
 #profilePhoto {
     height: 200px;
     width: 200px;
@@ -36,11 +32,11 @@ body {
 
 .spinnerText {
     color: steelblue;
+    font-weight: bolder;
     position: absolute;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    left: 0%;
 }
 
 
