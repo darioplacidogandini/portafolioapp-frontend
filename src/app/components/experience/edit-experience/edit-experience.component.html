@@ -1,33 +1,33 @@
 <form (ngSubmit)="saveChanges()">
   <h2 mat-dialog-title>Editar experiencia laboral</h2>
   <mat-dialog-content class="mat-typography">
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="empresa">Empresa</label>
           <input matInput [(ngModel)]="experience.company" 
           type="text" appearance="fill"
           class="form-control" id="empresa" name="empresa">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="puesto">Puesto</label>
           <input matInput [(ngModel)]="experience.job" 
           type="text" appearance="fill"
           class="form-control" id="puesto" name="puesto">
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="inicio">Desde</label>
           <input matInput [(ngModel)]="experience.start" 
           type="text" appearance="fill"
           class="form-control" id="inicio" name="inicio">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="fin">Hasta</label>
           <input matInput [(ngModel)]="experience.end" 
           type="text" appearance="fill"
           class="form-control" id="fin" name="fin">
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field class="form-field">
           <label for="logo">URL logo de la empresa</label>
           <input matInput [(ngModel)]="experience.companyLogo" 
           type="text" appearance="fill"

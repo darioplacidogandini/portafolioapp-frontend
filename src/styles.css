@@ -22,6 +22,7 @@ body {
 
 .primaryText {
     color: steelblue;
+    font-weight: bolder;
 }
 
 .accentText {

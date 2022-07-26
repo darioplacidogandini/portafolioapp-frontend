@@ -11,7 +11,7 @@
         <mat-list-item *ngFor="let project of projects">
             <img [src]="project.projectLogo" 
             id="proyectPhoto" [alt]="'Logo' + project.projectName">
-            <h3 mat-line>{{project.projectName}}</h3>
+            <h3 mat-line class="accentText">{{project.projectName}}</h3>
                 <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(project.id)" 
                     mat-mini-fab color="accent"
                     matTooltip="Editar">

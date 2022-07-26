@@ -11,7 +11,7 @@
         <mat-list-item *ngFor="let experience of experience">
             <img [src]="experience.companyLogo" 
             id="companyLogo" [alt]="'Logo' + experience.company">
-            <h3 mat-line>{{experience.company}}</h3>
+            <h3 mat-line class="accentText">{{experience.company}}</h3>
             <h5 mat-line>{{experience.job}}</h5>
             <p mat-line>{{experience.start}} - {{experience.end}}</p>
             <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(experience.id)" 
