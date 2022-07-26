@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Project } from 'src/app/model/project.model';
 import { ProjectsService } from 'src/app/services/projects.service';
 
@@ -9,7 +10,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 })
 export class EditProjectsComponent implements OnInit {
 
-  constructor(private projectsService:ProjectsService) {}
+  constructor(private projectsService:ProjectsService, private route:Router) {}
 
   id:number = 0;
   project:Project = new Project();
@@ -25,6 +26,6 @@ export class EditProjectsComponent implements OnInit {
     this.projectsService.edit(this.id,this.project).subscribe(data => {
       console.log(data);
     },error => console.log(error));
+    this.route.navigate(['']);
   }
-
 }

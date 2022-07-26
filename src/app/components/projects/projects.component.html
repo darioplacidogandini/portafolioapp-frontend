@@ -10,8 +10,8 @@
     <mat-list>
         <mat-list-item *ngFor="let project of projects">
             <img [src]="project.projectLogo" 
-            id="proyectPhoto" [alt]="'Logo' + project.name">
-            <h3 mat-line>{{project.name}}</h3>
+            id="proyectPhoto" [alt]="'Logo' + project.projectName">
+            <h3 mat-line>{{project.projectName}}</h3>
                 <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(project.id)" 
                     mat-mini-fab color="accent"
                     matTooltip="Editar">

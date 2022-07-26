@@ -5,7 +5,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddProjectsComponent } from './add-projects/add-projects.component';
 import { EditProjectsComponent } from './edit-projects/edit-projects.component';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
   projects:Project[] = [];
 
   constructor(private projectsService:ProjectsService,private authService:AuthenticationService,
-      public dialog:MatDialog) {}
+  public route:Router,public dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.list();
@@ -51,7 +51,7 @@ export class ProjectsComponent implements OnInit {
   public delete(id:number) {
     this.projectsService.delete(id).subscribe(data => {
       console.log(data);
-      this.list();
+      this.route.navigate(['']);
     })
   }
 

@@ -2,36 +2,36 @@
   <h2 mat-dialog-title>Editar proyecto</h2>
 <mat-dialog-content class="mat-typography">
     <mat-form-field class="form-field">
-        <label for="nombre">Nombre del proyecto</label>
-        <input matInput [(ngModel)]="project.name" 
+        <label for="proyectName">Nombre del proyecto</label>
+        <input matInput [(ngModel)]="project.projectName" 
         type="text" appearance="fill"
-        class="form-control" id="nombre" name="nombre">
+        class="form-control" id="proyectName" name="proyectName">
     </mat-form-field>
     <mat-form-field class="form-field">
         <label for="descripcion">Descripcion del proyecto</label>
         <input matInput [(ngModel)]="project.description" 
         type="text" appearance="fill"
-        class="form-control" id="descripcion" name="descripcion">
+        class="form-control" id="description" name="description">
     </mat-form-field>
     <br>
     <mat-form-field class="form-field">
-        <label for="url">URL del proyecto</label>
+        <label for="projectURL">URL del proyecto</label>
         <input matInput [(ngModel)]="project.projectURL" 
         type="text" appearance="fill"
-        class="form-control" id="url" name="url">
+        class="form-control" id="projectURL" name="projectURL">
     </mat-form-field>
     <mat-form-field class="form-field">
-      <label for="codigoFuente">Repositorio codigo</label>
+      <label for="sourceCode">Repositorio codigo</label>
       <input matInput [(ngModel)]="project.sourceCode" 
       type="text" appearance="fill"
-      class="form-control" id="codigoFuente" name="codigoFuente">
+      class="form-control" id="sourceCode" name="sourceCode">
     </mat-form-field>
     <br>
     <mat-form-field class="form-field">
-        <label for="logo">Logo del proyecto</label>
+        <label for="projectLogo">Logo del proyecto</label>
         <input matInput [(ngModel)]="project.projectLogo" 
         type="text" appearance="fill"
-        class="form-control" id="logo" name="logo">
+        class="form-control" id="projectLogo" name="projectLogo">
     </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

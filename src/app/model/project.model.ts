@@ -1,6 +1,6 @@
 export class Project {
     id:number = 0;
-    name:String = '';
+    projectName:String = '';
     description:String = '';
     projectURL:String = '';
     sourceCode:String = '';
