@@ -11,14 +11,15 @@ export class AddHabilitiesComponent implements OnInit {
 
   hability:Hability = new Hability();
 
-  constructor(private abilitiesService:HabilitiesService) {}
+  constructor(private habilitiesService:HabilitiesService) {}
 
   ngOnInit(): void {}
 
   public add() {
-    this.abilitiesService.add(this.hability).subscribe(data => {
+    this.habilitiesService.add(this.hability).subscribe(data => {
       console.log(data);
     });
+    this.habilitiesService.list();
   }
 
 }

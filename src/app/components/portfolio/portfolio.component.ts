@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { DialogsService } from 'src/app/services/dialogs.service';
 
 @Component({
@@ -11,18 +12,18 @@ export class PortfolioComponent implements OnInit {
 
   databaseLoaded:boolean = false;
 
-  constructor(private dialogsService:DialogsService,private dialog:MatDialog) { }
+  constructor(private dialogsService:DialogsService,private dialog:MatDialog,
+    private authenticationService:AuthenticationService) {}
 
   ngOnInit(): void {
-    this.loadingScreen();
+    if (this.authenticationService.isUserLoggedIn()) {
+      this.loadingScreen();
+    }
   }
 
   public loadingScreen() {
       this.dialog.open(LoadingDialog,this.dialogsService.loadingDialogConfig);
       setTimeout(() => this.dialog.closeAll(),8000);
-      if (this.databaseLoaded === false) {
-        this.databaseLoaded = true;
-      }
   }
 }
 
