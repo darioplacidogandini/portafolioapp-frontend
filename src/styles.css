@@ -15,6 +15,10 @@ body {
     border: 2px solid;
 }
 
+.loadingDialogBackground {
+    color: white;
+}
+
 .card {
     margin-bottom: 4px;
     margin-top: 4px;

@@ -16,7 +16,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   public loadingScreen() {
-      this.dialog.open(LoadingDialog,this.dialogsService.dialogConfig);
+      this.dialog.open(LoadingDialog,this.dialogsService.loadingDialogConfig);
       setTimeout(() => this.dialog.closeAll(),8000);
   }
 }

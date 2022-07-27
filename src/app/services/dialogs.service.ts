@@ -6,9 +6,11 @@ import { MatDialogConfig } from '@angular/material/dialog';
 })
 export class DialogsService {
 
+  loadingDialogConfig = new MatDialogConfig();
   dialogConfig = new MatDialogConfig();
 
     constructor() {
+      this.loadingDialogConfig.backdropClass = 'loadingDialogBackground';
       this.dialogConfig.disableClose = true;
       this.dialogConfig.autoFocus = true;
     }
