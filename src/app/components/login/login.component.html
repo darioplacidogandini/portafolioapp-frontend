@@ -6,7 +6,7 @@
   </mat-grid-list>
       <mat-dialog-content class="mat-typography">
         <mat-form-field class="form-field" appearance="fill">
-          <mat-mat-label for="username">Usuario</mat-mat-label>
+          <mat-label for="username">Usuario</mat-label>
           <input matInput appearance="fill" type="text" name="username" 
           autocomplete="username" formControlName="username" required>
           <mat-error *ngIf="loginForm.invalid">
@@ -14,7 +14,7 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="form-field" appearance="fill">
-          <mat-mat-label for="password">Contraseña</mat-mat-label>
+          <mat-label for="password">Contraseña</mat-label>
           <input matInput appearance="fill" type="password" name="password" 
           autocomplete="current-password" formControlName="password" required>
           <mat-error *ngIf="loginForm.invalid">
