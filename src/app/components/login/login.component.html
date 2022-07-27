@@ -5,7 +5,7 @@
     </mat-grid-tile>
   </mat-grid-list>
       <mat-dialog-content class="mat-typography">
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="fill">
           <label for="username">Usuario</label>
           <input matInput appearance="fill" type="text" name="username" 
           autocomplete="username" formControlName="username" required>
@@ -13,7 +13,7 @@
             {{getErrorMessages()}}
           </mat-error>
         </mat-form-field>
-        <mat-form-field class="form-field">
+        <mat-form-field class="form-field" appearance="fill">
           <label for="password">Contraseña</label>
           <input matInput appearance="fill" type="password" name="password" 
           autocomplete="current-password" formControlName="password" required>

@@ -1,33 +1,33 @@
 <form (ngSubmit)="add()">
   <h2 mat-dialog-title>Agregar educación</h2>
   <mat-dialog-content class="mat-typography">
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field" appearance="fill">
           <label for="title">Titulo</label>
           <input matInput [(ngModel)]="education.title" 
           type="text" appearance="fill"
           id="title" name="title">
       </mat-form-field>
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field" appearance="fill">
           <label for="institution">Institucion</label>
           <input matInput [(ngModel)]="education.institution" 
           type="text" appearance="fill"
           id="institution" name="institution">
       </mat-form-field>
       <br>
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field" appearance="fill">
           <label for="date">Fecha</label>
           <input matInput [(ngModel)]="education.date" 
           type="text" appearance="fill"
           id="date" name="date">
       </mat-form-field>
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field" appearance="fill">
           <label for="duration">Duracion</label>
           <input matInput [(ngModel)]="education.duration" 
           type="text" appearance="fill"
           id="duration" name="duration">
       </mat-form-field>
       <br>
-      <mat-form-field class="form-field">
+      <mat-form-field class="form-field" appearance="fill">
           <label for="institutionLogo">URL logo de la institucion</label>
           <input matInput [(ngModel)]="education.institutionLogo" 
           type="text" appearance="fill"
