@@ -11,6 +11,7 @@ export class DialogsService {
 
     constructor() {
       this.loadingDialogConfig.backdropClass = 'loadingDialogBackground';
+      this.loadingDialogConfig.panelClass = 'loadingDialogPanel';
       this.dialogConfig.disableClose = true;
       this.dialogConfig.autoFocus = true;
     }

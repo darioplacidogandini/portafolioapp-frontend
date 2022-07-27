@@ -16,7 +16,11 @@ body {
 }
 
 .loadingDialogBackground {
-    color: white;
+    background-color: white;
+}
+
+.loadingDialogPanel {
+    background-color: white;
 }
 
 .card {
