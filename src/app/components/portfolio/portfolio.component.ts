@@ -9,6 +9,8 @@ import { DialogsService } from 'src/app/services/dialogs.service';
 })
 export class PortfolioComponent implements OnInit {
 
+  databaseLoaded:boolean = false;
+
   constructor(private dialogsService:DialogsService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
@@ -18,6 +20,9 @@ export class PortfolioComponent implements OnInit {
   public loadingScreen() {
       this.dialog.open(LoadingDialog,this.dialogsService.loadingDialogConfig);
       setTimeout(() => this.dialog.closeAll(),8000);
+      if (this.databaseLoaded === false) {
+        this.databaseLoaded = true;
+      }
   }
 }
 
