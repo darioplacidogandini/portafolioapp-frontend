@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Hability } from 'src/app/model/hability.model';
 import { HabilitiesService } from 'src/app/services/habilities.service';
 
@@ -10,7 +9,7 @@ import { HabilitiesService } from 'src/app/services/habilities.service';
 })
 export class EditHabilitiesComponent implements OnInit {
 
-  constructor(private route:Router,private habilitiesService:HabilitiesService) {}
+  constructor(private habilitiesService:HabilitiesService) {}
 
   id:number = 0;
   habilities:Hability = new Hability();
@@ -24,9 +23,8 @@ export class EditHabilitiesComponent implements OnInit {
 
   public saveChanges() {
     this.habilitiesService.edit(this.id,this.habilities).subscribe(data => {
-      console.log(data)
+      console.log(data);
     },error => console.log(error));
-    this.route.navigate(['']);
   }
 
 }
