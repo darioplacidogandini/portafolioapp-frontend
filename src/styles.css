@@ -21,6 +21,9 @@ body {
 
 .loadingDialogPanel >  mat-dialog-container {
     box-shadow: none;
+    color: steelblue;
+    width: 20px;
+    text-align: center;
 }
 
 .card {
