@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       return 'La contraseña debe contener al menos 8 caracteres';
      }
      if (this.loginForm.get('password')?.hasError('pattern')) {
-      return 'La contraseña debe contener al menos \n uno de  los siguientes caracteres: @ -';
+      return 'Debe contener: @ -';
      }
      return 'Rellene este campo';
   }
