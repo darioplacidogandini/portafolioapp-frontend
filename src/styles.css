@@ -15,6 +15,11 @@ body {
     border: 2px solid;
 }
 
+#projectPhoto {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 .loadingDialogBackground {
     background-color: white;
 }
@@ -45,6 +50,11 @@ body {
     margin-right: 4px;
 }
 
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+}
+
 .editButtonGroup {
     display: flex;
     flex-direction: column;
@@ -52,8 +62,7 @@ body {
 }
 
 .editButton {
-    margin: 4px;
-    margin: 4px;
+    margin-bottom: 8px;
 }
 
 .spinnerText {

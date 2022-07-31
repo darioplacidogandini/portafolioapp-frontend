@@ -13,19 +13,21 @@
             id="proyectPhoto" [alt]="'Logo' + project.projectName">
             <h3 mat-line class="accentText">{{project.projectName}}</h3>
             <h5 mat-line>{{project.description}}</h5>
-            <a href="{{project.sourceCode}}">
-                <button mat-mini-fab color="accent" class="editButton"
-                    data-toggle="tooltip" 
-                    matTooltip="Código fuente">
-                        <mat-icon>code</mat-icon>
+            <div class="buttonGroup">
+                <a href="{{project.sourceCode}}">
+                    <button mat-mini-fab color="accent" class="editButton"
+                        data-toggle="tooltip" 
+                        matTooltip="Código fuente">
+                            <mat-icon>code</mat-icon>
+                        </button>
+                </a>
+                <a href="{{project.projectURL}}">
+                    <button mat-mini-fab color="accent" class="editButton"
+                        matTooltip="Ver proyecto">
+                        <mat-icon>visibility</mat-icon>
                     </button>
-            </a>
-            <a href="{{project.projectURL}}">
-                <button mat-mini-fab color="accent" class="editButton"
-                    matTooltip="Ver proyecto">
-                    <mat-icon>visibility</mat-icon>
-                </button>
-            </a>
+                </a>
+            </div>
             <div class="editButtonGroup">
                 <button *ngIf="isUserLoggedIn()" (click)="openEditDialog(project.id)" 
                     mat-mini-fab color="accent"
