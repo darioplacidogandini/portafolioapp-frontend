@@ -21,6 +21,7 @@ body {
 
 .loadingDialogPanel {
     background: white;
+    box-shadow: none;
 }
 
 .card {
