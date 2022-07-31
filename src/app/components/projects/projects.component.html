@@ -8,7 +8,8 @@
         </button>
     </h1>          
     <mat-list>
-        <mat-list-item *ngFor="let project of projects">
+        <mat-list-item class="listElement"
+         *ngFor="let project of projects">
             <img [src]="project.projectLogo" 
             id="proyectPhoto" [alt]="'Logo' + project.projectName">
             <h3 mat-line class="accentText">{{project.projectName}}</h3>

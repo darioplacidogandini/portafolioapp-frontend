@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Education } from 'src/app/model/education.model';
 import { EducationService } from 'src/app/services/education.service';
 
@@ -12,8 +13,7 @@ export class EditEducationComponent implements OnInit {
   id:number = 0;
   education:Education = new Education();
 
-    constructor(private educationService:EducationService) {
-    }
+    constructor(private educationService:EducationService,private route:Router) {}
   
     ngOnInit(): void {
       this.id = this.educationService.id;
@@ -26,6 +26,8 @@ export class EditEducationComponent implements OnInit {
       this.educationService.edit(this.id,this.education).subscribe(data => {
         console.log(data);
       }, error => console.log(error));
+      this.route.navigate(['']);
+      window.location.reload();
     }
 }
 

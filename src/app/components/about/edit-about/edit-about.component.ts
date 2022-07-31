@@ -29,5 +29,6 @@ export class EditAboutComponent implements OnInit {
       console.log(data);
     }, error => console.log(error)); 
     this.route.navigate(['']);
+    window.location.reload();
   }
 }

@@ -38,7 +38,7 @@ body {
 .primaryText {
     color: steelblue;
     font-weight: bolder;
-    margin-bottom: 2px;
+    padding-bottom: 0px;
 }
 
 .accentText {
@@ -68,6 +68,10 @@ body {
 
 .habilityContainer {
     width: 150px;
+}
+
+.listElement {
+    margin-bottom: 5px;
 }
 
 .spinnerText {
