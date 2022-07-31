@@ -6,6 +6,8 @@ import { MatDialogConfig } from '@angular/material/dialog';
 })
 export class DialogsService {
 
+  databaseLoaded = false;
+
   loadingDialogConfig = new MatDialogConfig();
   dialogConfig = new MatDialogConfig();
 

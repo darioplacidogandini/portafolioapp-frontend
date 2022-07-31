@@ -16,7 +16,7 @@ export class PortfolioComponent implements OnInit {
     private authenticationService:AuthenticationService) {}
 
   ngOnInit(): void {
-    if (this.authenticationService.isUserLoggedIn()) {
+    if (this.databaseLoaded === false) {
       this.loadingScreen();
     }
   }
@@ -24,6 +24,7 @@ export class PortfolioComponent implements OnInit {
   public loadingScreen() {
       this.dialog.open(LoadingDialog,this.dialogsService.loadingDialogConfig);
       setTimeout(() => this.dialog.closeAll(),8000);
+      this.databaseLoaded = true;
   }
 }
 
