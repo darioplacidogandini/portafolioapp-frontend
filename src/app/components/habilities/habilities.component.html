@@ -19,18 +19,20 @@
                     {{hability.percentage}}%
                 </div>
                 <h2 mat-line>{{hability.hability}}</h2>
-                <button mat-mini-fab class="editButton" color="accent" 
-                    *ngIf="isUserLoggedIn()" 
-                    (click)="editAbility(hability.id)" 
-                    class="editButton" matTooltip="Editar">
-                <mat-icon>edit</mat-icon>
-                </button>    
-                <button mat-mini-fab class="editButton" color="accent" 
-                    *ngIf="isUserLoggedIn()" 
-                    (click)="deleteAbility(hability.id)" 
-                    class="editButton" matTooltip="Eliminar">
-                    <mat-icon>delete</mat-icon>
-                </button>
+                <div class="editButtonGroup">
+                    <button mat-mini-fab class="editButton" color="accent" 
+                        *ngIf="isUserLoggedIn()" 
+                        (click)="editAbility(hability.id)" 
+                        class="editButton" matTooltip="Editar">
+                        <mat-icon>edit</mat-icon>
+                    </button>    
+                    <button mat-mini-fab class="editButton" color="warn" 
+                        *ngIf="isUserLoggedIn()" 
+                        (click)="deleteAbility(hability.id)" 
+                        class="editButton" matTooltip="Eliminar">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
             </mat-list-item>
             </mat-grid-tile>
         </mat-list>        

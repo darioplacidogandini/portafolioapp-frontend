@@ -2,7 +2,7 @@
     <mat-list *ngFor="let about of about">
         <div id="headerImage" [ngStyle]="{'background-image': 'url(' + about.headerImage + ')'}" 
         alt="Foto de Portada">
-            <button mat-mini-fab align="right" *ngIf="isUserLoggedIn()" 
+            <button mat-mini-fab *ngIf="isUserLoggedIn()" 
                 (click)="openEditDialog()" class="editButton"
                 matTooltip="Editar perfil">
                 <mat-icon>edit</mat-icon>
