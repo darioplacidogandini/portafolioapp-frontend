@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private loginservice: AuthenticationService) {
       this.loginForm = this.formBuilder.group({
         username: new FormControl('', [Validators.required,Validators.email]),
-        password: new FormControl('', [Validators.required,Validators.minLength(8),Validators.pattern("^[@-]$")]),
+        password: new FormControl('', [Validators.required,Validators.minLength(8),Validators.pattern("^[a-z0-9_-]{8,15}$"),
       })
     }
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       return 'La contraseña debe contener al menos 8 caracteres';
      }
      if (this.loginForm.get('password')?.hasError('pattern')) {
-      return 'La contraseña debe contener al menos uno de  los siguientes caracteres: @ -';
+      return 'La contraseña debe contener al menos \r uno de  los siguientes caracteres: @ -';
      }
      return 'Rellene este campo';
   }

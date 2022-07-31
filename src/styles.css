@@ -19,8 +19,7 @@ body {
     background-color: white;
 }
 
-.loadingDialogPanel {
-    background: white;
+.loadingDialogPanel >  mat-dialog-container {
     box-shadow: none;
 }
 
