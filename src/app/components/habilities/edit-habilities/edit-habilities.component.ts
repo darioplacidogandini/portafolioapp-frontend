@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hability } from 'src/app/model/hability.model';
 import { HabilitiesService } from 'src/app/services/habilities.service';
 
@@ -9,7 +10,7 @@ import { HabilitiesService } from 'src/app/services/habilities.service';
 })
 export class EditHabilitiesComponent implements OnInit {
 
-  constructor(private habilitiesService:HabilitiesService) {}
+  constructor(private habilitiesService:HabilitiesService,private route:Router) {}
 
   id:number = 0;
   habilities:Hability = new Hability();
@@ -26,6 +27,7 @@ export class EditHabilitiesComponent implements OnInit {
       console.log(data);
       this.habilitiesService.list();
     },error => console.log(error));
+    this.route.navigate(['']);
     window.location.reload();
   }
 }
