@@ -16,8 +16,8 @@ body {
 }
 
 #projectPhoto {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .loadingDialogBackground {
@@ -58,7 +58,7 @@ body {
 .editButtonGroup {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 .editButton {
