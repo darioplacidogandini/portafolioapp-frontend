@@ -18,8 +18,7 @@ export class AddHabilitiesComponent implements OnInit {
   public add() {
     this.habilitiesService.add(this.hability).subscribe(data => {
       console.log(data);
+      this.habilitiesService.list();
     });
-    this.habilitiesService.list();
   }
-
 }

@@ -24,7 +24,7 @@ export class EditHabilitiesComponent implements OnInit {
   public saveChanges() {
     this.habilitiesService.edit(this.id,this.habilities).subscribe(data => {
       console.log(data);
+      this.habilitiesService.list();
     },error => console.log(error));
   }
-
 }
