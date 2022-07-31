@@ -38,6 +38,7 @@ body {
 .primaryText {
     color: steelblue;
     font-weight: bolder;
+    margin-bottom: 2px;
 }
 
 .accentText {

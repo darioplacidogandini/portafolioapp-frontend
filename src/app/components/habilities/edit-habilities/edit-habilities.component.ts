@@ -26,5 +26,6 @@ export class EditHabilitiesComponent implements OnInit {
       console.log(data);
       this.habilitiesService.list();
     },error => console.log(error));
+    window.location.reload();
   }
 }
