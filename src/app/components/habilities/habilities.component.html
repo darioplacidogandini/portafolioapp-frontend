@@ -7,34 +7,33 @@
             <mat-icon>add</mat-icon>
         </button>
     </h1>
-    <mat-grid-list cols="1" rowHeight="120px">
+    <mat-grid-list class="habilityContainer" cols="1" rowHeight="120px">
         <mat-list>
             <mat-grid-tile>
-            <mat-list-item class="habilityContainer" 
-            *ngFor="let hability of habilities">
-                <mat-progress-spinner mat-list-icon
-                    [value]="hability.percentage"
-                    mode="determinate">
-                </mat-progress-spinner>
-                <div class="spinnerText">
-                    {{hability.percentage}}%
-                </div>
-                <h2 mat-line>{{hability.hability}}</h2>
-                <div class="editButtonGroup">
-                    <button mat-mini-fab class="editButton" color="accent" 
-                        *ngIf="isUserLoggedIn()" 
-                        (click)="editAbility(hability.id)" 
-                        class="editButton" matTooltip="Editar">
-                        <mat-icon>edit</mat-icon>
-                    </button>    
-                    <button mat-mini-fab class="editButton" color="warn" 
-                        *ngIf="isUserLoggedIn()" 
-                        (click)="deleteAbility(hability.id)" 
-                        class="editButton" matTooltip="Eliminar">
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </mat-list-item>
+                <mat-list-item *ngFor="let hability of habilities">
+                    <mat-progress-spinner mat-list-icon
+                        [value]="hability.percentage"
+                        mode="determinate">
+                    </mat-progress-spinner>
+                    <div class="spinnerText">
+                        {{hability.percentage}}%
+                    </div>
+                    <h2 mat-line>{{hability.hability}}</h2>
+                    <div class="editButtonGroup">
+                        <button mat-mini-fab class="editButton" color="accent" 
+                            *ngIf="isUserLoggedIn()" 
+                            (click)="editAbility(hability.id)" 
+                            class="editButton" matTooltip="Editar">
+                            <mat-icon>edit</mat-icon>
+                        </button>    
+                        <button mat-mini-fab class="editButton" color="warn" 
+                            *ngIf="isUserLoggedIn()" 
+                            (click)="deleteAbility(hability.id)" 
+                            class="editButton" matTooltip="Eliminar">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </mat-list-item>
             </mat-grid-tile>
         </mat-list>        
     </mat-grid-list>

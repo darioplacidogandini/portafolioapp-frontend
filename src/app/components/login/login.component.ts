@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private loginservice: AuthenticationService) {
       this.loginForm = this.formBuilder.group({
         username: new FormControl('', [Validators.required,Validators.email]),
-        password: new FormControl('', [Validators.required,Validators.minLength(8),Validators.pattern("^[a-z0-9_-]{8,15}$")])
+        password: new FormControl('', [Validators.required,Validators.minLength(8),])
       })
     }
 
@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
      if (this.loginForm.get('password')?.hasError('minLength')) {
       return 'La contraseña debe contener al menos 8 caracteres';
      }
-     if (this.loginForm.get('password')?.hasError('pattern')) {
-      return 'Debe contener: @ -';
+     if (this.invalidLogin === true) {
+        return 'Usuario y/o contraseña inválidos';
      }
      return 'Rellene este campo';
   }
@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.log(error);
         this.invalidLogin = true;
+        this.getErrorMessages();
       }
     ));
   }
