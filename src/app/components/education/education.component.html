@@ -9,8 +9,7 @@
     </h1>
     <mat-list>
         <mat-list-item *ngFor="let education of education">
-            <img mat-card-image
-            [src]="education.institutionLogo" id="educacionPhoto"
+            <img [src]="education.institutionLogo" id="educacionPhoto"
             [alt]="'Logo' + education.institutionLogo">
             <h3 mat-line class="accentText">{{education.title}} </h3>
             <br>
