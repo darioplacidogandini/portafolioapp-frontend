@@ -9,8 +9,8 @@
     </h1>
     <mat-grid-list cols="5" rowHeight="120px">
         <mat-list>
-            <mat-grid-tile colspan="1">
-                <mat-list-item *ngFor="let hability of habilities">
+            <mat-grid-tile colspan="1" *ngFor="let hability of habilities">
+                <mat-list-item>
                     <mat-progress-spinner mat-list-icon
                         [value]="hability.percentage"
                         mode="determinate">
