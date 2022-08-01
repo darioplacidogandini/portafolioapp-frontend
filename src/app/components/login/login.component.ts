@@ -35,6 +35,10 @@ export class LoginComponent implements OnInit {
      return 'Rellene este campo';
   }
 
+  public wrongLogin() {
+    return 'Usuario y/o contraseña inválidos'
+  }
+
   public checkLogin() {
     this.usernameFieldValue = this.loginForm.get('username')?.value;
     this.passwordFieldValue = this.loginForm.get('password')?.value;

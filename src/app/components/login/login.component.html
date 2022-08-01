@@ -13,7 +13,7 @@
             {{getErrorMessages()}}
           </mat-error>
           <mat-error *ngIf="invalidLogin">
-            {{'Usuario y/o contraseña inválidos'}}
+            {{wrongLogin()}}
           </mat-error>
         </mat-form-field>
         <br>
