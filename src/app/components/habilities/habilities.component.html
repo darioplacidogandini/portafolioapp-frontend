@@ -10,7 +10,7 @@
     <mat-grid-list cols="5" rowHeight="150px">
         <mat-list>
             <mat-grid-tile colspan="1" *ngFor="let hability of habilities">
-                <mat-list-item>
+                <mat-list-item class="habilityContainer">
                     <mat-progress-spinner mat-list-icon
                         [value]="hability.percentage"
                         mode="determinate">
@@ -18,7 +18,7 @@
                     <div class="spinnerText">
                         {{hability.percentage}}%
                     </div>
-                    <h2>{{hability.hability}}</h2>
+                    <h2 class="accentText">{{hability.hability}}</h2>
                     <div class="editButtonGroup">
                         <button mat-mini-fab class="editButton" color="accent" 
                             *ngIf="isUserLoggedIn()" 

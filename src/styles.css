@@ -74,6 +74,11 @@ body {
     margin-bottom: 10px;
 }
 
+.habiltyContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .spinnerText {
     color: steelblue;
     font-weight: bolder;

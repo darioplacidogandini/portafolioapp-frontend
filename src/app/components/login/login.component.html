@@ -12,7 +12,7 @@
           <mat-error *ngIf="loginForm.invalid">
             {{getErrorMessages()}}
           </mat-error>
-          <mat-error *ngIf="invalidLogin === true">
+          <mat-error *ngIf="wrongLogin()">
             {{wrongLogin()}}
           </mat-error>
         </mat-form-field>
