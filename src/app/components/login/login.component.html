@@ -27,8 +27,8 @@
     <mat-grid-tile>
       <mat-dialog-actions align="end">
         <button type="submit" mat-raised-button color="primary"
-          [mat-dialog-close]="(invalidLogin === false) && (loginForm.valid)" cdkFocusInitial
-          matTooltip="Iniciar sesion">
+          mat-dialog-close disabled="(invalidLogin === false) && loginForm.hasErrors" 
+          cdkFocusInitial matTooltip="Iniciar sesion">
           <mat-icon>check</mat-icon>
         </button>
         <button type="button" mat-raised-button color="accent"
