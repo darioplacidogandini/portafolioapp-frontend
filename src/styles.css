@@ -75,6 +75,7 @@ body {
 }
 
 .habiltyContainer {
+    text-align: center;
     display: flex;
     flex-direction: column;
 }
@@ -84,7 +85,7 @@ body {
     font-weight: bolder;
     position: absolute;
     text-align: center;
-    transform: translate(35px,0px);
+    transform: translate(35px,-60px);
 }
 
 
