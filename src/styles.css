@@ -15,6 +15,10 @@ body {
     border: 2px solid;
 }
 
+#editProfileButton {
+    align-items: flex-end;
+}
+
 #projectPhoto {
     margin-top: 15px;
     margin-bottom: 15px;
