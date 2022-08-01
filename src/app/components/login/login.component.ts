@@ -32,10 +32,11 @@ export class LoginComponent implements OnInit {
      if (this.loginForm.get('password')?.hasError('minLength')) {
       return 'La contraseña debe contener al menos 8 caracteres';
      }
-     if (this.invalidLogin === true) {
-        return 'Usuario y/o contraseña inválidos';
-     }
      return 'Rellene este campo';
+  }
+
+  public wrongLogin() {
+    return 'Usuario y/o contraseña inválidos';
   }
 
   public checkLogin() {
@@ -50,7 +51,6 @@ export class LoginComponent implements OnInit {
       error => {
         console.log(error);
         this.invalidLogin = true;
-        this.getErrorMessages();
       }
     ));
   }
