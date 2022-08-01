@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       data => {
         console.log(data);
         this.invalidLogin = false;
+        this.loginDialog.closeAll();
       },
       error => {
         console.log(error);
