@@ -12,8 +12,8 @@
           <mat-error *ngIf="loginForm.invalid">
             {{getErrorMessages()}}
           </mat-error>
-          <mat-error *ngIf="wrongLogin()">
-            {{wrongLogin()}}
+          <mat-error *ngIf="invalidLogin">
+            {{'Usuario y/o contraseña inválidos'}}
           </mat-error>
         </mat-form-field>
         <br>
