@@ -8,7 +8,7 @@ import { Experience } from '../model/experience.model';
 })
 export class ExperienceService {
 
-  private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/experience';
+  private baseUrl = '';
   id:number = 0;
 
   constructor(private http: HttpClient) {}

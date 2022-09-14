@@ -1,8 +1,7 @@
 <mat-card class="card">
     <h1 class="primaryText">
         Habilidades
-        <button *ngIf="isUserLoggedIn()" (click)="addAbility()" 
-            mat-mini-fab color="primary" class="editButton" 
+        <button mat-mini-fab color="primary" class="editButton" 
             matTooltip="Agregar habilidad">
             <mat-icon>add</mat-icon>
         </button>
@@ -23,14 +22,10 @@
                     </div>
                     <div class="editButtonGroup">
                         <button mat-mini-fab class="editButton" color="accent" 
-                            *ngIf="isUserLoggedIn()" 
-                            (click)="editAbility(hability.id)" 
                             class="editButton" matTooltip="Editar">
                             <mat-icon>edit</mat-icon>
                         </button>    
                         <button mat-mini-fab class="editButton" color="warn" 
-                            *ngIf="isUserLoggedIn()" 
-                            (click)="deleteAbility(hability.id)" 
                             class="editButton" matTooltip="Eliminar">
                             <mat-icon>delete</mat-icon>
                         </button>

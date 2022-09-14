@@ -8,7 +8,7 @@ import { Education } from '../model/education.model';
 })
 export class EducationService {
 
-  private baseUrl = 'https://dariogandini-portfolio-backend.herokuapp.com/api/education';
+  private baseUrl = '';
   id:number = 0;
 
   constructor(private http: HttpClient) {}

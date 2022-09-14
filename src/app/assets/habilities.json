@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "hability": "HTML",
+        "percentage": 80
+    },
+    {
+        "id": 2,
+        "hability": "Bootstrap",
+        "percentage": 70
+    },
+    {
+        "id": 3,
+        "hability": "Java",
+        "percentage": 60
+    }
+]
