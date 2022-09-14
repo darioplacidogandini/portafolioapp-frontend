@@ -3,8 +3,6 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Experience } from 'src/app/model/experience.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ExperienceService } from 'src/app/services/experience.service';
-import { AddExperienceComponent } from './add-experience/add-experience.component';
-import { EditExperienceComponent } from './edit-experience/edit-experience.component';
 import experience from '../../assets/experience.json';
 
 @Component({
@@ -25,21 +23,6 @@ export class ExperienceComponent implements OnInit {
 
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
-  }
-
-  public openAddDialog() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    this.dialog.open(AddExperienceComponent,dialogConfig);
-  }
-
-  public openEditDialog(id:number) {
-    this.experienceService.id = id;
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    this.dialog.open(EditExperienceComponent,dialogConfig);
   }
 
   public delete(id:number) {
