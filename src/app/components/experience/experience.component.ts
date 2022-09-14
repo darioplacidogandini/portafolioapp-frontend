@@ -20,7 +20,6 @@ export class ExperienceComponent implements OnInit {
 
   ngOnInit(): void {}
 
-
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
   }

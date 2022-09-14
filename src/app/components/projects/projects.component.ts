@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import project from '../../assets/projects.json'
 
 @Component({
   selector: 'app-projects',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class ProjectsComponent implements OnInit {
   
-  projects:Project[] = [];
+  projects:Project[] = project;
 
   constructor(private projectsService:ProjectsService,private authService:AuthenticationService,
   public route:Router,public dialog:MatDialog) {}

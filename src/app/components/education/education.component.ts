@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Education } from 'src/app/model/education.model';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import education from '../../assets/education.json'
 
 @Component({
@@ -11,8 +12,13 @@ export class EducationComponent implements OnInit {
 
   education: Education[] = education;
 
-  constructor() {}
+  constructor(private authService:AuthenticationService) {}
 
   ngOnInit(): void {}
+
+  public isUserLoggedIn() {
+    return this.authService.isUserLoggedIn();
+  }
+
 }
 

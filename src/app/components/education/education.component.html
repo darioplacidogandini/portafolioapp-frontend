@@ -2,7 +2,7 @@
     <h1 class="primaryText">
         Educación
         <button mat-mini-fab color="primary"
-            class="editButton"
+            *ngIf="isUserLoggedIn()" class="editButton"
             matTooltip="Agregar educación">
             <mat-icon>add</mat-icon>
         </button>
@@ -15,12 +15,12 @@
             <h5 mat-line>{{education.institution}}</h5>
             <p mat-line>{{education.date}} - {{education.duration}} hs</p>
             <div class="editButtonGroup">
-                <button mat-mini-fab color="accent" class="editButton"
-                    matTooltip="Editar">
+                <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
+                    class="editButton" matTooltip="Editar">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-mini-fab color="warn" class="editButton"
-                    matTooltip="Eliminar">
+                <button mat-mini-fab color="warn" *ngIf="isUserLoggedIn()"
+                    class="editButton" matTooltip="Eliminar">
                 <mat-icon>delete</mat-icon>
                 </button>
             </div> 
