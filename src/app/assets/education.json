@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "Diplomatura en Programacion Java",
+        "institution": "UTN FRBA",
+        "date": "Febrero del 2016",
+        "duration": 160,
+        "institutionLogo": ""
+    },
+    {
+        "id": 2,
+        "title": "Diseñador Web",
+        "institution": "Instituto Económico Nacional",
+        "date": "Diciembre del 2021",
+        "duration": 48,
+        "institutionLogo": ""
+    }
+]
