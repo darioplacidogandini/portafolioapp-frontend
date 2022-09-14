@@ -9,6 +9,14 @@
     },
     {
         "id": 2,
+        "title": "Argentina Programa: #SeProgramar",
+        "institution": "Ministerio de Desarrollo Productivo",
+        "date": "Octubre 2021",
+        "duration": 60,
+        "institutionLogo": "https://yt3.ggpht.com/a/AATXAJxS6a-59RFLfEEj9dRFjBouh5pi2HmuktJwUg=s900-c-k-c0xffffffff-no-rj-mo"
+    },
+    {
+        "id": 3,
         "title": "Diseñador Web",
         "institution": "Instituto Económico Nacional",
         "date": "Diciembre del 2021",

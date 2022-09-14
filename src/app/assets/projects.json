@@ -3,8 +3,8 @@
         "id": 1,
         "projectName": "Calculadora",
         "description": "Calculadora web hecha con HTML, JS y Bootstrap",
-        "projectURL": "",
-        "sourceCode": "",
-        "projectLogo": ""
+        "projectURL": "https://darioplacidogandini.github.io/Calculadora/",
+        "sourceCode": "https://github.com/darioplacidogandini/Calculadora",
+        "projectLogo": "https://static.vecteezy.com/system/resources/previews/000/349/743/original/vector-calculator-icon.jpg"
     }
 ]
