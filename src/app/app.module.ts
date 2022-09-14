@@ -10,19 +10,10 @@ import { LoadingDialog, PortfolioComponent } from './components/portfolio/portfo
 import { LoginComponent } from './components/login/login.component'
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
-import { EditAboutComponent } from './components/about/edit-about/edit-about.component';
 import { ExperienceComponent } from './components/experience/experience.component';
-import { AddExperienceComponent } from './components/experience/add-experience/add-experience.component';
-import { EditExperienceComponent } from './components/experience/edit-experience/edit-experience.component';
 import { EducationComponent } from './components/education/education.component';
-import { AddEducationComponent } from './components/education/add-education/add-education.component';
-import { EditEducationComponent } from './components/education/edit-education/edit-education.component';
 import { HabilitiesComponent } from './components/habilities/habilities.component';
-import { AddHabilitiesComponent } from './components/habilities/add-habilities/add-habilities.component';
-import { EditHabilitiesComponent } from './components/habilities/edit-habilities/edit-habilities.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { AddProjectsComponent } from './components/projects/add-projects/add-projects.component';
-import { EditProjectsComponent } from './components/projects/edit-projects/edit-projects.component';
 
 @NgModule({
   declarations: [
@@ -32,19 +23,10 @@ import { EditProjectsComponent } from './components/projects/edit-projects/edit-
     LoginComponent,
     HeaderComponent,
     AboutComponent,
-    EditAboutComponent,
     ExperienceComponent,
-    AddExperienceComponent,
-    EditExperienceComponent,
     EducationComponent,
-    AddEducationComponent,
-    EditEducationComponent,
     HabilitiesComponent,
-    AddHabilitiesComponent,
-    EditHabilitiesComponent,
     ProjectsComponent,
-    AddProjectsComponent,
-    EditProjectsComponent
   ],
   imports: [
     BrowserModule,

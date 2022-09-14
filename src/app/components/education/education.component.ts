@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Education } from 'src/app/model/education.model';
 import education from '../../assets/education.json'
-
-interface Education {
-  id:number;
-  title:string;
-  institution:string;
-  date:string;
-  duration:number;
-  institutionLogo:string;  
-}
 
 @Component({
   selector: 'app-education',

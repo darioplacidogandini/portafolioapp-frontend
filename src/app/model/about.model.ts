@@ -1,7 +1,6 @@
-export class About {
-    id:number = 0;
-    profilePhoto:string = '';
-    headerImage:string = '';
-    name:string = '';
-    job:string = '';
+export interface About {
+    profilePhoto:String,
+    headerImage:String,
+    name:String,
+    job:String;
 }

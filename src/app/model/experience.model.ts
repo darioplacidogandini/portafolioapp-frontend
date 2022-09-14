@@ -1,8 +1,8 @@
-export class Experience {
-    id:number = 0;
-    company:string = '';
-    job:string = '';
-    start:string = '';
-    end:string = '';
-    companyLogo:string = '';
+export interface Experience {
+    id:number;
+    company:string;
+    job:string;
+    start:string;
+    end:string;
+    companyLogo:string;
 }

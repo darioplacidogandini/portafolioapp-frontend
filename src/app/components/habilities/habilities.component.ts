@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Hability } from 'src/app/model/hability.model';
 import habilities from '../../assets/habilities.json'
-
-interface Hability {
-  id:number,
-  hability:String,
-  percentage:number
-} 
 
 @Component({
   selector: 'app-habilities',

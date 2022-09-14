@@ -5,6 +5,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ExperienceService } from 'src/app/services/experience.service';
 import { AddExperienceComponent } from './add-experience/add-experience.component';
 import { EditExperienceComponent } from './edit-experience/edit-experience.component';
+import experience from '../../assets/experience.json';
 
 @Component({
   selector: 'app-experience',
@@ -13,21 +14,14 @@ import { EditExperienceComponent } from './edit-experience/edit-experience.compo
 })
 export class ExperienceComponent implements OnInit {
   
-  experience:Experience[] = [];
+  experience:Experience[] = experience;
   id:number = 0;
   
   constructor(private experienceService:ExperienceService,private authService:AuthenticationService,
     public dialog:MatDialog) {}
 
-  ngOnInit(): void {
-    this.list();
-  }
+  ngOnInit(): void {}
 
-  public list() {
-    this.experienceService.list().subscribe(data => {
-      this.experience = data;
-    });
-  }
 
   public isUserLoggedIn() {
     return this.authService.isUserLoggedIn();
@@ -49,11 +43,9 @@ export class ExperienceComponent implements OnInit {
   }
 
   public delete(id:number) {
-    this.experienceService.delete(id).subscribe(data => {
-      console.log(data);
-      this.list();
-    });
+    alert(id);
   }
+
 }
 
 
