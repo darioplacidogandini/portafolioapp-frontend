@@ -23,7 +23,7 @@ export class PortfolioComponent implements OnInit {
 
   public loadingScreen() {
       this.dialog.open(LoadingDialog,this.dialogsService.loadingDialogConfig);
-      setTimeout(() => this.dialog.closeAll(),8000);
+      setTimeout(() => this.dialog.closeAll(),1000);
       this.databaseLoaded = true;
   }
 }
