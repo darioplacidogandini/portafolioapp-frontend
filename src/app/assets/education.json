@@ -41,6 +41,22 @@
     },
     {
         "id": 6,
+        "title": "React Básico",
+        "institution": "UBA IALAB",
+        "date": "Julio del 2023",
+        "duration": 40,
+        "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
+    },
+    {
+        "id": 7,
+        "title": "React Avanzado",
+        "institution": "UBA IALAB",
+        "date": "Julio del 2023",
+        "duration": 25,
+        "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
+    },
+    {
+        "id": 8,
         "title": "Excel Avanzado y Power BI Inicial",
         "institution": "Gobierno de la Ciudad de Buenos Aires",
         "date": "Diciembre del 2022",
@@ -48,8 +64,8 @@
         "institutionLogo": "https://gcba.github.io/Obelisco/header/header-logo.svg"
     },
     {
-        "id": 7,
-        "title": "Excel Avanzado y Power BI Inicial",
+        "id": 9,
+        "title": "Gobernanzade Datos",
         "institution": "UBA IALAB",
         "date": "Enero del 2023",
         "duration": 120,
