@@ -28,7 +28,7 @@
         "title": "Sé Programar",
         "institution": "Ministerio de Ciencia y Tecnología Provincia de Corrientes",
         "date": "Diciembre del 2021",
-        "duration": "96",
+        "duration": 96,
         "institutionLogo": "https://pbs.twimg.com/profile_images/1510995830135791624/KSdHUy_a_400x400.jpg"
     },
     {
@@ -36,7 +36,7 @@
         "title": "Diseñador Web",
         "institution": "Instituto Económico Nacional",
         "date": "Diciembre del 2021",
-        "duration": "48",
+        "duration": 48,
         "institutionLogo": "https://scontent.fcnq1-1.fna.fbcdn.net/v/t39.30808-6/312989275_5515995295158745_1058236837981145030_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fPe3zXnzXwYAX8-_SUa&_nc_ht=scontent.fcnq1-1.fna&oh=00_AfCYLaAbaFmkhilXKkQR5ETWYIXtL2GE-rFpb9ssH9Pdkg&oe=63CF7F3F"
     },
     {
@@ -44,7 +44,7 @@
         "title": "Excel Avanzado y Power BI Inicial",
         "institution": "Gobierno de la Ciudad de Buenos Aires",
         "date": "Diciembre del 2022",
-        "duration": "56",
+        "duration": 56,
         "institutionLogo": "https://gcba.github.io/Obelisco/header/header-logo.svg"
     }
 ]
