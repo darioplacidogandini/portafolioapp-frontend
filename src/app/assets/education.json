@@ -3,7 +3,8 @@
         "id": 1,
         "title": "#YoProgramo - Perfil Web Full Stack Junior",
         "institution": "Ministerio de Desarrollo Productivo",
-        "date": "Septiembre del 2022",
+        "startDate": "Noviembre del 2022",
+        "endDate": "Septiembre del 2022",
         "duration": 250,
         "institutionLogo": "https://yt3.ggpht.com/a/AATXAJxS6a-59RFLfEEj9dRFjBouh5pi2HmuktJwUg=s900-c-k-c0xffffffff-no-rj-mo"
     },
@@ -11,7 +12,8 @@
         "id": 2,
         "title": "Diplomatura en Programacion Java",
         "institution": "UTN FRBA",
-        "date": "Febrero del 2016",
+        "startDate": "Septiembre del 2016",
+        "endDate": "Febrero del 2016",
         "duration": 160,
         "institutionLogo": "https://yt3.ggpht.com/a/AATXAJwN8jCrZ6cId6bzB-5P2J6tDi5wHIZJ2ufRnA=s900-c-k-c0xffffffff-no-rj-mo"
     },
@@ -19,7 +21,8 @@
         "id": 3,
         "title": "Argentina Programa: #SeProgramar",
         "institution": "Ministerio de Desarrollo Productivo",
-        "date": "Octubre 2021",
+        "startDate": "Junio del 2021",
+        "endDate": "Octubre 2021",
         "duration": 60,
         "institutionLogo": "https://yt3.ggpht.com/a/AATXAJxS6a-59RFLfEEj9dRFjBouh5pi2HmuktJwUg=s900-c-k-c0xffffffff-no-rj-mo"
     },
@@ -27,7 +30,8 @@
         "id": 4,
         "title": "Sé Programar",
         "institution": "Ministerio de Ciencia y Tecnología Provincia de Corrientes",
-        "date": "Diciembre del 2021",
+        "startDate": "Agosto del 2021",
+        "endDate": "Diciembre del 2021",
         "duration": 96,
         "institutionLogo": "https://pbs.twimg.com/profile_images/1510995830135791624/KSdHUy_a_400x400.jpg"
     },
@@ -35,7 +39,8 @@
         "id": 5,
         "title": "Diseñador Web",
         "institution": "Instituto Económico Nacional",
-        "date": "Diciembre del 2021",
+        "startDate": "Octubre del 2021",
+        "endDate": "Diciembre del 2021",
         "duration": 48,
         "institutionLogo": "https://scontent.fcnq1-1.fna.fbcdn.net/v/t39.30808-6/312989275_5515995295158745_1058236837981145030_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fPe3zXnzXwYAX8-_SUa&_nc_ht=scontent.fcnq1-1.fna&oh=00_AfCYLaAbaFmkhilXKkQR5ETWYIXtL2GE-rFpb9ssH9Pdkg&oe=63CF7F3F"
     },
@@ -43,7 +48,8 @@
         "id": 6,
         "title": "Javascript",
         "institution": "UBA IALAB",
-        "date": "Junio del 2022",
+        "startDate": "Junio del 2022",
+        "endDate": "Junio del 2022",
         "duration": 25,
         "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
     },
@@ -51,7 +57,8 @@
         "id": 7,
         "title": "React Básico",
         "institution": "UBA IALAB",
-        "date": "Julio del 2022",
+        "startDate": "Julio del 2022",
+        "endDate": "Julio del 2022",
         "duration": 40,
         "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
     },
@@ -59,7 +66,8 @@
         "id": 8,
         "title": "Node.Js",
         "institution": "UBA IALAB",
-        "date": "Julio del 2022",
+        "startDate": "Julio del 2022",
+        "endDate": "Julio del 2022",
         "duration": 50,
         "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
     },
@@ -67,7 +75,8 @@
         "id": 9,
         "title": "React Avanzado",
         "institution": "UBA IALAB",
-        "date": "Julio del 2022",
+        "startDate": "Julio del 2022",
+        "endDate": "Julio del 2022",
         "duration": 25,
         "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
     },
@@ -75,7 +84,8 @@
         "id": 10,
         "title": "Excel Avanzado y Power BI Inicial",
         "institution": "Gobierno de la Ciudad de Buenos Aires",
-        "date": "Diciembre del 2022",
+        "startDate": "Octubre del 2022",
+        "endDate": "Diciembre del 2022",
         "duration": 56,
         "institutionLogo": "https://gcba.github.io/Obelisco/header/header-logo.svg"
     },
@@ -83,8 +93,18 @@
         "id": 11,
         "title": "Gobernanza de Datos",
         "institution": "UBA IALAB",
-        "date": "Enero del 2023",
+        "startDate": "Diciembre del 2022",
+        "endDate": "Enero del 2023",
         "duration": 120,
+        "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
+    },
+    {
+        "id": 12,
+        "title": "Gobernanza de la Inteligencia Artificial",
+        "institution": "UBA IALAB",
+        "startDate": "Enero del 2023",
+        "endDate": "Enero del 2023",
+        "duration": 50,
         "institutionLogo": "https://scontent.fcnq2-2.fna.fbcdn.net/v/t1.6435-9/164239103_110565397785454_3769350818574559354_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SdkvvFnoqgQAX8tiSVu&_nc_ht=scontent.fcnq2-2.fna&oh=00_AfA-EIuqCQAo1C3Exk3AtAOQR4QPVOxU1Fg7Z_Ir7d0wvQ&oe=63F1DB13"
     }
 ]

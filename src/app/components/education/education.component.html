@@ -13,7 +13,7 @@
             [alt]="'Logo' + education.institutionLogo">
             <h3 mat-line class="accentText">{{education.title}} </h3>
             <h5 mat-line>{{education.institution}}</h5>
-            <p mat-line>{{education.date}} - {{education.duration}} hs</p>
+            <p mat-line>{{education.startDate}} a {{education.endDate}} - {{education.duration}} hs</p>
             <div class="editButtonGroup">
                 <button mat-mini-fab color="accent" *ngIf="isUserLoggedIn()" 
                     class="editButton" matTooltip="Editar">
